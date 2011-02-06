@@ -1,0 +1,35 @@
+public String getName() {
+	return "Przykładowy dialog postępu";
+}
+
+public int getVersion() {
+	return 001;
+}
+
+public String getAuthor() {
+	return "dmn";
+}
+
+public int getType() {
+	return 1;
+}
+
+public String getInfo() {
+	return "Testowa wtyczka\nWyświetla dialog postępu.";
+}
+
+public boolean init() {
+	return true;
+}
+
+public void start() {
+	tools.progress("start");
+	for (int i = 1; i <= 10; i++) {
+		tools.progress(calc(i + "*10") + " %");
+		Thread.sleep(50);
+	}
+	print("Koniec testu");
+}
+
+public void stop() {
+}

@@ -1,0 +1,33 @@
+public String getName() {
+	return "Strona domowa";
+}
+
+public int getVersion() {
+	return 001;
+}
+
+public String getAuthor() {
+	return "dmn";
+}
+
+public int getType() {
+	return 1;
+}
+
+public String getInfo() {
+	return "Wyświetla stronę domową programu we wbudowanej przeglądarce.";
+}
+
+public boolean init() {
+	print("init");
+	return true;
+}
+
+public void start() {
+	print("start");
+	new SimpleBrowser("http://gdamian.ovh.org/jstat").showFrame();
+}
+
+public void stop() {
+	print("stop");
+}

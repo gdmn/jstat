@@ -1,0 +1,261 @@
+<dmnutils.document.Document serialization="custom">
+  <unserializable-parents/>
+  <linked-list>
+    <default/>
+    <int>18</int>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>Skrypt</string>
+      <string>print(&quot;a&quot;);
+k = new Liczba(3);
+j = new Liczba(&quot;1,2&quot;);
+z = Znak.podzielElementy(k, j);
+print(z);
+
+m = new double[][] {{1, 4}, {3, 8}};
+Macierz macierz = new Macierz(m);
+System.out.println(&quot;j &quot; + macierz);
+// System.exit(-3);
+
+print(przeciwny(2));
+print(poteguj(2, new Liczba(4)));
+print(calc(&quot;2/5&quot;));
+
+print(tools.getActivePage(null));
+
+page = tools.getActivePage(!false, PageSheet.class);
+print(page);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.notepad.PageNotepad>
+      <string>Notatnik</string>
+      <string>jestem notatnikiem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+joł :)
+</string>
+    </jstat.pages.notepad.PageNotepad>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>nowy panel</string>
+      <string>p = tools.getMain().insertJPanel(&quot;3&quot;);
+p.add(new JLabel(&quot;S&quot;));
+p.validate();</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>nowy notatnik z zapisem</string>
+      <string>p = tools.getMain().insertPage(PageNotepad.factory);
+p.print(&quot;wszystko dobrze&quot;);
+p.print(&quot;jest&quot;);</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>zapisywanie wykresu</string>
+      <string>w = new Wykres(-10,10,-10,10,&quot;1/x&quot;);
+w.setWidth(600);
+w.setHeight(600);
+w.savePNG(new File(&quot;/home/dmn/Pulpit/graph.png&quot;));
+print(&quot;ok&quot;);</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>zapisywanie wykresu (2)</string>
+      <string>Object[][] wzory = new Object[][] {
+	new Object[] { &quot;1/x&quot;, new Double(-5), new Double(5), new Double(-5), new Double(5), &quot;odw&quot; },
+	new Object[] { &quot;sin(x)&quot;, new Double(-5), new Double(5), new Double(-1), new Double(1), &quot;a&quot; },
+};
+w = new Wykres(-10,10,-10,10,&quot;0&quot;);
+w.setWidth(400);
+w.setHeight(400);
+int i = 0;
+for (Object[] s : wzory) {
+	print(s[0]);
+	w.setWyrazenie(s[0]);
+	w.setXYMinMax(s[1], s[2], s[3], s[4]);
+	w.savePNG(new File(&quot;/home/dmn/Pulpit/&quot; + s[5] + &quot;.png&quot;));
+}
+print(&quot;ok&quot;);</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>wykresyrozkladow</string>
+      <string>Object[][] wzory = new Object[][] {
+	new Object[] { &quot;fjednostajny(1;2;x)&quot;, new Double(-0.1), new Double(3), new Double(-0.02), new Double(1.05), &quot;wykresfjednostajny&quot; },
+	new Object[] { &quot;normalnystd(x)&quot;, new Double(-4), new Double(4), new Double(-0.02), new Double(0.42), &quot;wykresnormalnystd&quot; },
+	new Object[] { &quot;fnormalnystd(x)&quot;, new Double(-4), new Double(4), new Double(-0.02), new Double(1.05), &quot;wykresfnormalnystd&quot; },
+	new Object[] { &quot;chikwadrat(4;x)&quot;, new Double(-0.1), new Double(20), new Double(-0.02), new Double(0.2), &quot;wykreschikwadrat&quot; },
+	new Object[] { &quot;fchikwadrat(4;x)&quot;, new Double(-0.4), new Double(20), new Double(-0.02), new Double(1.05), &quot;wykresfchikwadrat&quot; },
+	new Object[] { &quot;studenta(4;x)&quot;, new Double(-8.1), new Double(8.1), new Double(-0.02), new Double(0.4), &quot;wykresstudenta&quot; },
+	new Object[] { &quot;fstudenta(4;x)&quot;, new Double(-8.1), new Double(8.1), new Double(-0.02), new Double(1.05), &quot;wykresfstudenta&quot; },
+	new Object[] { &quot;snedecora(7;10;x)&quot;, new Double(-0.1), new Double(8.1), new Double(-0.02), new Double(0.75), &quot;wykressnedecora&quot; },
+	new Object[] { &quot;fsnedecora(7;10;x)&quot;, new Double(-0.1), new Double(8.1), new Double(-0.02), new Double(1.05), &quot;wykresfsnedecora&quot; },
+};
+w = new Wykres(-10,10,-10,10,&quot;0&quot;);
+w.setWidth(400);
+w.setHeight(400);
+int i = 0;
+for (Object[] s : wzory) {
+	print(s[0]);
+	w.setWyrazenie(s[0]);
+	w.setXYMinMax(s[1], s[2], s[3], s[4]);
+	w.savePNG(new File(&quot;/home/dmn/Pulpit/&quot; + s[5] + &quot;.png&quot;));
+}
+print(&quot;ok&quot;);</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>test wstaw funkcję</string>
+      <string>a = new Macierz(&quot;{{0.28366219;-0.65364362}}&quot;).getValue();
+b = calc(&quot;COS({{5;4}})&quot;);
+print(a); print(b);
+
+a = new Liczba(&quot;-0,41614684&quot;);
+b = calc(&quot;COS(5-4,33)&quot;);
+
+print(a); print(b);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>browser</string>
+      <string>frame = new JFrame();
+browser = new SimpleBrowser();
+frame.getContentPane().add(browser);
+browser.navigate(&quot;http://dmn.jogger.pl&quot;);
+frame.pack();
+frame.show();</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>equals test</string>
+      <string>int ip1 = 2;
+int ip2 = 3;
+print(ip1 != ip2);            // wypisze true
+Integer i1 = new Integer(3);
+Integer i2 = new Integer(3);
+print(i1 == i2);              // wypisze false (porównanie referencji do obiektów)
+print(i1.equals(i2));         // wypisze true
+print((int)i1 == (int)i2);    // rzutowanie na typ podstawowy, wypisze true
+Liczba a = new Liczba(&quot;4&quot;);
+Liczba b = new Liczba(&quot;4.0&quot;);
+print(a.equals(b));           // wypisze true
+
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>browser2</string>
+      <string>new SimpleBrowser(&quot;http://gdamian.ovh.org/jstat&quot;).showFrame();</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>tools.showerr,warn, itp</string>
+      <string>Tools.showErr(&quot;Wystąpił błąd.&quot;);
+Tools.showWarn(&quot;Nie wykonano żadnych obliczeń.&quot;);
+Tools.showInf(&quot;To jest informacja.&quot;);
+Tools.getYesNo(&quot;Czy chcesz zakończyć program?&quot;);
+Tools.getOkCancel(&quot;Zamykanie dokumentu bez zapisu. Kontynuować?&quot;);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>rxy</string>
+      <string>x = new Macierz(&quot;{{7; 0,6; 12; 0,13; 0,15}{7; 1; 12; 0,13; 0,15}{8; 1; 15; 0,13; 0,16}{8; 1,4; 15; 0,14; 0,16}{8; 1; 16; 0,13; 0,17}{10; 1; 21; 0,13; 0,16}{10; 1; 21; 0,13; 0,15}{12; 1,4; 21; 0,13; 0,17}{12; 1,4; 21; 0,13; 0,17}{12; 1,6; 20; 0,12; 0,17}{14; 1,6; 20; 0,15; 0,17}{14; 1,6; 19; 0,21; 0,17}{14; 2; 18; 0,21; 0,17}{16; 2; 20; 0,22; 0,16}{16; 2; 17; 0,22; 0,16}{16; 2; 16; 0,22; 0,16}{16; 2,1; 16; 0,22; 0,18}{15; 2,1; 15; 0,21; 0,19}{14; 2,03; 16; 0,21; 0,19}{12; 1,98; 17; 0,21; 0,2}{12; 2; 21; 0,21; 0,24}{12; 2; 25; 0,2; 0,24}{12; 1,96; 21; 0,2; 0,24}{12; 1,95; 21; 0,2; 0,25}{11; 1,95; 20; 0,23; 0,26}{12; 1,95; 20; 0,24; 0,25}{12; 1,93; 21; 0,24; 0,24}{12; 1,93; 18; 0,24; 0,22}}&quot;);
+y = new Macierz(&quot;{{1,5}{1,5}{1,6}{1,6}{2}{1,6}{2}{2}{2}{2,2}{2,25}{2,35}{2,35}{2,45}{2,5}{2,6}{2,5}{2,55}{2,6}{2,65}{2,7}{2,85}{2,8}{2,95}{3}{3,2}{2,97}{2,85}}&quot;);
+
+print(x.getLengthX()+&quot; &quot;+x.getLengthY());
+print(y.getLengthX()+&quot; &quot;+y.getLengthY());
+
+//rxy = rozszerzonamacierzkorelacji(y, x);
+
+//print(rxy);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>srednia</string>
+      <string>x =  new Macierz(&quot;{{3;4}{5;5}}&quot;);
+print(PodstawoweStatystyki.srednia(x));
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>browser3</string>
+      <string>plik = &quot;interfejs.html&quot;;
+adr = jstat.gui.Help.getAddr(plik).toString();
+//SystemBrowser.browse(adr);
+f = jstat.gui.HelpMini.help(plik);
+new SimpleBrowser(adr).showFrame();
+f.setVisible(true);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>kwartyle</string>
+      <string>int rozmiar = 12;
+
+
+q1 = new Liczba(1);
+q3 = new Liczba(3);
+typ = new Liczba(0);
+String s = &quot;{{&quot;;
+for (int i = 0; i &lt; rozmiar; i++) {
+		s = (i&gt;0) ? s+&quot;; &quot;+i : s+i;
+}
+s = s + &quot;}}&quot;;
+xit = new Macierz(s);
+xi = transp(xit);
+Macierz zero = new Macierz(&quot;{{0}}&quot;);
+result1 = kwartyl(q1, typ, xi, zero, zero, zero);
+result3 = kwartyl(q3, typ, xi, zero, zero, zero);
+print(s);
+print(result1+&quot; &quot;+result3);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>macierzToHtml</string>
+      <string>m = new Macierz(&quot;{{3785; 5891; 805; 147009667}{3552; 9466; 834; 144524268}{3242; 7109; 843; 126842373}{2960; 10573; 1028; 114917218}{2987; 6497; 1040; 134426582}{3149; 6875; 1007; 153085401}{3030; 9167; 1040; 198689045}}&quot;);
+m = new Macierz(&quot;{{1922; 3700; 1079; 51; 1620; 532; 2032}{1923; 4334; 1134; 25; 1927; 688; 2229}{1924; 4332; 1194; 78; 1864; 759; 2351}{1925; 4502; 1250; 36; 2042; 825; 2434}{1926; 4802; 1245; 8; 2136; 881; 2518}{1927; 4843; 1262; 42; 2092; 858; 2580}{1928; 4936; 1288; 63; 2137; 818; 2638}{1929; 5221; 1338; 35; 2230; 788; 2716}{1930; 4777; 1277; 56; 1828; 594; 2589}{1931; 4047; 1121; 9; 1477; 371; 2338}{1932; 3170; 975; 16; 1053; 177; 1970}{1933; 3005; 902; 22; 1040; 109; 1767}{1934; 3489; 910; 35; 1220; 123; 1819}{1935; 3793; 952; -27; 1407; 160; 1928}{1936; 4248; 1012; -47; 1654; 255; 2095}{1937; 4657; 1123; -26; 1738; 333; 2242}{1938; 4323; 1106; 61; 1440; 293; 2228}}&quot;);
+s = jstat.pages.html.PageHtmlOutput.macierzToHtmlTable(m);
+print(s);</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>dobór zmiennych H</string>
+      <string>y = new Macierz(&quot;{{27}{25}{28}{31}{30}{34}{32}{28}{27}{29}{28}{30}}&quot;);
+x = new Macierz(&quot;{{2; 1; 0,6}{3; 0,5; 0,8}{3; 0,6; 1}{4; 0,5; 1}{3; 0,5; 0,9}{5; 0,5; 0,7}{5; 0,6; 1}{4; 0,5; 0,6}{3; 0,7; 0,6}{3; 0,7; 1}{4; 1; 0,6}{4; 1,2; 0,9}}&quot;);
+mkorelacji = rozszerzonamacierzkorelacji(y, x);
+dobierz = doborzmiennychmetodawskaznikowpojemnosciinformacji_dobierz(mkorelacji);
+print(dobierz);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+  </linked-list>
+  <dmnutils.document.Document>
+    <default/>
+  </dmnutils.document.Document>
+</dmnutils.document.Document>

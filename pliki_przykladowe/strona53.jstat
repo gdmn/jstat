@@ -1,0 +1,47 @@
+<dmnutils.document.Document serialization="custom">
+  <unserializable-parents/>
+  <linked-list>
+    <default/>
+    <int>1</int>
+    <jstat.pages.sheet.PageSheet>
+      <string>Arkusz danych [2 zm.]</string>
+      <java-class-array>
+        <java-class>kalkulator.Liczba</java-class>
+        <java-class>kalkulator.Liczba</java-class>
+      </java-class-array>
+      <string-array>
+        <string>jeden</string>
+        <string>liczba ludności</string>
+      </string-array>
+      <object-array-array>
+        <object-array>
+          <kalkulator.Liczba>
+            <value>1</value>
+          </kalkulator.Liczba>
+          <kalkulator.Liczba>
+            <value>5000</value>
+          </kalkulator.Liczba>
+        </object-array>
+        <object-array>
+          <kalkulator.Liczba>
+            <value>1</value>
+          </kalkulator.Liczba>
+          <kalkulator.Liczba>
+            <value>7500</value>
+          </kalkulator.Liczba>
+        </object-array>
+        <object-array>
+          <kalkulator.Liczba>
+            <value>1</value>
+          </kalkulator.Liczba>
+          <kalkulator.Liczba>
+            <value>8250</value>
+          </kalkulator.Liczba>
+        </object-array>
+      </object-array-array>
+    </jstat.pages.sheet.PageSheet>
+  </linked-list>
+  <dmnutils.document.Document>
+    <default/>
+  </dmnutils.document.Document>
+</dmnutils.document.Document>

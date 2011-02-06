@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+"
+	codebase="http://gdamian.ovh.org/jstat/pliki"
+	href="JStat.jnlp">
+	<information>
+		<title>JStat</title>
+		<vendor>Damian Gorlach</vendor>
+		<description>JStat - wersja rozwojowa</description>
+		<homepage href="http://gdamian.ovh.org"/>
+		<description kind="short">Program do obliczeń statystycznych</description>
+		<offline-allowed/>
+	</information>
+	<resources>
+		<jar href="JStat.jar"/>
+		<j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+		</resources>
+	<application-desc main-class="jstat.gui.Main"/>
+	<security>	<all-permissions/>	</security>
+</jnlp>

@@ -1,0 +1,67 @@
+<dmnutils.document.Document serialization="custom">
+  <unserializable-parents/>
+  <linked-list>
+    <default/>
+    <int>2</int>
+    <jstat.pages.sheet.PageSheet>
+      <string>Arkusz danych [3 zm.]</string>
+      <java-class-array>
+        <java-class>kalkulator.Liczba</java-class>
+        <java-class>kalkulator.Liczba</java-class>
+        <java-class>kalkulator.Liczba</java-class>
+      </java-class-array>
+      <string-array>
+        <string>Zmn1</string>
+        <string>Zmn2</string>
+        <string>Zmn3</string>
+      </string-array>
+      <object-array-array>
+        <object-array>
+          <string>1.0 </string>
+          <string>100000.00000001</string>
+          <string>1.0</string>
+        </object-array>
+        <object-array>
+          <string>2.0 </string>
+          <string>100000.00000002 </string>
+          <string>2.0</string>
+        </object-array>
+        <object-array>
+          <string>3.0 </string>
+          <string>100000.00000001 </string>
+          <string>1.0</string>
+        </object-array>
+        <object-array>
+          <string>4.0 </string>
+          <string>100000.00000002 </string>
+          <string>2.0</string>
+        </object-array>
+        <object-array>
+          <string>5.0 </string>
+          <string>100000.00000001 </string>
+          <string>1.0</string>
+        </object-array>
+        <object-array>
+          <string>6.0 </string>
+          <string>100000.00000002 </string>
+          <string>2.0</string>
+        </object-array>
+        <object-array>
+          <string>7.0 </string>
+          <string>100000.00000005 </string>
+          <string>5.0</string>
+        </object-array>
+      </object-array-array>
+    </jstat.pages.sheet.PageSheet>
+    <jstat.pages.notepad.PageNotepad>
+      <string>Notatnik</string>
+      <string>http://www.statsoft.com/company/benchmk.html
+
+Example 1: The &quot;small relative variance test&quot; of numerical precision
+</string>
+    </jstat.pages.notepad.PageNotepad>
+  </linked-list>
+  <dmnutils.document.Document>
+    <default/>
+  </dmnutils.document.Document>
+</dmnutils.document.Document>

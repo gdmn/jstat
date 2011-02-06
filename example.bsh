@@ -1,0 +1,188 @@
+import kalkulator.*;
+
+String[] inputstrings = new String[] {
+                            //"2/3",
+                            //"odwr(hilbert(7))",
+                            //"hilbert(7)^2",
+                            /*
+                            "{{2;3}{4;22}}^(-1)",
+                            "inv({{2;3}{4;22}})",
+                            "({{2;3}{4;22}}^(-1))^2",
+                            "{{2;3}{4;22}}^(-2)",
+                            "tekst(2)",
+                            "2^0.5*2^10   - 2^10.5",
+                            */
+                            //wszędzie ma być równe 0:
+                            // p,k
+                            "zerojedynkowy(0,5; 0) -0,5",
+                            "zerojedynkowy(0,5; 1) -0,5",
+                            "fzerojedynkowy(0,5; -1) -0",
+                            "fzerojedynkowy(0,5; 0,1) -0,5",
+                            "fzerojedynkowy(0,5; 1) -0,5",
+                            "fzerojedynkowy(0,5; 1,1) -1",
+                            // n,p,k
+                            "dwumianowy(5; 1/2; 0) -1/32",
+                            "dwumianowy(5; 1/2; 1) -5/32",
+                            "dwumianowy(5; 1/2; 2) -10/32",
+                            "dwumianowy(5; 1/2; 3) -10/32",
+                            "dwumianowy(5; 1/2; 4) -5/32",
+                            "dwumianowy(5; 1/2; 5) -1/32",
+                            "fdwumianowy(5; 1/2; 0) -0",
+                            "fdwumianowy(5; 1/2; 0,9) -1/32",
+                            "fdwumianowy(5; 1/2; 1) -1/32",
+                            "fdwumianowy(5; 1/2; 1,1) -6/32",
+                            "fdwumianowy(5; 1/2; 2) -6/32",
+                            "fdwumianowy(5; 1/2; 3) -16/32",
+                            "fdwumianowy(5; 1/2; 4) -26/32",
+                            "fdwumianowy(5; 1/2; 5) -31/32",
+                            "fdwumianowy(5; 1/2; 5,1) -1",
+                            "fdwumianowy(3; 0,9; 3) -0,271",
+                            // m,k
+                            "poissona(2; 0) -0,135",
+                            "poissona(2; 4) -0,09",
+                            "poissona(2; 0)+poissona(2; 1)+poissona(2; 2) -0,675",
+                            "fpoissona(2; 2) -0,675",
+                            "fpoissona(2; 1,9) -0,675",
+                            "fpoissona(2; 2,1)-poissona(2; 3) -0,675",
+                            // p, k
+                            "geometryczny(0,8; 2) -0,16",
+                            "fgeometryczny(0,8; 2) -0,8",
+                            "fgeometryczny(0,8; 3,999) -0,992",
+                            "fgeometryczny(0,8; 4) -0,992",
+                            "fgeometryczny(0,8; 4,1) -0,9984",
+                            // a, b, x
+                            "jednostajny(6; 18; 5,9) -0",
+                            "jednostajny(6; 18; 6) -1/12",
+                            "jednostajny(6; 18; 18) -1/12",
+                            "jednostajny(6; 18; 19,4) -0",
+                            "fjednostajny(6; 18; 18) -1",
+                            "fjednostajny(6; 18; 9) -(9-6)/12",
+                            "fjednostajny(6; 18; 7,32) -(7,32-6)/12",
+                            "fjednostajny(6; 18; 6) -0",
+                            // gamma, x
+                            "fwykladniczy(1/20; 10) -0,39",
+                            "fwykladniczy(1/20; 20)-fwykladniczy(1/20; 15) -0,1",
+                            "1-fwykladniczy(1/20; 25) -0,29",
+                            //k, x
+                                                 "chikwadrattail(5; 1,145) -0,95",
+                                                 "1-fchikwadrat(5; 1,145) -0,95",
+                                                 "fchikwadrat(5; 7,289) -0,8",
+                            "fchikwadrat(2;3)-integral(0;3;chikwadrat(2;x)) -0",
+                            "fchikwadrat(1;3)-integral(0;3;chikwadrat(1;x)) -0",
+                            //"fchikwadrat(3;3)-integral(0;3;chikwadrat(3;x)) -0",
+                            //"fchikwadrat(4;3)-integral(0;3;chikwadrat(4;x)) -0",
+                            //"fchikwadrat(5;3)-integral(0;3;chikwadrat(5;x)) -0",
+                            //"fchikwadrat(12;3)-integral(0;3;chikwadrat(12;x)) -0",
+                            "integral(8,31;100;chikwadrat(3;x)) -0,040021",
+                            "fchikwadrat(3;8,31) -(1-0,040021)",
+                            "chikwadrattail(3; 8.31) -0.040021",
+                            "1-fchikwadrat(3;8,31) -0,040021", //http://www.danielsoper.com/statcalc/calc11.aspx - po kolei w okienkach: 8.31; 3; wynik: 0.040021
+                            "integral(0.09;100;chikwadrat(1;x)) -0.764177",
+                            "fchikwadrat(1;0.09) -(1-0.764177)",
+                            "chikwadrattail(1;0.09) -0.764177",
+                            "1-fchikwadrat(1;0.09) -0.764177", //http://www.danielsoper.com/statcalc/calc11.aspx - po kolei w okienkach: 8.31; 3; wynik: 0.040021
+                                                 
+                            //
+                            "beta(2;3) -0,083333",
+                            "beta(5;1,5) -0.073882",
+                            "beta(5;1,5) - gamma(5)*gamma(1,5)/gamma(5+1,5) -0",
+                            "betaincmpl(0,5;1;2) -0,375",
+                            "betareg(0,5;1;2) -0,75",
+                            //x,a,b
+                            "betaincmpl(0.2;1.2;2.34) -0.103566",
+                            "betaincmpl(0.3;0.14;0.2) -6.244599",//
+                            "betaincmpl(0.8;0.14;0.2) -7.961579",
+                            "betaincmpl(0.8;3;2) -0.068267",
+                            "betaincmpl(0.8;3.1;2) -0.063819",
+                            "betaincmpl(0.8;3;2.1) -0.062777",
+                            "betaincmpl(0.7;3;0.1) -0.237914",//
+                            "betaincmpl(0.95;3;0.1) -1.313158",
+                            "betaincmpl(0.8;2.11;21.2) -0.00158447",
+                            //k, x
+                            "fstudenta(5;4) -0,994838",
+                            "studenta(5;4) - 0.005124", //http://www.danielsoper.com/statcalc/calc40.aspx
+                            "fstudenta(2;-4) -0.028595",
+                            "1-fstudenta(2;4) -0.028595",
+                            "fstudenta(5;-2) -0.0509697",
+                            "1-fstudenta(5;2) -0.0509697",
+                            "fstudenta(2;0) -0.5",
+                            "1-fstudenta(21;0) -0.5",
+                            //x
+                            "gamma(0,1) -9.513508",
+                            "gamma(0,2) -4.590844",
+                            "gamma(0,3) -2.991569",
+                            "gamma(0,4) -2.218160",
+                            "gamma(0,5) -1.772454",
+                            "gamma(0,6) -1.489192",
+                            "gamma(0,7) -1.298055",
+                            "gamma(0,8) -1.164230",
+                            "gamma(0,9) -1.068629",
+                            "gamma(0.0001) -9999.422883",
+                            //k,x
+                            "gammalower(3; 5.5) -1.825994",
+                            "gammalower(0.9;0.2) -0.237841",
+                            "gammaupper(3;5.5) -0.174006",
+                            "gammaupper(0.9;0.2) -0.830788",
+                            "gamma(0.9) -gammaupper(0.9;0.2)-gammalower(0.9;0.2) -0",
+                            "gammaupper(0.2;1.4) -0.136902",
+                            "gammaupper(0.8;3.9) -0.014809",
+                            "gammaupper(2;3.9) -0.099185",
+                            "gammaupper(4.3;12) -0.029737",
+                            "gammalower(3;0.2) -0.002297",
+                            "gammalower(3;1) -0.160603",
+                            "gammalower(3;1.2) -0.241026",
+                            "gammalower(0.02;1.2) -49.277403",
+                            "gammalower(0.2;1.2) -4.407539",
+                            "gammalower(0.2;0.23) -3.592278",
+                            "gammalower(0.2;0.91) -4.314389",
+                            "gammalower(1;0) -0",
+                        };
+
+FunkcjaInterface[] mojeFunkcje = new FunkcjaInterface[] {Funkcja.funkcjaX};
+
+void selftest() {
+	//10*sin(1,0*x)*cos(0,03*x)
+	List input = new LinkedList(Arrays.asList(inputstrings));
+	for (int x = -3; x <= 1; x++) {
+		//input.add("normalny(0; 1; " + x + ")");
+	}
+	ElementWyrazenia[] output = new ElementWyrazenia[input.size()];
+	long l1 = System.nanoTime();
+	int j = 0;
+	for (String s : input) {
+		System.out.println(s);
+		output[j++] = WyrazeniePostfix.valueOf(s, mojeFunkcje).getValue();
+	}
+	long l2 = System.nanoTime();
+	for (int i = 0; i < j; i++) {
+		System.out.println(input.get(i) + " = " + output[i]);
+	}
+	System.out.println("czas: " + ((double) (l2 - l1) / 1000000000) + " sek.");
+}
+
+void mathtest() {
+	for (int i = -20; i <= 20; i++) {
+		double ii = 0.1*i;
+		for (int j = -20; j <= 20; j++) {
+			double jj = 0.1*j;
+			System.out.println(ii+"^"+jj+" = " + Math.pow(ii, jj));
+		}
+	}
+}
+
+setStrictJava(true);
+System.out.println(Funkcja.funkcjaX.toString() + WyrazeniePostfix.valueOf("x", mojeFunkcje).getValue().toString());
+selftest();
+//mathtest();
+
+/*
+Macierz dst = Macierz.valueOf("{{1;2;3;44}{4;5;6;45}{7;8;9;46}}", null);
+Macierz src = Macierz.valueOf("{{100;200}{300;400}}", null);
+Macierz wklejona = Macierz.wklej(dst, src, 0, 0);
+Macierz wycieta = Macierz.pobierz(dst, 1, 0, 3, 3);
+System.out.println("wklej: "+wklejona);
+System.out.println("pobierz: "+wycieta);
+*/
+
+// calc("1/11");
+calc("hilbert(4)");

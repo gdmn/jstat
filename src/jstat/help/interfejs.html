@@ -1,0 +1,200 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+	<head>
+		<title>Interfejs programu</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="Author" content="Damian Gorlach" />
+		<link rel="Stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<h1><a name="TOP"></a>Interfejs programu</h1>
+		<p>Rozdział jest opisem interfejsu programu JStat, jaki użytkownik widzi
+			po uruchomieniu aplikacji oraz przedstawia wskazówki do używania wbudowanej pomocy.
+		</p>
+		<p>Interfejs programu może mieć wygląd typowy dla aplikacji Javy (<b>OCEAN</b>) lub
+			integrować się z systemem operacyjnym, na jakim został uruchomiony (<b>NATIVE</b>)
+			[<i>How to Set the Look and Feel</i>,
+			<a href="http://java.sun.com/docs/books/tutorial/uiswing/lookandfeel/plaf.html">http://java.sun.com/docs/books/tutorial/uiswing/lookandfeel/plaf.html</a>
+			z dnia 30 kwietnia 2008].
+			Wygląd programu można zmienić w <a href="ustawienia.html">ustawieniach</a>.
+			Tam też można zdecydować o sposobie wyświetlania podpisów
+			tekstowych pod ikonami na pasku narzędzi.
+		</p>
+		<p><table border="0"><caption>Wygląd <b>OCEAN</b>.</caption><tr><td>
+		<img alt="interfejs-ocean" src="images/interfejs-ocean.png" />
+		</td></tr></table></p>
+		<p><table border="0"><caption>Wygląd <b>NATIVE</b> w systemie Linux (Ubuntu 8.04).</caption><tr><td>
+		<p><img alt="interfejs-native-lin" src="images/interfejs-native-lin.png" /></p>
+		</td></tr></table></p>
+		<p><table border="0"><caption>Wygląd <b>NATIVE</b> w systemie Windows XP.</caption><tr><td>
+		<p><img alt="interfejs-native-win" src="images/interfejs-native-win.png" /></p>
+		</td></tr></table></p>
+		<p><table border="0"><caption>Wygląd <b>NATIVE</b> w systemie Mac OS X Leopard.</caption><tr><td>
+		<p><img alt="interfejs-native-mac" src="images/interfejs-native-mac.png" /></p>
+		</td></tr></table></p>
+
+
+		<h2><a name="pasekmenu"></a>Pasek menu</h2>
+		<p>
+			<ul><li><b>Plik</b> - zawiera pozycje związane z otwieraniem, zapisywaniem dokumentów oraz zakończeniem pracy,</li>
+				<li><b>Wstaw</b> - umożliwia wstawienie różnego rodzaju stron do dokumentu. Każda strona
+					odpowiada modułowi w programie. Opis poszczególnych stron
+					znajduje się w rozdziale o <a href="moduly.html">modułach</a>.</li>
+				<li><b>Okno</b> - menu zawiera listę wszystkich otwartych aktualnie dokumentów.
+					Umożliwia szybkie przełączanie między nimi.</li>
+					<li><b>Narzędzia</b> - dostęp do narzędzi, takich jak:<ul>
+							<li>czyszczenie logów aplikacji - czyści pole z informacjami programu (tylko jeśli
+							w <a href="ustawienia.html">ustawieniach</a> zaznaczona jest opcja <i>Przechwytywanie komunikatów z konsoli</i>),</li>
+							<li><a href="ustawienia.html">ustawienia</a> programu,</li>
+							<li><a href="moduly.html#edytorfunkcji">edytor funkcji</a>,</li>
+					</ul></li>
+				<li><b>Obliczenia</b> - zawiera menu umożliwiające dostęp do wszystkich
+					<a href="obliczenia.html">obliczeń</a> wbudowanych w program.
+					Opis znajduje się w odpowiednim rozdziale,</li>
+				<li><b>Wtyczki</b> - lista wszystkich załadowanych <a href="pluginy.html">wtyczek</a>,
+					które tworzą wpis w menu (więcej informacji w rozdziale o
+					<a href="pluginy.html">wtyczkach</a>),
+				</li>
+				<li><b>Pomoc</b> - zawiera pozycje umożliwiające wyświetlenie pomocy oraz informacji o programie.</li>
+			</ul>
+		</p>
+
+
+		<h2><a name="paseknarzedziowy"></a>Pasek narzędziowy</h2>
+
+		<p><table border="0" cellpadding="5">
+				<thead>
+					<tr>
+						<th>Ikona</th>
+						<th>Znaczenie</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img alt="ikonka - nowy" src="images/document-new.png" /></td>
+						<td>Tworzy nowy dokument.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - otwórz" src="images/document-open.png" /></td>
+						<td>Otwiera istniejący dokument.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - zapisz" src="images/document-save.png" /></td>
+						<td>Zapisuje bieżący dokument. Jeśli nie nie został wcześniej<br />
+						zapisany, wyświetla dialog pozwalający wprowadzić nazwę pliku.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - ustawienia" src="images/preferences-system.png" /></td>
+						<td>Wyświetla dialog <a href="ustawienia.html">ustawień</a> programu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - wyczyść log" src="images/edit-clear.png" /></td>
+						<td>Czyści pole z logami programu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - arkusz" src="images/x-office-spreadsheet.png" /></td>
+						<td>Wstawia nowy <a href="moduly.html#arkusz">arkusz</a> do bieżącego dokumentu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - kalkulator" src="images/accessories-calculator.png" /></td>
+						<td>Wstawia nowy <a href="moduly.html#kalkulator">kalkulator</a> do bieżącego dokumentu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - wykres" src="images/x-office-presentation.png" /></td>
+						<td>Wstawia nowy <a href="moduly.html#wykres">wykres</a> do bieżącego dokumentu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - notatnik" src="images/accessories-text-editor.png" /></td>
+						<td>Wstawia nowy <a href="moduly.html#notatnik">notatnik</a> do bieżącego dokumentu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - skrypt" src="images/text-x-script.png" /></td>
+						<td>Wstawia nowy <a href="moduly.html#skrypt">skrypt</a> do bieżącego dokumentu.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - zakończ" src="images/system-log-out.png" /></td>
+						<td>Kończy pracę z programem.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - pomoc" src="images/help-browser.png" /></td>
+						<td>Pokazuje okno z pomocą.</td>
+					</tr>
+					<tr>
+						<td><img alt="ikonka - o programie" src="images/help-about.png" /></td>
+						<td>Pokazuje okno z informacjami o programie.</td>
+					</tr>
+				</tbody>
+			</table>
+		</p>
+
+
+		<h2><a name="dokumenty"></a>Praca z dokumentami</h2>
+		<p>Każdy dokument może się składać z dowolnej ilości podstron, różnych typów,
+			jak na przykład <a href="moduly.html#arkusz">arkusz z danymi</a>,
+			<a href="moduly.html#wykres">wykres</a> czy
+			<a href="moduly.html#notatnik">notatnik</a>.
+			Kolejne podstrony dokumentu można dodawać za pomocą pozycji
+			<i>Wstaw</i> w menu głównym.
+			Po lewej stronie okna z dokumentem znajduje się lista wszystkich
+			wstawionych podstron. Po kliknięciu na wybranej stronie,
+			zostanie ona wyświetlona w centralnej części okna.
+			Po kliknięciu prawym przyciskiem myszki na wspomnianą listę
+			uzyskuje się dostęp do menu kontekstowego.
+		</p>
+		<p><table border="0"><caption>Lista stron - menu kontekstowe.</caption><tr><td>
+		<img alt="Lista stron - menu kontekstowe" src="images/dokument-menukontekstowe.png" />
+		</td></tr></table></p>
+		<p>Pozycje w menu pozwalają na:<ul>
+			<li>zmianę nazwy zaznaczonej podstrony dokumentu,</li>
+			<li>usunięcie zaznaczonej podstrony dokumentu,</li>
+			<li>przesunięcie w górę hierarchii stron zaznaczonej podstrony dokumentu,</li>
+			<li>przesunięcie w dół hierarchii stron zaznaczonej podstrony dokumentu.</li>
+		</ul>
+		</p>
+
+
+		<h2><a name="pomoc"></a>Przeglądarka pomocy</h2>
+		<p>Aby uruchomić pomoc, należy z menu głównego
+			okna <i>Pomoc</i> wybrać pozycję <i>Pomoc</i>.
+			Można też użyć skrótu klawiaturowego, jakim jest klawisz <i>F1</i>.
+		</p>
+		<p><table border="0"><caption>Przeglądarka pomocy.</caption><tr><td>
+		<img alt="pomoc" src="images/interfejs-pomoc.png" />
+		</td></tr></table></p>
+
+		<p>Pomoc programu jest
+			napisana w formacie HTML, ułatwiając jej umieszczanie w internecie
+			oraz gwarantując zgodność ze standardami. Łatwo jest również
+			wygenerować drzewo dokumentu. Wszystkie pliki ze ścieżki pomocy
+			są automatycznie przeszukiwane, a nagłówki są dodawane do drzewa
+			widocznego po lewej stronie okna.
+			Zachowywana jest struktura dokumentu, co oznacza, że podrozdziały
+			ukazują się dopiero po rozwinięciu wszystkich wcześniejszych poziomów
+			nagłówków.
+			Kliknięcie na dowolną pozycję drzewa
+			otworzy w polu po prawej stronie zawartość odpowiedniego pliku
+			przewiniętą na zaznaczony temat. Dzięki temu jest możliwa łatwa
+			nawigacja przez istniejącą pomoc. Drzewko jest dynamicznie generowane,
+			każda zmiana dokumentacji znajduje automatyczne odzwierciedlenie
+			w strukturze drzewa. W przyszłości dodana zostanie funkcja przeszukiwania
+			plików pomocy.
+			<!-- Zmiana w dokumentacji spowoduje zindeksowanie zmienionej
+			części pomocy na dysku w celu szybszego późniejszego przeszukiwania. -->
+		</p>
+		<p>Dzięki formatowi HTML, w jakim została napisana pomoc, możliwe stało
+			się utworzenie dokumentacji wraz z odnośnikami do innych dokumentów,
+			w których są zawarte np. dodatkowe informacje lub definicje.
+			Ma to przewagę nad zwykłym tekstowym trybem, gdyż zbędne staje się
+			przeszukiwanie kilkudziesięciostronicowego dokumentu.
+			Kliknięcie na odnośnik automatycznie przenosi użytkownika w odpowiednie
+			miejsce. Dodatkowo zależnie od preferencji przeglądającego lub
+			zainstalowanego oprogramowania, taka sama pomoc
+			może być oglądana przez przeglądarkę wewnętrzną dokumentacji
+			jak również systemową przeglądarkę internetową.
+		</p>
+
+
+		<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+	</body>
+</html>

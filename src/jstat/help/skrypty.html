@@ -1,0 +1,396 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Skrypty</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach" />
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<h1><a name="TOP"></a><a name="wstep"></a>Skrypty</h1>
+<p>Skrypty są "programem w programie". Mogą rozszerzać funkcjonalność
+lub dodawać całkiem nowe funkcje.</p>
+<p>Skrypty nie są kompilowane do postaci
+kodu zrozumiałego dla maszyny wirtualnej Javy a jedynie
+<b>interpretowane</b> przez moduł wbudowany w JStat.
+Pociąga to za sobą kilka konsekwencji. Przede wszystkim łatwość użycia.
+W <strong>JStat</strong> wystarczy w otwartym dokumencie
+wstawić podstronę z edytorem skryptów, napisać skrypt i uruchomić.
+Nie trzeba się martwić o konfigurację ani kompilatorów, ani ścieżki
+do klas. Kolejną zaletą jest to, że dzięki interpreterowi
+zintegrowanemu z aplikacją z poziomu skryptów istnieje dostęp
+do wszystkich klas programu. Nietrudno sobie wyobrazić przykłady
+zastosowania. Wtyczki, dodatkowe obliczenia, dodawanie własnych
+funkcji itp.
+</p>
+
+<h3><a name="BeanShell"></a>BeanShell</h3>
+<p>BeanShell
+[Strona internetowa projektu BeanShell: <a href="http://www.beanshell.org/">http://www.beanshell.org</a>]
+jest małym, darmowym, łatwym do użycia w aplikacjach Javy
+interpreterem kodu źródłowego, napisanym w całości w Javie.
+BeanShell potrafi uruchamiać kod źródłowy Javy (jednakże z niewielkimi
+ograniczeniami). Wzbogaca również standardowe polecenia
+Javy o własne, charakterystyczne dla siebie.</p>
+
+<h3><a name="przykladskryptu"></a>Przykład</h3>
+<p>Aby zademonstrować działanie skryptów, najlepiej będzie posłużyć
+się przykładem.<a name="pierwszy-przyklad"></a></p>
+<pre>
+/* Funkcja dodająca dwie liczby,
+   zwracająca wynik. */
+dodaj(a, b) {
+    return a + b;
+}
+suma = dodaj(5, 7);  // uruchamia funkcję
+print("Wynik wynosi: "+suma);
+</pre>
+<p>Jak widać, aby zdefiniować nową funkcję, należy podać nazwę,
+a ewentualne parametry podaje się w nawiasach. Ciało metody
+należy umieścić w <a href="#blok">bloku</a>, czyli
+ująć w nawiasy klamrowe "<b>{</b>" oraz "<b>}</b>". Każda instrukcja
+musi kończyć się średnikiem "<b>;</b>".</p>
+<p>Funkcja <code>print</code> służy do wypisania informacji na wyjściu, czyli
+w specjalnym polu w dolnej części okna z edytorem skryptu.
+Powinno się tam pojawić: "<i>Wynik wynosi: 12</i>".</p>
+<p>W przykładzie widać również, że dzięki operatorowi dodawania (<code>+</code>)
+można dodawać nie tylko cyfry ale również ciągi znakowe, tak zwane <code>String</code>.
+Jeśli zostaje użyty operator dodawania do ciągu znakowego oraz liczby,
+liczba zostaje przekonwertowana do reprezentacji znakowej i "sklejona"
+z tekstem.</p>
+<p>W BeanShell, jak w większości języków skryptowych, nie jest konieczne
+podawanie typu zmiennej. W przykładzie powyżej definicję funkcji <i>dodaj(a, b)</i>
+można zapisać używając typu <code>int</code> (liczba całkowita):</p>
+<pre>
+int dodaj(int a, int b) {
+    return a + b; // zwraca sumę
+}
+</pre>
+
+<h2><a name="typy"></a>Najczęściej używane typy</h2>
+<p>W języku skryptowym BeanShell można używać tych samych typów,
+jakie są dostępne w Javie. Omówione zostaną tylko niektóre,
+niezbędne do poznania podstaw programowania.</p>
+<p><a name="typy-podstawowe"></a>Szczególnym rodzajem
+są <strong>typy podstawowe</strong>. Są nimi między innymi wspomniane
+niżej <a href="#int">int</a>,
+<a href="#double">double</a>,
+<a href="#boolean">boolean</a>. Typy podstawowe
+nie są obiektami, reprezentują jedyne dane
+przechowywane w pamięci komputera.</p>
+
+<h3><a name="liczby"></a>Liczby</h3>
+<p><a name="int"></a><strong>int</strong>
+[<i>The Java Tutorials - Primitive Data Types</i>,
+<a href="http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html">http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html</a>
+z dnia 30 kwietnia 2008]
+oraz <strong>Integer</strong>
+[<i>The Java Tutorials - The Numbers Classes</i>
+<a href="http://java.sun.com/docs/books/tutorial/java/data/numberclasses.html">http://java.sun.com/docs/books/tutorial/java/data/numberclasses.html</a>
+z dnia 30 kwietnia 2008]
+są typami przedstawiającymi
+liczbę całkowitą. Mogą przechowywać wartości od
+<code>-2147483648</code> do <code>2147483647</code>.
+Typowym zastosowaniem są <a href="#petle">pętle</a>.</p>
+<p><a name="double"></a><strong>double</strong> oraz <strong>Double</strong>
+są typami zmiennoprzecinkowymi. Nie powinno się używać ich
+do przechowywania dokładnych wartości, gdyż np. liczba
+<code>0.1</code> w pamięci komputera widnieje jako
+<code>0.1000000000000000055511151231257827021181583404541015625</code>.
+Można to szybko sprawdzić wykorzystując inny typ zmiennoprzecinkowy,
+tym razem o nieograniczonej ilości zapamiętywanych cyfr znaczących,
+np. uruchamiając skrypt:
+<pre>double a = 0.1;
+BigDecimal b = new BigDecimal(a);
+print(b);</pre>
+</p>
+
+<h3><a name="logiczne"></a>Logiczne</h3>
+<p><a name="boolean"></a><strong>boolean</strong> oraz <strong>Boolean</strong>
+są typami reprezentującymi wartości logiczne. Można im przypisać wartości
+<code>true</code> lub <code>false</code>, np.:
+<pre>boolean b1 = 5==4; // false, ponieważ 5 jest różne od 4
+b2 = !b1; // zmienna bez jawnego podania typu, zaprzeczenie b1
+print(b1); // wypisze "false"
+print(b2); // wypisze "true"</pre>
+</p>
+
+<h3><a name="znakowe"></a>Znakowe</h3>
+<p><a name="String"></a><strong>String</strong>
+[<i>The Java Tutorials - Strings</i>,
+<a href="http://java.sun.com/docs/books/tutorial/java/data/strings.html">http://java.sun.com/docs/books/tutorial/java/data/strings.html</a>
+z dnia 30 kwietnia 2008]
+jest ciągiem znakowym. Ciągiem znakowym jest dowolna ilość znaków ograniczona
+znakami podwójnych cudzysłowów. Jeśli znak cudzysłowu ma również
+należeć do ciągu, należy go poprzedzić znakiem backslasha (<code>\"</code>).
+Ciągi znakowe można łączyć
+ze sobą, np.:
+<pre>String s = "Połączmy ciąg tekstowy z liczbą " + 4.1;
+s = s + " i z kolejnym ciągiem";
+print(s);</pre>
+</p>
+
+<h3><a name="tablice"></a>Tablice</h3>
+<p>Najogólniej mówiąc, tablice są zbiorem obiektów
+[<i>The Java Tutorials - Arrays</i>,
+<a href="http://java.sun.com/docs/books/tutorial/java/nutsandbolts/arrays.html">http://java.sun.com/docs/books/tutorial/java/nutsandbolts/arrays.html</a>
+z dnia 30 kwietnia 2008]. Ponieważ
+tablice są również obiektem, mogą istnieć tablice tablic itd.
+Wszystkie tablice są numerowane od zera, czyli pierwszym
+elementem tablicy jest element zerowy.<br />
+Definiowanie typu tablicowego polega na dodaniu nawiasów
+kwadratowych <code>[</code> i <code>]</code> za nazwą typu, jaki dana
+tablica ma przechowywać, np. instrukcja
+<code>int[] k</code> jest definicją tablicy elementów typu <a href="#int">int</a>.
+Odwołanie do elementu tablicy następuje przez napisanie jej nazwy
+oraz numeru elementu w nawiasach kwadratowych. Odczytanie trzeciego
+elementu wyglądałoby tak: <code>print(k[2])</code>. Jednak zanim
+to nastąpi, należy koniecznie utworzyć tablicę. Ponieważ
+tablica jest obiektem, nie zostanie automatycznie utworzona,
+tak jak to jest w przypadku <a href="#int">int</a>.
+Aby utworzyć tablicę (podobnie jak obiekt) należy skorzystać
+z operatora <code>new</code>, po nim podać typ, jaki tablica
+ma przechowywać oraz w nawiasach kwadratowych jej rozmiar.</p><p>Przykład:
+<pre>int[] k = new int[3]; // utworzenie tablicy trójelementowej
+k[0] = 1; // ustawienie pierwszego elementu na 1
+k[1] = 5; // ustawienie drugiego elementu na 5
+k[2] = 6; // ustawienie trzeciego elementu na 6
+print("tablica k ma " + k.length + " elementy");</pre></p>
+<p>Można również stworzyć tablicę na etapie definicji,
+wtedy nie trzeba jawnie podawać rozmiaru tablicy, ponieważ
+zostanie on wykryty na podstawie ilości podanych elementów.</p>
+<p>Przykład:
+<pre>String[] m = { "a", "coś", "napis" };
+m[0] = "zamieniam pierwszy element";
+print(m);</pre></p>
+
+<h2><a name="typy-dodane"></a>Typy dodane w JStat</h2>
+<p>Poza wspomnianymi wcześniej typami zmiennych wbudowanymi
+w BeanShell, JStat rozszerza je o własne. Konieczne było
+zwiększenie ilości typów, aby ułatwić obliczenia przeprowadzane
+w programie.
+Są to między innymi takie typy jak: <code>Macierz</code>,
+<code>Liczba</code>. Więcej informacji
+w rozdziale <a href="skrypty-jstat.html">zaawansowanym zastosowaniu skryptów</a>.</p>
+
+<h2><a name="konstrukcje"></a>Podstawowe konstrukcje języka</h2>
+<p></p>
+<h3><a name="komentarze"></a>Komentarze</h3>
+<p>Istnieją 2 typy komentarzy:<ul>
+<li>jednoliniowe - oznaczane są przez <code>//</code>.
+Po rozpoczęciu tego komentarza obowiązuje on od miejsca,
+w którym został rozpoczęty do końca linii. Tzn. nic za
+znakami slasha nie będzie interpretowane przez <i>BeanShell</i>.</li>
+<li>wieloliniowe - ogranicznikami w tym wypadku są znaki:
+<code>/*</code> oraz <code>*/</code>. Nic między tymi znakami
+nie będzie interpretowane. Tego typu komentarzy nie można
+zagnieżdżać.</li></ul>
+Zastosowanie obu typów komentarzy można zaobserwować w
+<a href="#pierwszy-przyklad">pierwszym przykładzie</a>.
+</p>
+<h3><a name="blok"></a>Bloki</h3>
+<p>Blok jest ciągiem instrukcji rozdzielonych średnikami
+ujętymi w nawiasy klamrowe "<b>{</b>" oraz "<b>}</b>".
+</p>
+<h3><a name="operatory"></a>Operatory</h3>
+<p>Można wyróżnić operatory
+[<i>The Java Tutorials - Operators</i>,
+<a href="http://java.sun.com/docs/books/tutorial/java/nutsandbolts/operators.html">http://java.sun.com/docs/books/tutorial/java/nutsandbolts/operators.html</a>
+z dnia 30 kwietnia 2008]:
+<ul><li>przypisania,</li>
+<li>matematyczne,</li>
+<li>zwiększania i zmniejszania,</li>
+<li>relacji,</li>
+<li>logiczne.</li></ul></p>
+<h4><a name="operatory-przypisania"></a>Operator przypisania</h4>
+<p>Operatorem przypisania jest <code>=</code> (znak równości).
+Przypisanie może nastąpić jedynie do zmiennej.
+Nie można przypisywać wartości do stałych
+lub literałów (np. <code>2="y"</code> jest niepoprawne).<br />
+Gdy operator przypisania jest stosowany
+do <a href="#typy-podstawowe">typów podstawowych</a>, przypisanie powoduje
+skopiowanie wartości (tworzona jest druga zmienna o tej samej wartości).
+W każdym innym wypadku przypisana zostaje jedynie <strong>referencja</strong>
+do obiektu (czyli wskaźnik na obiekt w pamięci). W tym wypadku
+istnieje tak naprawdę jeden obiekt, a odwoływać się do niego
+można za pomocą dwóch zmiennych. Zmiany w jednym
+obiekcie są widoczne przez przypisaną do niego drugą zmienną.</p>
+<h4><a name="operatory-matematyczne"></a>Operatory matematyczne</h4>
+<p>Podstawowymi operatorami matematycznymi są:<ul>
+<li>dodawanie - np. <code>wynik = 2+3</code>,</li>
+<li>odejmowanie - np. <code>wynik = 2-3.1</code>,</li>
+<li>dzielenie - np. <code>wynik = 2/3</code>,</li>
+<li>mnożenie - np. <code>wynik = 2*3</code>,</li>
+<li>module (reszta z dzielenia) - np. <code>wynik = 4%3</code>.</li></ul></p>
+<h4><a name="operatory-zwiekszania"></a>Operatory zwiększania i zmniejszania</h4>
+<p>Są to operatory <code>++</code> i <code>--</code> oznaczające
+odpowiednio: zwiększ o jednostkę i zmniejsz o jednostkę.</p>
+<p>Dodatkowo można wyróżnić postinkrementację i preinkrementację
+(dla <code>++</code>) oraz postdekrementację i predekrementację
+(dla <code>--</code>) w zależności od umieszczenia operatora
+w stosunku do zmiennej. Postinkrementacja i postdekrementacja
+oznacza, że najpierw jest zwracana wartość zmiennej,
+a następnie jest wykonywane działanie. Preinkrementacja
+oraz predekrementacja oznacza, że najpierw jest wykonywane
+działanie, a potem zwracana wartość zmiennej.</p><p>Przykład:
+<pre>a = 1;
+a++;
+print(a);   // wypisze 2
+++a;
+print(a);   // wypisze 3
+print(a++); // wypisze 3, ale po wykonaniu instrukcji wartość zmiennej będzie wynosić 4
+print(a);   // wypisze 4
+print(++a); // wypisze 5, po wykonaniu instrukcji wartość zmiennej będzie wynosić 5
+print(a);   // wypisze 5</pre></p>
+<h4><a name="operatory-relacji"></a>Operatory relacji</h4>
+<p>Operatory relacji zwracają wartości logiczne <code>true</code>/<code>false</code>
+(typu <a href="#boolean">boolean</a>).</p>
+<p>Do operatorów relacyjnych zaliczamy:<ul>
+<li>mniejszy: <code>&lt;</code>,</li>
+<li>większy: <code>&gt;</code>,</li>
+<li>mniejszy lub równy: <code>&lt;=</code>,</li>
+<li>większy lub równy: <code>&gt;=</code>,</li>
+<li>równość: <code>==</code>,</li>
+<li>nierówność: <code>!=</code>.</li>
+</ul></p>
+<p>Należy zwrócić uwagę na to, że do porównywania wszystkiego poza
+<a href="#typy-podstawowe">typami podstawowymi</a>
+powinno się używać funkcji <code>equals()</code>. Wynika to z tego,
+że używając wymienionych operatorów do porównywania obiektów,
+porównywane są referencje do nich, a nie wartości, jakie
+reprezentują. W przypadku niektórych typów można jednak
+posłużyć się rzutowaniem (czyli konwersją) do typu podstawowego.</p>
+<p><a name="przyklad-operatory-relacji"></a>Przykład:
+<pre>int ip1 = 2;
+int ip2 = 3;
+print(ip1 != ip2);            // wypisze true
+Integer i1 = new Integer(3);
+Integer i2 = new Integer(3);
+print(i1 == i2);              // wypisze false (porównanie referencji do obiektów)
+print(i1.equals(i2));         // wypisze true
+print((int)i1 == (int)i2);    // rzutowanie na typ podstawowy, wypisze true
+Liczba a = new Liczba("4");
+Liczba b = new Liczba("4.0");
+print(a.equals(b));           // wypisze true</pre></p>
+<h4><a name="operatory-logiczne"></a>Operatory logiczne</h4>
+<p>Do operatorów logicznych zaliczamy:<ul>
+<li>koniunkcję: <code>&amp;&amp;</code>,</li>
+<li>alternatywę: <code>||</code>,</li>
+<li>negację: <code>!</code>.</li></ul></p>
+<p>Przykład:
+<pre>a = true;
+b = !a;     // b będzie miało wartość false
+c = a || b; // c będzie miało wartość true
+d = a &amp;&amp; b; // d będzie miało wartość false</pre></p>
+<h4><a name="operatory-rzutowanie"></a>Rzutowanie</h4>
+<p>Rzutowanie służy do zmiany typu, tam gdzie jest to dozwolone.
+Np. można rzutować <a href="#int">Integer</a>
+na <a href="#int">int</a>, ale bez sensu byłoby rzutowanie
+<a href="#String">String</a> na <a href="#int">int</a>.</p>
+<p>Rzutowanie następuje poprzez zapisanie typu docelowego
+w nawiasach okrągłych bezpośrednio przed zmienną, stałą,
+liczbą, obiektem itp. Przykład wykorzystania
+rzutowania można było zaobserwować w podpunkcie
+o <a href="#przyklad-operatory-relacji">operatorach relacji</a>.</p>
+
+<h3><a name="warunkowe"></a>Instrukcje warunkowe if/switch</h3>
+<p>Podstawową formą instrukcji warunkowej jest
+<code>if (warunek) instrukcja;</code>. Jeśli <code>warunek</code>
+będzie prawdą, zostanie wykonana <code>instrukcja</code>
+[<i>The Java Tutorials - Control Flow Statements</i>,
+<a href="http://java.sun.com/docs/books/tutorial/java/nutsandbolts/flow.html">http://java.sun.com/docs/books/tutorial/java/nutsandbolts/flow.html</a>
+z dnia 30 kwietnia 2008].
+Jeśli ma zostać wykonanych kilka instrukcji, należy je
+objąć w <a href="#blok">blok</a>.</p>
+<p><a name="if"></a>Instrukcja <code>if (warunek) instrukcja; else innainstrukcja;</code>
+wzbogaca poprzednią konstrukcję o <code>innainstrukcja</code>,
+która zostanie wykonana, jeśli <code>warunek</code> nie będzie spełniony.
+Podobnie jak poprzednio, <code>innainstrukcja</code> może być
+<a href="#blok">blokiem</a> kilku instrukcji, jak również kolejną
+konstrukcją if-else.</p><p>Przykład:
+<pre>a = 50;
+if (a &lt; 0)
+	print("a jest ujemne");
+if (a &gt; 100)
+	print("a jest duże");
+else if (a &gt; 50)
+	print("a jest większe od 50, ale mniejsze lub równe 100");
+else if (a &lt; 10)
+	print("a jest małe");
+else {
+	print("nie mam nic do powiedzenia o zmiennej a");
+	print("spróbuj z inną zmienną");
+}</pre></p>
+<p><a name="switch"></a>Instrukcja <strong>switch</strong> służy
+do wielokrotnego wyboru fragmentu kodu. Jest wygodniejsza niż
+wielokrotne używanie instrukcji <a href="#if">if</a>,
+ale ma jedno ograniczenie. Może być stosowane jedynie dla selektorów
+całkowitych, czyli np. typu <a href="#int">int</a>. Wartość
+podana jako <code>selektor</code> jest po kolei dopasowywana
+do wartości przy słowie <code>case</code> (mogą być grupowane).
+W przypadku
+znalezienia dopasowania wykonywane są wszystkie instrukcje
+aż do słowa <code>break</code>. Jeśli żadna wartość
+nie pasuje, wykonywane są domyślne instrukcje, podane
+po słowie <code>default</code>.
+</p><p>Przykład:<pre>int selektor = 4;
+switch (selektor) {
+	case 1:  print("jeden");    break;
+	case 2:  print("dwa");      break;
+	case 3:  print("trzy");     break;
+	case 4:  print("cztery");   break;
+	case 5:  print("pięć");     break;
+	case 6:  print("sześć");    break;
+	case 7:  print("siedem");   break;
+	case 8:  print("osiem");    break;
+	case 9:  print("dziewięć"); break;
+	case 10: case 20: case 30: case 40:
+	         case 50: case 70: case 80:
+	         case 70: case 80: case 90:
+	         print("jakaś dziesiątka"); break;
+	default: print("nie potrafię zamienić liczby na jej słowną reprezentację");
+}</pre></p>
+<h3><a name="petle"></a>Pętle</h3>
+<p><a name="while"></a>Pierwszym rodzajem pętli jest pętla
+<strong>while</strong>. Instrukcje podane w pętli są wykonywane
+dopóki warunek jest prawdziwy.</p><p>Przykład:
+<pre>int a = 0;
+while (a &lt; 10) {
+	print(a++);
+}</pre>
+Warunek sprawdzający można przesunąć na koniec:
+<pre>int a = 0;
+do {
+	print(a++);
+} while (a &lt; 10);</pre></p>
+<p><a name="for"></a>Drugim rodzajem pętli jest pętla
+<strong>for</strong>. Przyjmuje ona trzy parametry, oddzielane średnikiem.
+Pierwszy parametr to <i>inicjalizacja</i>, jest wykonywany
+na początku pętli. Drugi jest <i>warunkiem</i> sprawdzanym
+przy każdym wykonaniu pętli. Jeśli jest nieprawdziwy, wykonywanie
+pętli się kończy. Trzeci jest <i>krokiem</i> wykonywanym po
+każdorazowym przejściu pętli.</p><p>Przykład:
+<pre>for(int i = 1; i &lt; 4; i++)
+	print(i*10);</pre></p>
+<p><a name="foreach"></a>Trzecim rodzajem pętli jest tzw. pętla
+<strong>foreach</strong>. Stosowana jest najczęściej przy
+<a href="#tablice">tablicach</a>.
+Służy do prostego "przejścia" po wszystkich elementach.
+Tworzy się ją za pomocą słowa kluczowego <b>for</b>,
+jednakże w nawiasie należy podać kolejno:<ul>
+<li>typ w jakim kolejne elementy tablicy (lub innego typu
+umożliwiającego iterację) pobieramy,</li>
+<li>dwukropek,</li>
+<li>tablicę (lub inny typ umożliwiający iterację).</li></ul></p><p>Przykład:
+<pre>int[] tablica = new int[3];
+tablica[0] = 1;
+tablica[1] = 5;
+tablica[2] = 6;
+for(int i : tablica)
+	print(i);</pre></p>
+
+
+<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

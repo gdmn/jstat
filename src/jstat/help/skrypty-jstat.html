@@ -1,0 +1,673 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+	<head>
+		<title>Skrypty - zaawansowane zagadnienia</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="Author" content="Damian Gorlach" />
+		<link rel="Stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+
+
+		<h1><a name="typy"></a><a name="TOP"></a>Skrypty - zaawansowane zagadnienia</h1>
+		<p>Rozdział jest przewodnikiem po zaawansowanych zastosowaniach skryptów.
+			Dzięki skryptom możliwe jest wykorzystanie programu <b>JStat</b>
+			do innych obliczeń, niż te zaimplementowane w programie.
+			Można też wykorzystywać wbudowane typy i mechanizmy
+			obliczeń do tworzenia nowych algorytmów lub wybierać
+			jedynie te potrzebne w danym momencie.
+		</p>
+		<p>Wykorzystanie skryptów pozwala <b>JStat</b> zbliżyć
+			się funkcjonalnie do znacznie droższych komercyjnych odpowiedników.
+		</p>
+
+
+		<h2><a name="dodatkoweklasy"></a>Dodatkowe klasy</h2>
+		<p>Program <b>JStat</b> zawiera wiele klas, które mogą zostać wykorzystane do obliczeń.</p>
+		<p><a name="konstruktor"></a><strong>Konstruktorem</strong> klasy nazywamy specjalną procedurę,
+			która ma za zadanie utworzenie obiektu w pamięci. Konstruktor wywołujemy
+			słowem kluczowym <b>new</b> i nazwą klasy.
+		</p>
+
+		<p><table border="0"><caption>Automatycznie wygenerowany diagram klas.</caption><tr><td>
+		<a href="images/diagram-liczba-macierz.png">
+		<img width="500" height="400" alt="UML - diagram klas, liczba, macierz itp." src="images/diagram-liczba-macierz.png" />
+		</a>
+		</td></tr></table></p>
+
+
+		<h3><a name="ElementWyrazenia"></a>ElementWyrazenia</h3>
+		<p><code>ElementWyrazenia</code> jest superklasą (czyli klasą nadrzędną) dla wszystkich
+			typów używanych do obliczeń.
+		</p>
+
+		<h3><a name="Tekst"></a>Tekst</h3>
+		<p>Klasa reprezentuje tekst. Jeszcze nie jest szerzej wykorzystywana.
+		</p>
+
+		<h3><a name="Liczba"></a>Liczba</h3>
+		<p>Typ <b>Liczba</b> reprezentuje dowolną liczbę rzeczywistą. Dzięki wykorzystaniu jako podstawy
+			klasy <code>BigDecimal</code>, czyli wbudowanego typu obsługującego liczby o dowolnej
+			ilości cyfr znaczących, możliwe jest uzyskanie wysokiej jakości obliczeń.
+			Ich dokładność może ustawić użytkownik w <a href="ustawienia.html#obliczenia">ustawieniach</a>.
+			Jednym z ważniejszych zadań stawianych przed projektem była właśnie wysoka
+			dokładność obliczeń. Niestety, niektóre funkcje, takie jak <a href="funkcje.html#sin">sinus</a>,
+			wciąż korzystają z mniej dokładnego systemu prezentacji liczb (dokładniej mówiąc
+			z 64-bitowego natywnego typu <a href="skrypty.html#double">double</a>).
+			Poprawienie dokładności obliczeń zostanie dokonane w przyszłych wersjach programu.
+			Możliwe będzie wtedy przeprowadzanie wszelkich obliczeń z dowolną dokładnością.
+		</p>
+		<p>Jako separatora dziesiętnego  dla konstruktora klasy <a href="#Liczba">Liczba</a>
+			można używać kropki
+			lub domyślnego wybranego w systemie, w którym program
+			został uruchomiony. W przypadku polskojęzycznych systemów,
+			takich jak Windows lub całej rodziny Linux będzie to przecinek.
+			Można używać notacji naukowej, czyli po małej lub dużej
+			literze "E" wprowadzić wykładnik liczby 10, a przed literą - liczbę.
+		</p>
+		<p><b>Ważniejsze metody klasy</b>:<ul>
+				<li><a href="#konstruktor">konstruktory</a>:<ul>
+						<li><code>new Liczba(double d)</code> - parametrem jest <a href="skrypty.html#double">double</a>,</li>
+						<li><code>new Liczba(String s)</code> - parametrem jest <a href="skrypty.html#String">String</a>.</li>
+				</ul></li>
+				<li><code>int compareTo(Liczba inna)</code> - porównuje dwie liczby. Zwraca <code>-1</code>
+					jeśli jeśli <code>inna</code> jest większa, <code>1</code>
+					jeśli jeśli <code>inna</code> jest mniejsza, a <code>0</code> jeśli są równe.
+					Wyrażenie: <code>(x &lt;op&gt; y)</code> powinno być zastąpione przez:
+					<code>(x.compareTo(y) &lt;op&gt; 0)</code>, gdzie <code>&lt;op&gt;</code> jest jednym
+					z <a href="skrypty.html#operatory-relacji">operatorów relacji</a>.
+				</li>
+			</ul>
+		</p>
+		<p>Przykład:<pre>
+Liczba l1 = new Liczba(2.0);   // konstruktor z parametrem typu double
+Liczba l2 = new Liczba("3,1"); // konstruktor z parametrem typu String
+print(l1);
+print(l2);
+if (l1.compareTo(l2) &lt; 0)
+	print("l1 jest mniejsza");
+else if (l1.compareTo(l2) &gt; 0)
+	print("l1 jest większa");
+else
+	print("obie liczby są równe");
+</pre></p>
+
+		<h3><a name="WyrazenieInfix"></a><a name="WyrazeniePostfix"></a>WyrazenieInfix oraz WyrazeniePostfix</h3>
+		<p>Są to typy służące do obliczania wyrażeń. Przechowują tablice elementów
+		typu <a href="#ElementWyrazenia">ElementWyrazenia</a>, odpowiednio posortowane.</p>
+		<p><code>WyrazenieInfix</code> reprezentuje wyrażenie w notacji infiksowej (standardowej, zazwyczaj
+			używanej i czytelnej dla człowieka), np. <code>(2+3)*4</code>.
+		</p>
+		<p><code>WyrazeniePostfix</code> reprezentuje wyrażenie w notacji postfiksowej,
+			czyli w <b>odwrotnej notacji polskiej</b>.
+			Notacja prefiksowa, inaczej nazywana polską, łukasiewicza, przedrostkową charakteryzuje się tym,
+			że najpierw jest podawany operator, a następnie argumenty. W odwrotnej notacji
+			najpierw są podawane argumenty, potem operator (różni się jedynie zapisem,
+			jednak pod względem matematyczno-logicznym jest jednoznaczna z oryginalną
+			notacją polską).
+			Po przedstawieniu wyrażenia w tej notacji, późniejsze obliczenie wartości
+			jest o wiele szybsze (mowa tu o szybkości obliczeń wyrażenia przez komputer,
+			nie przez człowieka). Poprzedni przykład w notacji postfiksowej
+			wygląda następująco: <code>2, 3, +, 4, *</code> (przecinki zostały dodane, aby zachować
+			czytelność).
+		</p>
+
+
+		<h3><a name="Macierz"></a>Macierz</h3>
+		<p>Macierz wewnętrznie w programie jest zapamiętywana jako tablica elementów
+			typu <a href="#WyrazeniePostfix">WyrazeniePostfix</a>. Dzięki temu jako macierz
+			można podawać różne wyrażenia, a następnie, po wywołaniu odpowiedniej funkcji
+			(<code>getValue</code>), odczytywać macierz wartości tych wyrażeń.
+		</p>
+		<p><a name="macierz-string"></a>W programie została przyjęta następująca
+			tekstowa reprezentacja tego typu:<ul>
+				<li>na początku otwierający nawias klamrowy <b>{</b>,</li>
+				<li>każdy wiersz macierzy rozpoczyna otwierający nawias klamrowy <b>{</b>,</li>
+				<li>jeśli jest więcej kolumn niż jedna, każdą z nich rozdziela średnik <b>;</b>,</li>
+				<li>każdy wiersz macierzy kończy zamykający nawias klamrowy <b>}</b>,</li>
+				<li>na końcu zamykający nawias klamrowy <b>}</b>.</li>
+			</ul>
+			Przykładowo, <code>{{1; -0,3; 23}{4; -12; 8}}</code> reprezentuje macierz:
+		</p>
+		<p><img alt="przykładowa macierz" src="images/przykladowa-macierz.png" /></p>
+		<p><b>Ważniejsze metody klasy</b>:<ul>
+				<li><a href="#konstruktor">konstruktory</a>:<ul>
+						<li><code>new Macierz(double[][] matrixDouble)</code> - parametrem
+						jest dwuwymiarowa tablica elementów typu <a href="skrypty.html#double">double</a>,</li>
+						<li><code>new Macierz(Liczba[][] matrixLiczba)</code> - parametrem
+						jest dwuwymiarowa tablica elementów typu <a href="#Liczba">Liczba</a>,</li>
+						<li><code>new Macierz(int x, int y)</code> - parametrami są odpowiednio:
+						liczba kolumn macierzy i <a href="#Liczba">liczba</a> wierszy macierzy,</li>
+						<li><code>new Macierz(String macierz)</code> - parametrem jest
+							<a href="skrypty.html#String">ciąg znakowy</a> mający
+							składnię taką jak opisana wyżej <a href="#macierz-string">reprezentacja tekstowa</a>
+				tego typu,</li></ul></li>
+				<li><code>int getLengthX()</code> - zwraca ilość kolumn macierzy,</li>
+				<li><code>int getLengthY()</code> - zwraca ilość wierszy macierzy,</li>
+				<li><code>Macierz getValue()</code> -  zwraca macierz po przeliczeniu formuły w każdej komórce,</li>
+				<li><code>Liczba getValueAt(int x, int y)</code> -  zwraca element macierzy na pozycji <code>(x, y)</code>,
+					gdzie <code>x</code> to numer kolumny (licząc od zera), a <code>y</code> to numer wiersza (licząc od zera),
+				</li>
+				<li><code>void set(int x, int y, <a href="#Liczba">liczba</a> val)</code> - wstawia liczbę
+					do macierzy na pozycji  <code>(x, y)</code>,
+					gdzie <code>x</code> to numer kolumny (licząc od zera), a <code>y</code> to numer wiersza (licząc od zera),
+				</li>
+				<li><code>void fill(Liczba val)</code> - wypełnia każdą komórkę macierzy podaną liczbą.</li>
+		</ul></p>
+		<p><b>Ważniejsze statyczne metody klasy</b>:<ul>
+			<li><code>Macierz podmacierz(Macierz macierz, int xdel, int ydel)</code> - zwraca
+				podmacierz z <a href="#Macierz">macierzy</a> powstałą przez skreślenie <code>xdel</code> kolumny
+				i <code>ydel</code> wiersza,
+			</li>
+			<li><code>Macierz zamienKolumny(Macierz macierz, int x1, int x2)</code> - zamienia
+				miejscami kolumny o numerach <code>x1</code> i <code>x2</code> w <a href="#Macierz">macierzy</a>,
+			</li>
+			<li><code>Macierz zamienWiersze(Macierz macierz, int y1, int y2)</code> - zamienia
+				miejscami wiersze o numerach <code>y1</code> i <code>y2</code> w <a href="#Macierz">macierzy</a>,
+			</li>
+			<li><code>Macierz pobierzKolumny(Macierz macierz, int[] kolumny)</code> - pobiera
+				kolumny z <a href="#Macierz">macierzy</a> o numerach podanych w tablicy <code>kolumny</code>,
+			</li>
+			<li><code>Macierz pobierzWiersze(Macierz macierz, int[] wiersze)</code> - pobiera
+				wiersze z <a href="#Macierz">macierzy</a> o numerach podanych w tablicy <code>wiersze</code>,
+			</li>
+			<li><code>Macierz pobierz(Macierz macierz, int x1, int y1, int lenx, int leny)</code> - pobiera
+				część <a href="#Macierz">macierzy</a>, zwraca macierz o wymarach <code>lenx</code>
+				na <code>leny</code>. Parametry:<ul>
+					<li><code>macierz</code> - <a href="#Macierz">macierz</a> źródłowa,</li>
+					<li><code>x1</code> - <a href="skrypty.html#int">numer</a> kolumny początkowej (numerowanie zaczyna się od 0),</li>
+					<li><code>y1</code> - <a href="skrypty.html#int">numer</a> wiersza początkowego (numerowanie zaczyna się od 0),</li>
+					<li><code>lenx</code> - <a href="skrypty.html#int">ilość</a> kolumn, jaka ma zostać pobrana,</li>
+					<li><code>leny</code> - <a href="skrypty.html#int">ilość</a> wierszy, jaka ma zostać pobrana,</li>
+				</ul>
+			</li>
+			<li><code>Macierz wklej(Macierz dst, Macierz src, int x1, int y1)</code> - wkleja komórki
+				z jednej macierzy do drugiej. Zwraca <a href="#Macierz">macierz</a> powstałą
+				przez wklejenie macierzy <code>src</code> do <code>dst</code>.
+				Wymiary są takie same jak macierzy <code>dst</code>. Parametry:<ul>
+					<li><code>dst</code> - <a href="#Macierz">macierz</a>, do której mają zostać wklejone komórki,</li>
+					<li><code>src</code> - <a href="#Macierz">macierz</a>, która ma zostać wklejona,</li>
+					<li><code>x1</code> - <a href="skrypty.html#int">numer</a> kolumny
+						macierzy <code>dst</code>, od której rozpocząć wklejanie macierzy <code>src</code>,
+					</li>
+					<li><code>y1</code> - <a href="skrypty.html#int">numer</a> wiersza
+						macierzy <code>dst</code>, od którego rozpocząć wklejanie macierzy <code>src</code>.
+					</li>
+				</ul>
+			</li>
+		</ul></p>
+		<p>Przykład:<pre>
+Macierz m = new Macierz(3, 1); // tworzy macierz 3 kolumny / 1 wiersz
+m.fill(new Liczba(4));		 // wypełnienie macierzy wartością 4
+Liczba l = new Liczba(5.3);	// utworzenie nowej liczby
+m.set(1, 0, l);				// przypisanie wartości środkowemu (drugiemu) elementowi macierzy
+print("Macierz: "+m);
+print("Ilość kolumn macierzy: "+m.getLengthX());
+print("Liczba na pozycji 2x0: "+m.getValueAt(2, 0));
+</pre>
+		</p>
+
+
+		<h1><a name="proceduryudostepnionedlaskryptow"></a>Procedury udostępnione dla skryptów</h1>
+		<p>Zarówno w <a href="skrypty.html">skryptach</a>, jak i we <a href="pluginy.html">wtyczkach</a>
+			istnieje możliwość skorzystania z wielu funkcji udostępnianych przez program <b>JStat</b>.
+			Opisane niżej nie są kompletną listą, ponieważ dzięki <b>BeanShell</b> istnieje
+			możliwość wywołania każdej metody z dowolnej klasy, z których jest
+			zbudowany <b>JStat</b>.
+		</p>
+		<h2><a name="calc"></a>calc</h2>
+		<p>Funkcja oblicza wartość wyrażenia podanego jako argument.</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>expression</code> - <a href="skrypty.html#String">String</a>,
+					ma składnię dokładnie taką samą jak w module <a href="moduly.html#kalkulator">Kalkulator</a>,
+					umożliwiając korzystanie ze wszystkich <a href="funkcje.html">funkcji</a>, dostępnych w module <a href="moduly.html#kalkulator">Kalkulator</a>.
+				</li>
+			</ul>
+		</p>
+		<p>Przykład:<pre>print(calc("2+1,4")); // wypisze 3,4</pre></p>
+		<p>Można też tworzyć szybko różnego rodzaju zmienne. Parser odpowiednio
+			zamieni je na odpowiednie typy, np.<ul>
+				<li><a href="#Macierz">macierze</a>:
+<pre>m = calc("{{3; 4; 6,2}{-3; sin(3); -0,2}}");
+print(m);
+</pre></li>
+				<li><a href="#Liczba">liczby</a>:
+<pre>a = calc("5");
+b = calc("2-1,2");
+print(a);
+print(b);
+</pre></li>
+			</ul>
+		</p>
+
+
+		<h2><a name="funkcje"></a>Funkcje</h2>
+		<p>Jeśli istnieje potrzeba, można korzystać z <a href="funkcje.html">funkcji</a>
+			nie używając jako pośrednika metody <a href="#calc">calc()</a>.
+			Jednak należy pamiętać o liczbie i rodzaju parametrów. Można je utworzyć
+			korzystając z konstruktorów klas <a href="#Macierz">Macierz</a> i <a href="#Liczba">Liczba</a>
+			lub za pośrednictwem <a href="#calc">calc()</a>.
+		</p>
+		<p>Przykład:<pre>Liczba l1 = new Liczba(2);
+print(sin(l1));
+
+double[][] md = new double[][] {{2,3,4},{7,8,9}};
+Macierz m1 = new Macierz(md);
+print(sin(m1));
+
+Macierz m2 = new Macierz("{{20;30;40}{70;80;90}}");
+print(cos(m2));
+</pre></p>
+
+
+		<h2><a name="arytmetyczne"></a>Działania arytmetyczne</h2>
+		<p>Działania arytmetyczne można wykonywać na <a href="skrypty-jstat.html#Liczba">liczbach</a>,
+			<a href="skrypty-jstat.html#Macierz">macierzach</a> i typach
+			<a href="skrypty.html#double">double</a>, ale te ostatnie zostają automatycznie
+			przekonwertowane do <a href="skrypty-jstat.html#Liczba">liczb</a>.
+		</p>
+
+
+		<h3><a name="dodaj"></a>dodaj</h3>
+		<p>Dodaje dwa elementy.
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="dodajSkalarnie"></a>dodajSkalarnie</h3>
+		<p>Oblicza "sumę skalarną" wektorów (pionowych lub poziomych) oraz <a href="#Macierz">macierzy</a>.
+		</p><p>Gdy <a href="#Macierz">macierze</a> mają te same wymiary, liczy sumę każdego elementu pierwszej
+			z odpowiednim elementem drugiej (czyli normalną sumę <a href="#Macierz">macierzy</a>).
+			Gdy jedna <a href="#Macierz">macierz</a> jest pionowa (o liczbie kolumn równej jeden)
+			lub pozioma (o liczbie wierszy równej jeden), a jej większy wymiar
+			jest równy odpowiadającemu wymiarowi drugiej,
+			to działanie jest wykonywane na wierszach (lub kolumnach).
+		</p><p><strong>Parametry</strong>:<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			Oba argumenty muszą być <b>tego samego typu</b>.</ul>
+		</p><p><b>Przykład</b>:<pre>m1 = calc("{{1;2;3}}");
+m2 = calc("{{10;20;30}{40;50;60}}");
+print(dodajSkalarnie(m1,m2)); // wypisze {{11;22;33}{41;52;63}}
+
+m1 = calc("{{1}{2}}");
+m2 = calc("{{10;20;30}{40;50;60}}");
+print(dodajSkalarnie(m1,m2)); // wypisze {{11;21;31}{42;52;62}}
+</pre></p>
+
+
+		<h3><a name="odejmij"></a>odejmij</h3>
+		<p>Odejmuje dwa elementy.
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="odejmijSkalarnie"></a>odejmijSkalarnie</h3>
+		<p>Oblicza "różnicę skalarną" wektorów (pionowych lub poziomych) oraz <a href="#Macierz">macierzy</a>.
+		</p><p>Gdy <a href="#Macierz">macierze</a> mają te same wymiary, liczy różnicę każdego elementu pierwszej
+			z odpowiednim elementem drugiej (czyli normalną różnicę <a href="#Macierz">macierzy</a>).
+			Gdy jedna <a href="#Macierz">macierz</a> jest pionowa (o liczbie kolumn równej jeden)
+			lub pozioma (o liczbie wierszy równej jeden), a jej większy wymiar
+			jest równy odpowiadającemu wymiarowi drugiej,
+			to działanie jest wykonywane na wierszach (lub kolumnach).
+		</p><p><strong>Parametry</strong>:<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			Oba argumenty muszą być <b>tego samego typu</b>.</ul>
+		</p><p><b>Przykład</b>:<pre>m1 = calc("{{10;20;30}{40;50;60}}");
+m2 = calc("{{1;2;3}}");
+print(odejmijSkalarnie(m1,m2)); // wypisze {{9;18;27}{39;48;57}}
+
+m1 = calc("{{10;20;30}{40;50;60}}");
+m2 = calc("{{1}{2}}");
+print(odejmijSkalarnie(m1,m2)); // wypisze {{9;19;29}{38;48;58}}
+</pre></p>
+
+
+		<h3><a name="pomnoz"></a>pomnoz</h3>
+		<p>Mnoży dwa elementy.
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="pomnozSkalarnie"></a>pomnozSkalarnie</h3>
+		<p>Oblicza iloczyn skalarny wektorów (pionowych lub poziomych) (bez sumowania!).
+		</p><p>Gdy <a href="#Macierz">macierze</a> mają te same wymiary, liczy iloczyn każdego elementu pierwszej
+			z odpowiednim elementem drugiej (nie jest to zwykły iloczyn <a href="#Macierz">macierzy</a>).
+			Gdy jedna <a href="#Macierz">macierz</a> jest pionowa (o liczbie kolumn równej jeden)
+			lub pozioma (o liczbie wierszy równej jeden), a jej większy wymiar
+			jest równy odpowiadającemu wymiarowi drugiej,
+			to działanie jest wykonywane na wierszach (lub kolumnach).
+		</p>
+
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			Oba argumenty muszą być <b>tego samego typu</b>.</ul>
+		</p><p><b>Przykład</b>:<pre>
+m1 = calc("{{10;20;30}{40;50;60}}");
+m2 = calc("{{1;2;3}}");
+print(pomnozSkalarnie(m1,m2)); // wypisze {{10;40;90}{40;100;180}}
+
+m2 = calc("{{1}{2}}");
+print(pomnozSkalarnie(m1,m2)); // wypisze {{10;20;30}{80;100;120}}
+
+print(pomnozSkalarnie(m1,m1)); // wypisze {{100;400;900}{1600;2500;3600}}
+</pre></p>
+
+
+		<h3><a name="podziel"></a>podziel</h3>
+		<p>Dzieli dwa elementy.
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="podzielSkalarnie"></a>podzielSkalarnie</h3>
+		<p>Oblicza "iloraz skalarny" wektorów (pionowych lub poziomych).
+		</p><p>Gdy <a href="#Macierz">macierze</a> mają te same wymiary, liczy iloraz każdego elementu pierwszej
+			z odpowiednim elementem drugiej (nie jest to zwykły iloraz <a href="#Macierz">macierzy</a>).
+			Gdy jedna <a href="#Macierz">macierz</a> jest pionowa (o liczbie kolumn równej jeden)
+			lub pozioma (o liczbie wierszy równej jeden), a jej większy wymiar
+			jest równy odpowiadającemu wymiarowi drugiej,
+			to działanie jest wykonywane na wierszach (lub kolumnach).
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>,</li>
+				<li><code>l2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			Oba argumenty muszą być <b>tego samego typu</b>.</ul>
+		</p><p><b>Przykład</b>:<pre>
+m1 = calc("{{10;20;30}{40;50;60}}");
+m2 = calc("{{1;2;3}}");
+print(podzielSkalarnie(m1,m2)); // wypisze {{10;10;10}{40;25;20}}
+
+m2 = calc("{{1}{2}}");
+print(podzielSkalarnie(m1,m2)); // wypisze {{10;20;30}{20;25;30}}
+
+print(podzielSkalarnie(m1,m1)); // wypisze {{1;1;1}{1;1;1}}
+</pre></p>
+
+
+		<h3><a name="poteguj"></a>poteguj</h3>
+		<p>Liczy potęgę, w której podstawą jest pierwszy argument, a wykładnikiem drugi.
+			Należy pamiętać, że w zbiorze liczb rzeczywistych nie istnieją niecałkowite
+			potęgi ujemnych liczb rzeczywistych.</p>
+		<p>W przypadku, gdy podstawą potęgi jest macierz, dalsze obliczenia zależą
+			od wykładnika:<ul>
+				<li>jeśli nie jest liczbą całkowitą, to działanie jest niewykonalne,</li>
+				<li>jeśli jest równy zero - zwracana jest macierz jedynek o takim
+					samym wymiarze jak <code>podst</code>,</li>
+				<li>jeśli jest równy jeden - zwracane jest <code>podst</code>,
+				</li>
+				<li>jeśli jest dodatni i większy od jednego - wykonywane jest
+					<code>wykl</code>-krotnie działanie
+					<code>podst = podst * <a href="funkcje.html#TRANSP">TRANSP</a>(podst)</code>
+					i zwracany jest ostatni wynik,
+				</li>
+				<li>jeśli jest ujemny - <code>podst</code> jest odwracana, następnie wykonywane jest
+					<code>wykl</code>-krotnie działanie (na odwróconej macierzy)
+					<code>podst = podst * <a href="funkcje.html#TRANSP">TRANSP</a>(podst)</code>
+					i zwracany jest ostatni wynik.
+				</li>
+			</ul>
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>podst</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+					lub <a href="skrypty.html#double">double</a>, podstawa potęgi,
+				</li>
+				<li><code>wykl</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>
+					lub <a href="skrypty.html#double">double</a>, wykładnik potęgi.
+				</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="przeciwny"></a>przeciwny</h3>
+		<p>Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a> lub
+			<a href="skrypty-jstat.html#Macierz">macierz</a> przeciwną do podanego argumentu.
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>l1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+					<a href="skrypty-jstat.html#Macierz">macierz</a>
+				lub <a href="skrypty.html#double">double</a>.</li>
+			</ul>
+		</p>
+
+
+		<h2><a name="Tools"></a>Tools</h2>
+		<h3><a name="Tools.progress"></a>Tools.progress</h3>
+		<p>Ustawia etykietę w dialogu postępu.</p>
+		<p><table border="0"><caption>Dialog postępu.</caption><tr><td>
+		<img alt="Dialog postępu" src="images/tools-progress.png" />
+		</td></tr></table></p>
+		<p>Użycie tej funkcji w we własnych <a href="pluginy.html">wtyczkach</a>
+			nie wymaga dodatkowych działań, ponieważ dla nich dialog postępu
+			jest pokazywany automatycznie. Wystarczy użyć <code>Tools.progress("tekst");</code>
+			w metodzie <code>start()</code>.
+		</p>
+		<p>Wykorzystanie dialogu postępu w <a href="skrypty.html">skryptach</a>
+			wymaga utworzenia wątku oraz pokazania i schowania okna postępu
+			(przykład został zamieszczony poniżej).
+		</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>tekst</code> - <a href="skrypty.html#String">String</a>, tekst.</li>
+			</ul>
+		</p>
+		<p>Przykład:
+<pre>Thread watek = new Thread() {
+	public void run() {
+		WorkingDialog.inc(); // pokazanie okna postępu
+		try {
+			// tutaj należy umieścić wszystkie instrukcje
+			print("jestem wątkiem");
+			Thread.sleep(1000);
+			Tools.progress("etykieta");
+			Thread.sleep(2000);
+		} finally {
+			WorkingDialog.dec(); // ukrycie okna postępu
+		}
+	}
+};
+
+print("start");
+watek.start();
+</pre>
+		</p>
+
+		<h3><a name="Tools.getActivePage"></a>Tools.getActivePage</h3>
+		<p>Pobiera aktywną stronę jako <code>AbstractDocumentPage</code>.</p>
+		<p><strong>Parametry</strong>:
+			<ul><li><code>showErrorMessage</code> - <a href="skrypty.html#boolean">boolean</a>, czy
+					pokazywać okno z informacją, jeśli zaznaczona strona jest różna od wymaganej.
+				Jeśli pominięto ten parametr, to okno zostanie pokazane,</li>
+				<li><code>c</code> - klasa wymaganej strony:<ul>
+					<li><code>PageBeanShell.class</code> - skrypt,</li>
+					<li><code>PageCalculator.class</code> - kalkulator,</li>
+					<li><code>PageGraph.class</code> - wykres,</li>
+					<li><code>PageHtmlOutput.class</code> - html,</li>
+					<li><code>PageNotepad.class</code> - notatnik,</li>
+					<li><code>PageSheet.class</code> - arkusz,</li>
+					<li><code>null</code> - w tym wypadku pobierana jest aktywna strona,
+				bez sprawdzania klasy.</li></ul></li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.getText"></a>Tools.getText</h3>
+		<p>Wczytuje tekst od użytkownika. Zwraca wprowadzony tekst
+		lub <code>null</code>, gdy anulowano.</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>information</code> - pokazywana informacja,</li>
+				<li><code>def</code> - domyślna wartość w polu edycji (można pominąć ten parametr).</li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.getObjectFromText"></a>Tools.getObjectFromText</h3>
+		<p>Wczytuje tekst od użytkownika. Przekształca go na obiekt podanej klasy,
+			o ile podana klasa ma metodę publiczną <code>valueOf(String s)</code>.
+			Używa mechanizmów refleksji do znalezienia i wywołania tej metody.
+		Zwraca wprowadzony tekst lub <code>null</code>, gdy anulowano.</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>information</code> - pokazywana informacja,</li>
+				<li><code>def</code> - domyślna wartość w polu edycji (można pominąć ten parametr).</li>
+				<li><code>klasa</code> - klasa obiektu, np. <code>Liczba.class</code>.</li>
+			</ul>
+		</p>
+		<p>Przykład:<pre>
+Liczba l = Tools.getObjectFromText("Wprowadź liczbę", Liczba.class);
+if (l == null) Tools.showWarn("Anulowano wprowadzanie");
+else Tools.showInf("Wprowadzono liczbę "+l);
+</pre></p>
+		<p>Wykonanie tego skryptu wyświetli następujący dialog:
+		</p>
+		<p><table border="0"><caption>Okno wprowadzania tekstu.</caption><tr><td>
+		<img alt="Wprowadź liczbę" src="images/tools-getobjectfromtext.png" />
+		</td></tr></table></p>
+
+
+		<h3><a name="Tools.getOkCancel"></a>Tools.getOkCancel</h3>
+		<p>Wyświetla dialog z dwoma przyciskami (<i>OK</i>, <i>Anuluj</i>).
+		Zwraca <code>true</code>, jeśli użytkownik wybrał przycisk <i>OK</i>.</p>
+		<p><table border="0"><caption>Przykładowy dialog (<i>OK</i>, <i>Anuluj</i>).</caption><tr><td>
+		<img alt="zrzut getOkCancel" src="images/tools-getokcancel.png" />
+		</td></tr></table></p>
+		<p>W zależności od zainstalowanej wersji Javy oraz systemu operacyjnego,
+		napisy na przyciskach mogą być w języku angielskim.</p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>question</code> - pokazywana informacja.</li>
+			</ul>
+		</p>
+
+
+		<h3><a name="Tools.getYesNo"></a>Tools.getYesNo</h3>
+		<p>Wyświetla dialog z dwoma przyciskami (<i>Tak</i>, <i>Nie</i>).
+		Zwraca <code>true</code>, jeśli użytkownik wybrał przycisk <i>Tak</i>.</p>
+		<p><table border="0"><caption>Przykładowy dialog (<i>Tak</i>, <i>Nie</i>).</caption><tr><td>
+		<img alt="zrzut getYesNo" src="images/tools-getyesno.png" />
+		</td></tr></table></p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>question</code> - pokazywana informacja.</li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.showErr"></a>Tools.showErr</h3>
+		<p>Wyświetla dialog z informacją o błędzie.</p>
+		<p><table border="0"><caption>Przykładowy dialog błędu.</caption><tr><td>
+		<img alt="zrzut showErr" src="images/tools-showerr.png" />
+		</td></tr></table></p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>err</code> - pokazywana informacja.</li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.showInf"></a>Tools.showInf</h3>
+		<p>Wyświetla dialog z informacją.</p>
+		<p><table border="0"><caption>Przykładowy dialog informacyjny.</caption><tr><td>
+		<img alt="zrzut showInf" src="images/tools-showinf.png" />
+		</td></tr></table></p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>information</code> - pokazywana informacja.</li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.showWarn"></a>Tools.showWarn</h3>
+		<p>Wyświetla dialog z uwagą.</p>
+		<p><table border="0"><caption>Przykładowy dialog ostrzeżenia.</caption><tr><td>
+		<img alt="zrzut showWarn" src="images/tools-showwarn.png" />
+		</td></tr></table></p>
+		<p><strong>Parametry</strong>:
+			<ul>
+				<li><code>warning</code> - pokazywana informacja.</li>
+			</ul>
+		</p>
+
+		<h3><a name="Tools.getMain"></a>Tools.getMain</h3>
+		<p>Pobiera uchwyt do głównego okna aplikacji. Znając konstrukcję klasy tego okna,
+		można uzyskać nieograniczony dostęp do ustawień programu.</p>
+		<p><strong>Parametry</strong>: brak.
+		</p>
+
+
+
+
+
+
+
+
+
+<!--
+		<h2><a name="Regresja"></a>Regresja</h2>
+		<p>Procedury z tej klasy umożliwiają przeprowadzenie różnych obliczeń związanych
+			z regresją i klasycznym modelem najmniejszych kwadratów.
+			?????????????????????????? wyciąć
+		</p>
+ -->
+
+
+		<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+	</body>
+</html>

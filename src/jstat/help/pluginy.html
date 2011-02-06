@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Wtyczki</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach" />
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<h1><a name="TOP"></a>Wtyczki</h1>
+<p>Wtyczki są <a href="skrypty.html">skryptami</a> o odpowiedniej budowie,
+	dzięki czemu możliwe jest
+	automatyczne tworzenie menu dostępnych wtyczek. Wszystkie zainstalowane
+	wtyczki są dostępne poprzez menu <i>Wtyczki</i> głównego okna programu.
+	Wtyczki są ładowane przy starcie programu, więc po dodaniu
+	lub usunięciu wtyczek należy uruchomić program <b>JStat</b> ponownie.
+	</p>
+<p>Główny folder wtyczek użytkownika znajduje się w folderze ustawień programu
+	(położenie tego folderu jest zależne od systemu operacyjnego,
+	dokładny opis znajduje się w rozdziale opisującym
+	<a href="ustawienia.html#folderustawien">ustawienia programu</a>)
+	w podfolderze <b>plugins</b>.
+	</p>
+<p>Kolejnymi folderami przeszukiwanymi jest folder, w którym jest plik
+	programu (<b>jstat.jar</b>) oraz bieżący folder.
+</p>
+
+
+<h2><a name="strukturawtyczki"></a>Struktura wtyczki</h2>
+<p>Wtyczki powinny zawierać co najmniej funkcje wymienione poniżej.
+Każda z tych funkcji jest wywoływana w ściśle określonym i opisanym
+niżej momencie. Oczywiście można dodawać własne funkcje, jednak podany
+zestaw jest obowiązkowy.</p>
+<p>Najprostszy szablon wtyczki wygląda w następujący sposób:
+<pre>/** Zwraca nazwę wtyczki */
+public String getName() {
+	return "Nazwa wtyczki";
+}
+
+/** Zwraca wersję wtyczki */
+public int getVersion() {
+	return 001;
+}
+
+/** Zwraca autora wtyczki */
+public String getAuthor() {
+	return "dmn";
+}
+
+/** Zwraca typ wtyczki */
+public int getType() {
+	return 1;
+}
+
+/** Zwraca informacje o wtyczce */
+public String getInfo() {
+	return "Wyświetla napis w konsoli programu.";
+}
+
+/** Procedura uruchamiana przed metodą start() */
+public boolean init() {
+	return true;
+}
+
+/** Właściwy kod wtyczki */
+public void start() {
+	print("witaj"); // wypisuje napis w konsoli
+}
+
+/** Procedura wywoływana po metodzie start() */
+public void stop() {
+}</pre>
+</p>
+
+
+<h3><a name="getName"></a>getName()</h3>
+<p>Funkcja zwraca nazwę wtyczki. Jest to również etykieta pozycji
+menu, jaka zostanie automatycznie stworzona przy uruchamianiu
+programu <b>JStat</b>.</p>
+
+<h3><a name="getVersion"></a>getVersion()</h3>
+<p>Nadawanie kolejnych numerów wersji dla pluginów jest wskazane.
+Ułatwia to orientację użytkowników, który skrypt jest nowszy.</p>
+
+<h3><a name="getAuthor"></a>getAuthor()</h3>
+<p>Funkcja powinna zwrócić autora wtyczki. Można podać również
+np. stronę domową, mail itp.</p>
+
+<h3><a name="getType"></a>getType()</h3>
+<p>Funkcja powinna zwrócić typ wtyczki. Obecnie dostępne są dwa rodzaje.
+	Więcej typów zostanie dodanych w przyszłych
+	wersjach programu <b>JStat</b>. Typy wtyczek można łączyć,
+	obliczając sumy logiczne typów. Dostępne są następujące
+	rodzaje wtyczek:<ul>
+		<li><b>1</b> - wtyczka powinna zostać dodana do menu głównego,</li>
+		<li><b>2</b> - wtyczka powinna zostać uruchomiona przy ładowaniu programu.</li>
+	</ul>
+	Czyli np. aby stworzyć wtyczkę, która będzie miała swoją
+	pozycję w menu oraz automatycznie ją uruchamiać przy starcie,
+	należy przypisać jej typ 3 (w zapisie bitowym: <nobr>01 + 10 = 11</nobr>).
+</p>
+
+<h3><a name="getInfo"></a>getInfo()</h3>
+<p>Wynikiem tej funkcji powinna być pomoc do wtyczki. Może opisywać
+zastosowanie, ewentualnie algorytm.</p>
+
+<h3><a name="init"></a>init()</h3>
+<p>Funkcja jest uruchamiana przed właściwym uruchomieniem wtyczki.
+Po kliknięciu użytkownika na odpowiednią pozycję z menu <i>Wtyczki</i>
+w pierwszej kolejności jest uruchamiana właśnie funkcja
+<code>init()</code>. Jeśli wtyczka potrzebuje danych np.
+z <a href="moduly.html#arkusz">arkusza</a>, w tym miejscu powinna
+sprawdzić, czy takie dane są dostępne i je pobrać.</p>
+
+<h3><a name="start"></a>start()</h3>
+<p>Metoda będącą właściwą częścią wtyczki. Jest uruchamiana w osobnym
+wątku, dzięki czemu program może zachować wysoką responsywność, podczas
+gdy wtyczka jest uruchomiona w tle.
+Wyświetlany jest prosty dialog informujący o trwających obliczeniach,
+składający się z etykiety oraz paska postępu. Etykietę
+można zmienić podczas obliczeń, wykorzystując do tego
+funkcję <code>tools.progress("nowa etykieta");</code>.</p>
+<p>W tej metodzie nie jest
+zalecane tworzenie żadnych elementów interfejsu graficznego.</p>
+
+<h3><a name="stop"></a>stop()</h3>
+<p>Funkcja wywoływana zawsze po zakończeniu działania wtyczki.
+Powinna stworzyć odpowiednie strony dokumentu lub wyświetlić
+komunikaty o przeprowadzonych obliczeniach.</p>
+
+
+<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

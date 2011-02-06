@@ -1,0 +1,4 @@
+dmn@swing:~/Projects/Java/JStat/src$ find . -name "*.java" -type f -exec cat {} \+ | wc -l -c -m ; echo linie bajty znaki
+  27661 1070389 1073128
+linie bajty znaki
+

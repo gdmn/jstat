@@ -1,0 +1,33 @@
+public String getName() {
+	return "Pomoc";
+}
+
+public int getVersion() {
+	return 001;
+}
+
+public String getAuthor() {
+	return "dmn";
+}
+
+public int getType() {
+	return 1;
+}
+
+public String getInfo() {
+	return "Wyświetla pomoc programu we wbudowanej przeglądarce.";
+}
+
+public boolean init() {
+	print("init");
+	return true;
+}
+
+public void start() {
+	print("start");
+	new SimpleBrowser(jstat.gui.Help.getAddr("spis.html")).showFrame();
+}
+
+public void stop() {
+	print("stop");
+}

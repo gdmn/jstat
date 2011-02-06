@@ -1,0 +1,26 @@
+<dmnutils.document.Document serialization="custom">
+  <unserializable-parents/>
+  <linked-list>
+    <default/>
+    <int>1</int>
+    <jstat.pages.bsh.PageBeanShell>
+      <string>Macierz s2xtx1 = new Macierz(new double[][] {{0.04, 0.04}, {0.04, 0.09}});
+Macierz w = new Macierz(new double[][] {{1}, {-1}});
+Liczba w0 = new Liczba(-1);
+Macierz alfa = new Macierz(new double[][] {{0.1}, {0.8}});
+
+Liczba stat = Regresja.istotnoscWektoraParametrow_statystyka(w, w0, s2xtx1, alfa);
+Liczba kryt = Regresja.istotnoscWektoraParametrow_wartoscKrytyczna(30, 1, 0.05);
+Boolean test = Regresja.istotnoscWektoraParametrow_testuj(stat, kryt);
+
+print(&quot;statystyka: &quot; + stat);
+print(&quot;krytyczna: &quot; + kryt);
+print(&quot;test: &quot; + test);
+</string>
+      <string></string>
+    </jstat.pages.bsh.PageBeanShell>
+  </linked-list>
+  <dmnutils.document.Document>
+    <default/>
+  </dmnutils.document.Document>
+</dmnutils.document.Document>

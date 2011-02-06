@@ -1,0 +1,2294 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Funkcje</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach"/>
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<a name="TOP"></a>
+
+<a href="#A">A</a>, <a href="#B">B</a>, <a href="#C">C</a>,
+<a href="#D">D</a>, <a href="#E">E</a>, <a href="#F">F</a>,
+<a href="#G">G</a>, <a href="#H">H</a>, <a href="#I">I</a>,
+<a href="#J">J</a>, <a href="#K">K</a>, <a href="#L">L</a>,
+<a href="#M">M</a>, <a href="#N">N</a>, <a href="#O">O</a>,
+<a href="#P">P</a>, <a href="#R">R</a>, <a href="#S">S</a>,
+<a href="#T">T</a>, <a href="#U">U</a>, <a href="#W">W</a>,
+<a href="#X">X</a>, <a href="#Y">Y</a>, <a href="#Z">Z</a>.
+<hr size="1" />
+
+<h1><a name="funkcje"></a>Funkcje</h1>
+<p>Składnia jest taka sama dla większości <a href="moduly.html">modułów</a>.
+Wyjątkiem jest jedynie <a href="moduly.html#skrypt">moduł skryptów</a>.
+Zastosowanie funkcji w tym module jest opisane w rozdziale
+poświęconym <a href="skrypty-jstat.html#funkcje">zaawansowanym zastosowaniom skryptów</a>.
+Używając jednak w skrypcie funkcji <a href="skrypty-jstat.html#calc">calc()</a>
+można stosować składnię podaną niżej.</p>
+<p>Wielkość liter nie ma znaczenia. Argumenty funkcji muszą być podane w nawiasie.
+Jeśli jest wymagany więcej niż jeden parametr, to  muszą być rozdzielone
+średnikiem (<code>;</code>).
+Typ parametrów jest napisany przy każdej funkcji.
+</p>
+
+<h3><a name="A"></a>
+<a name="ABS"></a>Funkcja ABS</h3>
+	<p>Oblicza wartość bezwzględną podanego argumentu.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca:
+		<ul><li><code>-x</code> - gdy jest ujemna,</li><li><code>x</code> - w przeciwnym wypadku.</li></ul>
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ABS">ABS</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ARCCOS"></a>Funkcja ARCCOS</h3>
+	<p>Oblicza funkcję arcus cosinus. Dziedziną jest przedział <nobr>[-1, 1]</nobr>,
+		przeciwdziedziną przedział <nobr>[0, π]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji arcus cosinus dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ARCCOS">ARCCOS</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[-1, 1]</nobr> lub
+				<a href="skrypty-jstat.html#Macierz">macierz</a> z elementami z takiego samego przedziału.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ARCCTG"></a>Funkcja ARCCTG</h3>
+	<p>Oblicza funkcję arcus cotangens. Dziedziną jest przedział <nobr>[-∞, ∞]</nobr>, przeciwdziedziną przedział <nobr>[0, π]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji arcus cotangens dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ARCCTG">ARCCTG</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ARCSIN"></a>Funkcja ARCSIN</h3>
+	<p>Oblicza funkcję arcus sinus. Dziedziną jest przedział <nobr>[-1, 1]</nobr>, przeciwdziedziną przedział <nobr>[-π/2, π/2]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji arcus sinus dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ARCSIN">ARCSIN</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[-1, 1]</nobr> lub
+				<a href="skrypty-jstat.html#Macierz">macierz</a> z elementami z takiego samego przedziału.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ARCTG"></a>Funkcja ARCTG</h3>
+	<p>Oblicza funkcję arcus tangens. Dziedziną jest przedział <nobr>[-∞, ∞]</nobr>, przeciwdziedziną przedział <nobr>[-π/2, π/2]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji arcus tangens dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ARCTG">ARCTG</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="B"></a>
+<a name="BETA"></a>Funkcja BETA</h3>
+	<p>Oblicza funkcję beta liczoną jako <code><a href="#GAMMA">GAMMA</a>(a)<a href="#GAMMA">GAMMA</a>(b) / <a href="#GAMMA">GAMMA</a>(a+b)</code>.</p>
+	<p><img alt="funkcja beta" src="images/funkcjabeta.png" />
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="BETAINCMPL"></a>Funkcja BETAINCMPL</h3>
+	<p>Liczy niepełną funkcję beta.
+	[Algorytm obliczania niepełnej funkcji beta opracowany na podstawie:
+	<i>Incomplete beta function</i>, <a href="http://www.alglib.net/specialfunctions/incompletebeta.php">http://www.alglib.net/specialfunctions/incompletebeta.php</a>
+	z dnia 10 lutego 2008].</p>
+	<p><img alt="funkcja betaincmpl" src="images/funkcjabetaincmpl.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, górna granica całki. Musi być w przedziale <nobr>[0, 1]</nobr>,</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="BETAREG"></a>Funkcja BETAREG</h3>
+	<p>Liczy standaryzowaną funkcję beta.</p>
+	<p><img alt="funkcja betareg" src="images/funkcjabetareg.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, górna granica całki. Musi być w przedziale <nobr>[0, 1]</nobr>,</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr funkcji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="C"></a>
+<a name="CBRT"></a>Funkcja CBRT</h3>
+	<p>Liczy pierwiastek sześcienny.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		pierwiastek sześcienny z podanego argumentu. Równoznaczne z zapisem <code>x^(1/3)</code>.<br />
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy
+		wykonuje funkcję <a href="#CBRT">CBRT</a>. <b>Uwaga</b>: nie jest to właściwa
+		procedura obliczania pierwiastka z macierzy.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CEIL"></a>Funkcja CEIL</h3>
+	<p>Zwraca najmniejszą liczbę całkowitą, która jest równa bądź większa od podanego argumentu.
+		Np.<ul>
+			<li><code>ceil(4,3)</code> wynosi <code>5</code>,</li>
+			<li><code>ceil(-4,3)</code> wynosi <code>-4</code>.</li>
+			</ul>
+		Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy
+		wykonuje funkcję <a href="#CEIL">CEIL</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CHIKWADRAT"></a>Funkcja CHIKWADRAT</h3>
+	<p>Funkcja gęstości rozkładu chi-kwadrat.
+	</p>
+	<p><img alt="wzór: funkcja chikwadrat" src="images/funkcjachikwadrat.png" /></p>
+	<p><table border="0"><caption>Wykres <code>chikwadrat(4;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja chikwadrat" src="images/wykreschikwadrat.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CHIKWADRATTAIL"></a>Funkcja CHIKWADRATTAIL</h3>
+	<p>Zwraca <code>1 - <a href="#FCHIKWADRAT">FCHIKWADRAT</a>(k, x)</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="COS"></a>Funkcja COS</h3>
+	<p>Oblicza funkcję cosinus, przedstawianej jako stosunek przyprostokątnej przeciwległej
+		do kąta ostrego i przeciwprostokątnej.
+		Dziedziną jest przedział <nobr>[-∞, ∞]</nobr>, przeciwdziedziną przedział <nobr>[-1, 1]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji cosinus dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#COS">COS</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="COSH"></a>Funkcja COSH</h3>
+	<p>Oblicza funkcję cosinus hiperboliczny.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji cosinus hiperboliczny dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#COSH">COSH</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CSC"></a>Funkcja CSC</h3>
+	<p>Oblicza funkcję cosecans, przedstawianą jako stosunek przeciwprostokątnej
+		i przyprostokątnej przeciwległej do kąta ostrego; odwrotność funkcji <a href="#SIN">sinus</a>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji cosecans dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#CSC">CSC</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CTG"></a>Funkcja CTG</h3>
+	<p>Oblicza funkcję kotangens, przedstawianą jako stosunek przyprostokątnej przyległej
+		do kąta ostrego i przyprostokątnej przeciwległej do kąta ostrego.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji cotangens dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#CTG">CTG</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CTGH"></a>Funkcja CTGH</h3>
+	<p>Oblicza funkcję kotangens hiperboliczny.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji tangens hiperboliczny dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#CTGH">CTGH</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="CZESTOSCI"></a>Funkcja CZESTOSCI</h3>
+	<p>Oblicza częstości dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są częstości.
+	</p>
+	<p>Do obliczenia częstości skumulowanych, można wykorzystać funkcję
+		<a href="#KUMULUJ"><code>KUMULUJ</code></a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="D"></a>
+<a name="DET"></a>Funkcja DET</h3>
+	<p>Liczy wyznacznik <a href="skrypty-jstat.html#Macierz">macierzy</a>.<br />
+		Używa metody eliminacji Gaussa z pełnym wyborem elementu podstawowego
+		w każdym kroku do rozłożenia macierzy <code>x</code> na dwie macierze
+		- dolno- i górnotrójkątną
+		[Procedura opracowana na podstawie:
+		A. Marciniak, D. Gregulec, J. Kaczmarek, <i>Podstawowe procedury numeryczne w języku Turbo Pascal</i>, Nakom, Poznań 2000].
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> kwadratowa.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_DOBIERZ"></a>Funkcja DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_DOBIERZ</h3>
+	<p>Jeden z etapów doboru zmiennych objaśniających do modelu metodą analizy współczynników korelacji
+		[Algorytmy doboru zmiennych różnymi metodami zostały opracowana na podstawie:
+		J. Dziechciarz (pod red.), <i>Ekonometria. Metody, przykłady, zadania</i>,
+		Wydawnictwo Akademii Ekonomicznej, Wrocław 2003].
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>, wektor indeksów zmiennych wybranych do modelu.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_R</code> - rozszerzona <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji, wynik funkcji
+				<a href="#ROZSZERZONAMACIERZKORELACJI"><code>ROZSZERZONAMACIERZKORELACJI</code></a>.
+			</li>
+			<li><code>wartoscKrytyczna</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wynik funkcji
+				<a href="#DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_KRYTYCZNA"><code>DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_KRYTYCZNA</code></a>.
+			</li>
+		</ul>
+	</p>
+
+
+<h3><a name="DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_KRYTYCZNA"></a>Funkcja DOBORZMIENNYCHMETODAANALIZYWSPOLCZYNNIKOWKORELACJI_KRYTYCZNA</h3>
+	<p>Jeden z etapów doboru zmiennych objaśniających do modelu metodą analizy współczynników korelacji.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a> oznaczającą wartość krytyczną testu..
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>alfa</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, poziom istotności.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="DOBORZMIENNYCHMETODAWSKAZNIKOWPOJEMNOSCIINFORMACJI_DOBIERZ"></a>Funkcja DOBORZMIENNYCHMETODAWSKAZNIKOWPOJEMNOSCIINFORMACJI_DOBIERZ</h3>
+	<p>Dobiera zmienne do modelu metodą wskaźników pojemności informacji.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>, wektor indeksów zmiennych wybranych do modelu.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_R</code> - rozszerzona <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji, wynik funkcji
+				<a href="#ROZSZERZONAMACIERZKORELACJI"><code>ROZSZERZONAMACIERZKORELACJI</code></a>.
+			</li>
+		</ul>
+	</p>
+
+
+<h3><a name="DODAJWYRAZWOLNY"></a>Funkcja DODAJWYRAZWOLNY</h3>
+	<p>Dodaje na końcu kolumnę złożoną z <b>1</b> do <a href="skrypty-jstat.html#Macierz">macierzy</a> obserwacji zmiennych objaśniających.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> z dodaną kolumną jedynek.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="DWUMIANOWY"></a>Funkcja DWUMIANOWY</h3>
+	<p>Funkcja rozkładu dwumianowego (binomialnego).
+	</p>
+	<p><img alt="wzór: funkcja dwumianowy" src="images/funkcjadwumianowy.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba prób,</li>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba sukcesów.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="E"></a>Funkcja E</h3>
+	<p>Zwraca przybliżoną wartość liczby <code>e</code>, czyli <code>2,7182818284590452354</code>.
+	</p>
+	<p><strong>Parametry</strong>: brak.
+	</p>
+
+
+<h3><a name="EXP"></a>Funkcja EXP</h3>
+	<p>Liczy wartość funkcji exponum, czyli podnosi liczbę <code>e</code> do wykładnika
+		podanego jako argument; <code>e<sup>x</sup></code>.
+		W przypadku, gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca
+		<a href="skrypty-jstat.html#Macierz">macierz</a> o takim samym wymiarze jak <code>x</code>.
+		Dla każdego elementu tej macierzy wykonuje funkcję <a href="#EXP">EXP</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="F"></a>
+<a name="FACT"></a>Funkcja FACT</h3>
+	<p>Oblicza silnię, czyli posługując się standardowym zapisem <code>x!</code>.<br />
+		Liczenie silni dla dużych wartości <code>x</code> może zająć dużo czasu.
+		Na testowym komputerze policzenie <code>6500!</code> trwało 2 sekundy,
+		policzenie <code>65000!</code> (10 razy więcej) zajęło 155 sekund,
+		a wynik miał 284614 cyfr.
+		Należy pamiętać, że dla uzyskania wyniku dokładnego należy zwiększyć
+		w ustawieniach programu ilość drukowanych cyfr na wyjściu.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna większa od zera.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FCHIKWADRAT"></a>Funkcja FCHIKWADRAT</h3>
+	<p>Dystrybuanta rozkładu chi-kwadrat.
+	</p>
+	<p><img alt="wzór: funkcja fchikwadrat" src="images/funkcjafchikwadrat.png" /></p>
+	<p><table border="0"><caption>Wykres <code>fchikwadrat(4;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja fchikwadrat" src="images/wykresfchikwadrat.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FDWUMIANOWY"></a>Funkcja FDWUMIANOWY</h3>
+	<p>Dystrybuanta rozkładu dwumianowego (binomialnego).
+	</p>
+	<p><img alt="wzór: funkcja fdwumianowy" src="images/funkcjafdwumianowy.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba prób,</li>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> rzeczywista.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FGEOMETRYCZNY"></a>Funkcja FGEOMETRYCZNY</h3>
+	<p>Dystrybuanta rozkładu geometrycznego.
+	</p>
+	<p><img alt="wzór: funkcja fgeometryczny" src="images/funkcjafgeometryczny.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> doświadczeń
+				do pojawienia się pierwszego sukcesu.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FJEDNOSTAJNY"></a>Funkcja FJEDNOSTAJNY</h3>
+	<p>Dystrybuanta rozkładu jednostajnego.
+	</p>
+	<p><img alt="wzór: funkcja fjednostajny" src="images/funkcjafjednostajny.png" /></p>
+	<p><table border="0"><caption>Wykres <code>fjednostajny(1;2;x)</code></caption>
+		<tr><td><img alt="wykres: funkcja fjednostajny" src="images/wykresfjednostajny.png" /></td></tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, początek przedziału,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, koniec przedziału,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FNORMALNY"></a>Funkcja FNORMALNY</h3>
+	<p>Dystrybuanta rozkładu normalnego.
+	</p>
+	<p><img alt="wzór: funkcja fnormalny" src="images/funkcjafnormalny.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość oczekiwana,</li>
+			<li><code>s</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, odchylenie standardowe,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FNORMALNYSTD"></a>Funkcja FNORMALNYSTD</h3>
+	<p>Dystrybuanta rozkładu normalnego standaryzowanego.
+	</p>
+	<p><img alt="wzór: funkcja fnormalnystd" src="images/funkcjafnormalnystd.png" /></p>
+	<p><table border="0"><caption>Wykres <code>fnormalnystd(x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja fnormalnystd" src="images/wykresfnormalnystd.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FPOISSONA"></a>Funkcja FPOISSONA</h3>
+	<p>Dystrybuanta rozkładu Poissona.
+	</p>
+	<p><img alt="wzór: funkcja foissona" src="images/funkcjafpoissona.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość oczekiwana zmiennej losowej,</li>
+			<li><code>x</code> -  <a href="skrypty-jstat.html#Liczba">liczba</a> rzeczywista.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FSNEDECORA"></a>Funkcja FSNEDECORA</h3>
+	<p>Dystrybuanta rozkładu F-Snedecora.
+	</p>
+	<p><img alt="wzór: funkcja fsnedecora" src="images/funkcjafsnedecora.png" /></p>
+	<p><table border="0"><caption>Wykres <code>fsnedecora(7;10;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja fsnedecora" src="images/wykresfsnedecora.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>r1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>r2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FSTUDENTA"></a>Funkcja FSTUDENTA</h3>
+	<p>Dystrybuanta rozkładu t-Studenta.
+	</p>
+	<p><img alt="wzór: funkcja fstudenta" src="images/funkcjafstudenta.png" /></p>
+	<p><table border="0"><caption>Wykres <code>fstudenta(4;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja fstudenta" src="images/wykresfstudenta.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FWYKLADNICZY"></a>Funkcja FWYKLADNICZY</h3>
+	<p>Dystrybuanta rozkładu wykładniczego.
+	</p>
+	<p><img alt="wzór: funkcja fwykladniczy" src="images/funkcjafwykladniczy.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>λ</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr rozkładu</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="FZEROJEDYNKOWY"></a>Funkcja FZEROJEDYNKOWY</h3>
+	<p>Dystrybuanta rozkładu zero-jedynkowego.
+        </p>
+	<p><img alt="wzór: funkcja fzerojedynkowy" src="images/funkcjafzerojedynkowy.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> rzeczywista.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="G"></a>
+<a name="GAMMA"></a>Funkcja GAMMA</h3>
+	<p>Oblicza wartość funkcji gamma dla podanego argumentu
+	[Algorytm obliczania funkcji gamma opracowany na podstawie:
+	<i>Lanczos approximation for computing the Gamma function for any positive argument</i>, <a href="http://www.rskey.org/gamma.htm">http://www.rskey.org/gamma.htm</a>
+	z dnia 10 lutego 2008].</p>
+	<p><img alt="funkcja gamma" src="images/funkcjagamma.png" /></p>
+	<p>Niektóre wartości funkcji gamma:<ul>
+		<li><code><a href="#GAMMA">GAMMA</a>(-3/2) = 4*<a href="#SQRT">SQRT</a>(<a href="#PI">PI</a>)/3</code></li>
+		<li><code><a href="#GAMMA">GAMMA</a>(-1/2) = -2*<a href="#SQRT">SQRT</a>(<a href="#PI">PI</a>)</code></li>
+		<li><code><a href="#GAMMA">GAMMA</a>(1/2) = <a href="#SQRT">SQRT</a>(<a href="#PI">PI</a>)/3</code></li>
+		<li><code><a href="#GAMMA">GAMMA</a>(3/2) = <a href="#SQRT">SQRT</a>(<a href="#PI">PI</a>)/2</code></li>
+		<li><code><a href="#GAMMA">GAMMA</a>(8) = <a href="#FACT">FACT</a>(7)</code></li>
+		<li><code><a href="#GAMMA">GAMMA</a>(7) = <a href="#FACT">FACT</a>(6)</code></li>
+		</ul></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="GAMMAINCMPL"></a>Funkcja GAMMAINCMPL</h3>
+	<p>Oblicza niepełną funkcję gamma. liczoną jako całkę od 0 do <code>x</code>.
+	[Algorytm obliczania niepełnej funkcji gamma opracowany na podstawie:
+	<i>The Incomplete Gamma Function</i>, <a href="http://www.rskey.org/gamma.htm">http://www.rskey.org/gamma.htm</a>
+	z dnia 10 lutego 2008].</p>
+	<p><img alt="funkcja gamma" src="images/funkcjagammaincmpl.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, górna granica całki, większa od zera.</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="GAMMALOWER"></a>Funkcja GAMMALOWER</h3>
+	<p>Oblicza wartość funkcji gamma liczonej dla całki od 0 do <code>x</code>
+		z podanego argumentu <code>a</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, górna granica całki, większa od zera.</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="GAMMAUPPER"></a>Funkcja GAMMAUPPER</h3>
+	<p>Oblicza wartość funkcji gamma liczonej dla całki <code>x</code> do nieskończoności
+		z podanego argumentu <code>a</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, dolna granica całki, większa od zera.</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="GEOMETRYCZNY"></a>Funkcja GEOMETRYCZNY</h3>
+	<p>Funkcja rozkładu geometrycznego.
+	</p>
+	<p><img alt="wzór: funkcja geometryczny" src="images/funkcjageometryczny.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> doświadczeń
+				do pojawienia się pierwszego sukcesu.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="H"></a>
+<a name="HILBERT"></a>Funkcja HILBERT</h3>
+	<p>Tworzy macierz Hilberta. Jest to macierz kwadratowa, symetryczna. Każdy element tej macierzy
+		jest równy odwrotności sumy numeru wiersza i kolumny (rozpoczynając od
+		jednego) pomniejszonej o 1.
+	</p>
+	<p><img alt="macierz hilberta" src="images/funkcjahilbert.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> oznaczająca wymiar
+				macierzy do utworzenia. Powinna być liczbą naturalną większą od zera.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="HYPOT"></a>Funkcja HYPOT</h3>
+	<p>Oblicza pierwiastek sumy kwadratów argumentów:
+		<code>(a^2 + b^2) ^(1/2)</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="I"></a>
+<a name="ILOCZYN"></a>Funkcja ILOCZYN</h3>
+	<p>Oblicza iloczyn wszystkich elementów kolumn macierzy.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są iloczyny elementów kolumn <a href="skrypty-jstat.html#Macierz">macierzy</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="INTEGRAL"></a>Funkcja INTEGRAL</h3>
+	<p>Oblicza przybliżoną wartość całki oznaczonej po <code>x</code> stosując prostą metodę Simpsona
+		[Procedura opracowana na podstawie:
+		A. Marciniak, D. Gregulec, J. Kaczmarek, <i>Podstawowe procedury numeryczne w języku Turbo Pascal</i>, Nakom, Poznań 2000].
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, dolna granica całki,</li>
+			<li><code>x2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, górna granica całki,</li>
+			<li><code>f</code> - <a href="skrypty-jstat.html#wyrazeniepostfix">wyrażenie postfix</a>, funkcja podcałkowa.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="INV"></a>Funkcja INV</h3>
+	<p>Zwraca element odwrotny do podanego argumentu: <code>1 / x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				W tym drugim przypadku liczy macierz odwrotną stosując metodę eliminacji Gaussa.
+				Aby odwrócić macierz, musi być ona kwadratowa oraz mieć wyznacznik różny od zera.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCPARAMETROWSTRUKTURALNYCH_KRYTYCZNA"></a>Funkcja ISTOTNOSCPARAMETROWSTRUKTURALNYCH_KRYTYCZNA</h3>
+	<p>Oblicza wartość krytyczną dla testu istotności parametrów strukturalnych
+		[Algorytmy testów istotności zostały opracowana na podstawie:
+		J. Dziechciarz (pod red.), <i>Ekonometria. Metody, przykłady, zadania</i>, Wydawnictwo Akademii Ekonomicznej, Wrocław 2003].
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>, wartość odczytana z tablic rozkładu <nobr>F-Snedecora</nobr>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba szacowanych parametrów,</li>
+			<li><code>alfa</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, poziom istotności.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCPARAMETROWSTRUKTURALNYCH_STATYSTKA"></a>Funkcja ISTOTNOSCPARAMETROWSTRUKTURALNYCH_STATYSTKA</h3>
+	<p>Oblicza statystykę testową dla testu istotności parametrów strukturalnych.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>, wartość statystyki.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba szacowanych parametrów,</li>
+			<li><code>wspR2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+				<a href="skrypty-jstat.html#WSPOLCZYNNIKDETERMINACJIR2">współczynnik determinacji</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCPARAMETROWSTRUKTURALNYCH_TESTUJ"></a>Funkcja ISTOTNOSCPARAMETROWSTRUKTURALNYCH_TESTUJ</h3>
+	<p>Testuje hipotezę testu istotności parametrów strukturalnych.
+		Zwraca <a href="skrypty.html#boolean">Boolean</a>, <code>true</code> jeśli odrzucamy
+		hipotezę zerową o nieistotności
+		parametrów strukturalnych (czyli parametry istotnie różnią się od zera).
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>statystyka</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wynik funkcji
+				<a href="#ISTOTNOSCPARAMETROWSTRUKTURALNYCH_STATYSTKA"><code>ISTOTNOSCPARAMETROWSTRUKTURALNYCH_STATYSTKA</code></a>,
+				</li>
+			<li><code>krytyczna</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wynik funkcji
+				<a href="#ISTOTNOSCPARAMETROWSTRUKTURALNYCH_KRYTYCZNA"><code>ISTOTNOSCPARAMETROWSTRUKTURALNYCH_WARTOSCKRYTYCZNA</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_KRYTYCZNA"></a>Funkcja ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_KRYTYCZNA</h3>
+	<p>Oblicza wartość krytyczną dla testu istotności poszczególnych
+		parametrów strukturalnych.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>, wartość odczytana z tablic rozkładu Studenta.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba szacowanych parametrów,</li>
+			<li><code>alfa</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, poziom istotności.</li>
+		</ul>
+		</p>
+
+
+<h3><a name="ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_STATYSTYKA"></a>Funkcja ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_STATYSTYKA</h3>
+	<p>Oblicza statystyki testowe dla testu istotności poszczególnych parametrów strukturalnych dla modelu KMNK.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>, pionowy wektor, którego elementami są ilorazy wartości
+		parametrów i odchylenia standardowego.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>parametry_alfa</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>, ocena wektora
+				parametrów alfa, wynik funkcji <a href="#PARAMETRYALFA"><code>PARAMETRYALFA</code></a>,
+			</li>
+			<li><code>bledy</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>, standardowe
+				błędy ocen parametrów strukturalnych
+				modelu, wynik funkcji <a href="#STANDARDOWEBLEDYOCEN"><code>STANDARDOWEBLEDYOCEN</code></a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_TESTUJ"></a>Funkcja ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_TESTUJ</h3>
+	<p>Testuje hipotezę o nieistotności poszczególnych parametrów strukturalnych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>. Element macierzy równy zero
+		oznacza, iż nie ma podstaw do odrzucenia hipotezy,
+		że parametr jest nieistotny. Natomiast element macierzy
+		równy jeden oznacza, że zmienne parametr jest istotny.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>sprawdzian</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>,
+				wynik funkcji <a href="#ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_STATYSTYKA"><code>ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_STATYSTYKA</code></a>,
+				</li>
+			<li><code>wartoscKrytyczna</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+				wynik funkcji <a href="#ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_KRYTYCZNA"><code>ISTOTNOSCPOSZCZEGOLNYCHPARAMETROWSTRUKTURALNYCH_KRYTYCZNA</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCWEKTORAPARAMETROW_KRYTYCZNA"></a>Funkcja ISTOTNOSCWEKTORAPARAMETROW_KRYTYCZNA</h3>
+	<p>Oblicza wartość krytyczną dla testu istotności kombinacji liniowej
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>, wartość odczytana z tablic rozkładu Studenta.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba szacowanych parametrów,</li>
+			<li><code>alfa</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, poziom istotności.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCWEKTORAPARAMETROW_STATYSTYKA"></a>Funkcja ISTOTNOSCWEKTORAPARAMETROW_STATYSTYKA</h3>
+	<p>Oblicza statystykę dla testu istotności kombinacji liniowej
+		wektora parametrów.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>w</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>,
+				wektor (pionowy) kombinacji liniowej. Wektor dobrany zgodnie
+				postulowaną zależnością liniową między parametrami,</li>
+			<li><code>w0</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, określona
+				<a href="skrypty-jstat.html#Liczba">liczba</a> (prawa strona hipotezy zerowej),
+				</li>
+			<li><code>macierz_kowariancji</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>,
+				wynik funkcji <a href="#MACIERZWARIANCJIKOWARIANCJI"><code>MACIERZWARIANCJIKOWARIANCJI</code></a>,
+				</li>
+			<li><code>parametry_alfa</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>,
+				parametry α modelu (wektor pionowy),
+			</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ISTOTNOSCWEKTORAPARAMETROW_TESTUJ"></a>Funkcja ISTOTNOSCWEKTORAPARAMETROW_TESTUJ</h3>
+	<p>Testuje hipotezę o nieistotności poszczególnych parametrów strukturalnych.
+		Zwraca <a href="skrypty.html#boolean">Boolean</a>, <code>false</code> oznacza,
+		że nie ma podstaw do odrzucenia hipotezy,
+		iż kombinacja liniowa wektora parametrów jest równa podanej liczbie;
+		natomiast <code>true</code> - że kombinacja liniowa wektora parametrów jest istotnie różna.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>statystyka</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, statystyka wynik
+				funkcji <a href="#ISTOTNOSCWEKTORAPARAMETROW_STATYSTYKA"><code>ISTOTNOSCWEKTORAPARAMETROW_STATYSTYKA</code></a>,
+				</li>
+			<li><code>wartoscKrytyczna</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wynik funkcji
+				<a href="#ISTOTNOSCWEKTORAPARAMETROW_KRYTYCZNA"><code>ISTOTNOSCWEKTORAPARAMETROW_KRYTYCZNA</code></a>.
+			</li>
+		</ul>
+	</p>
+
+
+<h3><a name="J"></a>
+<a name="JEDNOSTAJNY"></a>Funkcja JEDNOSTAJNY</h3>
+	<p>Funkcja gęstości rozkładu jednostajnego.
+	</p>
+	<p><img alt="wzór: funkcja jednostajny" src="images/funkcjajednostajny.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, początek przedziału,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, koniec przedziału,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="JEDNOSTKOWA"></a>Funkcja JEDNOSTKOWA</h3>
+	<p>Tworzy macierz jednostkową rzędu <code>n</code>.
+		Elementy na głównej przekątnej macierzy są równe jeden, a poza nią równe zero.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wymiar macierzy.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="K"></a>
+<a name="KOMBINACJE"></a>Funkcja KOMBINACJE</h3>
+	<p>Oblicza kombinacje bez powtórzeń z <code>n</code> elementów po <code>k</code>.
+	</p>
+	<p><img alt="wzór: funkcja kombinacje" src="images/funkcjakombinacje.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba elementów,</li>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, wielkość populacji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="KOMBINACJE2"></a>Funkcja KOMBINACJE2</h3>
+	<p>Oblicza kombinacje z powtórzeniami z <code>n</code> elementów po <code>k</code>.
+	</p>
+	<p><img alt="wzór: funkcja kombinacje z powtorzeniami" src="images/funkcjakombinacje2.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba elementów,</li>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, wielkość populacji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="KOWARIANCJA"></a>Funkcja KOWARIANCJA</h3>
+	<p>Oblicza kowariancję dla szeregów szczegółowych. Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="KUMULUJ"></a>Funkcja KUMULUJ</h3>
+	<p>Oblicza macierz powstałą przez zsumowanie elementów z wszystkich wierszy powyżej i bieżącego
+		dla każdej kolumny.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> wartości skumulowanych.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="KWARTYL"></a>Funkcja KWARTYL</h3>
+	<p>Oblicza kwartyle dla podanych danych.
+	</p>
+	<p>Dla kwartyla pierwszego i trzeciego numery przedziałów są obliczane według
+		metody zaproponowanej przez <b>Mendenhalla i Sincicha</b>
+		[<i>Wolfram Mathworld: Quartile</i>,
+		<a href="http://mathworld.wolfram.com/Quartile.html">http://mathworld.wolfram.com/Quartile.html</a>
+		z dnia 30 kwietnia 2008].<br />
+		Numer przedziału dla pierwszego kwartyla liczony jest jako 25%
+		ilości obserwacji zwiększonej o jeden. Jeśli obliczony przedział nie jest liczbą
+		całkowitą, jest zaokrąglany do najbliższej całkowitej liczby, a gdy obliczony
+		wynik jest w połowie między dwiema liczbami, jest zaokrąglany <b>w górę</b>.<br />
+		Numer przedziału dla trzeciego kwartyla liczony jest jako 75%
+		ilości obserwacji zwiększonej o jeden. Jeśli obliczony przedział nie jest liczbą
+		całkowitą, jest zaokrąglany do najbliższej całkowitej liczby, a gdy obliczony
+		wynik jest w połowie między dwiema liczbami, jest zaokrąglany <b>w dół</b>.
+	</p>
+	<p>Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są kwartyle.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>kwartyl</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+				numer kwartyla do obliczenia. Może wynosić 1, 2 lub 3,
+			</li>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametry <code>macierz_ni</code>, <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,
+						parametry <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,
+						parametr <code>macierz_xi</code> jest pomijany (może być <code>null</code>),
+						</li>
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy,
+				</li>
+			<li><code>macierz_xi_poczatek</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca początki przedziałów klasowych,
+				</li>
+			<li><code>macierz_xi_koniec</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca końce przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="L"></a>
+<a name="LN"></a>Funkcja LN</h3>
+	<p>Oblicza logarytm naturalny (o podstawie liczby <code>e</code>).
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość logarytmu naturalnego dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy
+		oblicza <a href="#LN">logarytm naturalny</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="LOG"></a>Funkcja LOG</h3>
+	<p>Oblicza logarytm o podstawie <code>a</code> z <code>x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, podstawa logarytmu.
+				Musi być większa od zera i różna od jednego.</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> logarytmowana.
+				Musi być większa od zera.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="LOG10"></a>Funkcja LOG10</h3>
+	<p>Oblicza logarytm o podstawie liczby <code>10</code>.
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość logarytmu dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy
+		oblicza <a href="#LOG10">logarytm o podstawie 10</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="M"></a>
+	<a name="MACIERZKORELACJI"></a>Funkcja MACIERZKORELACJI</h3>
+	<p>Oblicza <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji. Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		kwadratową o wymiarze równym ilości kolumn <a href="skrypty-jstat.html#Macierz">macierzy</a>
+		podanej w parametrze, której elementy są współczynnikami korelacji
+	między zmiennymi objaśniającymi.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> -  <a href="skrypty-jstat.html#Macierz">macierz</a> zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MACIERZWARIANCJIKOWARIANCJI"></a>Funkcja MACIERZWARIANCJIKOWARIANCJI</h3>
+	<p>Wyznacza estymator <a href="skrypty-jstat.html#Macierz">macierzy</a> wariancji i kowariancji ocen parametrów strukturalnych modelu <nobr><b>D<sup>2</sup>(a)</b></nobr>.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> równą <nobr><b>s<sup>2</sup> * (<a href="funkcje.html#TRANSP">TRANSP</a>(X) * X)<sup>-1</sup></b></nobr>
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>se2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, ocena wariancji składnika losowego,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MAX"></a>Funkcja MAX</h3>
+	<p>Dla dwóch podanych argumentów zwraca większy z nich.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MEDIANA"></a>Funkcja MEDIANA</h3>
+	<p>Oblicza mediany dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są mediany.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametry <code>macierz_ni</code>, <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,
+						parametry <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,
+						parametr <code>macierz_xi</code> jest pomijany (może być <code>null</code>),
+						</li>
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy,
+				</li>
+			<li><code>macierz_xi_poczatek</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca początki przedziałów klasowych,
+				</li>
+			<li><code>macierz_xi_koniec</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca końce przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MIN"></a>Funkcja MIN</h3>
+	<p>Dla dwóch podanych argumentów zwraca mniejszy z nich.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,</li>
+			<li><code>b</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MMAX"></a>Funkcja MMAX</h3>
+	<p>Dla każdej kolumny podanej <a href="skrypty-jstat.html#Macierz">macierzy</a> znajduje element maksymalny.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są elementy maksymalne.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MMIN"></a>Funkcja MMIN</h3>
+	<p>Dla każdej kolumny podanej <a href="skrypty-jstat.html#Macierz">macierzy</a> znajduje element minimalny.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są elementy minimalne.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="MODALNA"></a>Funkcja MODALNA</h3>
+	<p>Oblicza modalną (dominantę) dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są modalne.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametry <code>macierz_ni</code>, <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,
+						parametry <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,
+						parametr <code>macierz_xi</code> jest pomijany (może być <code>null</code>),
+						</li>
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy,
+				</li>
+			<li><code>macierz_xi_poczatek</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca początki przedziałów klasowych,
+				</li>
+			<li><code>macierz_xi_koniec</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca końce przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="N"></a>
+<a name="NEGATE"></a>Funkcja NEGATE</h3>
+	<p>Zwraca element przeciwny do podanego.
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość <code>-x</code>.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code> równą <code>(-1) * x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="NEWTON"></a>Funkcja NEWTON</h3>
+	<p>Oblicza symbol Newtona.
+	</p>
+	<p><img alt="funkcja newton" src="images/funkcjanewton.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+				musi być nieujemna i większa lub równa <code>n</code>.</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>,
+				musi być nieujemna i mniejsza lub równa <code>k</code>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="NORMALNY"></a>Funkcja NORMALNY</h3>
+	<p>Funkcja gęstości rozkładu normalnego.
+	</p>
+	<p><img alt="wzór: funkcja normalny" src="images/funkcjanormalny.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość oczekiwana,</li>
+			<li><code>s</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, odchylenie standardowe,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="NORMALNYFI"></a>Funkcja NORMALNYFI</h3>
+	<p>Dla dodatniego <code>x</code> zwraca wartość <code><a href="#NORMALNYSTD">NORMALNYSTD</a>(x) - 0,5</code>.
+	</p>
+	<p><img alt="wzór: funkcja normalnyfi" src="images/funkcjanormalnyfi.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> dodatnia.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="NORMALNYSTD"></a>Funkcja NORMALNYSTD</h3>
+	<p>Funkcja gęstości rozkładu normalnego standaryzowanego.
+	</p>
+	<p><img alt="wzór: funkcja normalnystd" src="images/funkcjanormalnystd.png" /></p>
+	<p><table border="0"><caption>Wykres <code>normalnystd(x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja normalnystd" src="images/wykresnormalnystd.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="NORMALNYSTDTAIL"></a>Funkcja NORMALNYSTDTAIL</h3>
+	<p>Znajduje wartość <code>x</code>, dla którego <code><a href="#NORMALNYSTD">NORMALNYSTD</a>(x) = p</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>p</code> - wartość dystrybuanty standardowego rozkładu normalnego.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="O"></a>
+<!-- <h3><a name="OBLICZTEORETYCZNE"></a>Funkcja OBLICZTEORETYCZNE</h3>
+	<p>Oblicza teoretyczne wartości funkcji regresji.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> wartości teoretycznych o ilości kolumn równej jeden.
+		Ilość wierszy = ilość wierszy <code>macierz_x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających,</li>
+			<li><code>wspolczynnik_a</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> współczynników kierunkowych. Ilość kolumn
+			musi się równać ilości kolumn <code>macierz_x</code>,</li>
+			<li><code>wspolczynnik_b</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> wyrazów wolnych. Ilość kolumn i wierszy
+			musi się równać jeden.</li>
+		</ul>
+	</p>
+
+<h3> -->
+<a name="OBLICZTEORETYCZNE"></a>Funkcja OBLICZTEORETYCZNE</h3>
+	<p>Oblicza teoretyczne wartości funkcji regresji.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> wartości teoretycznych o ilości kolumn równej jeden
+		i ilości wierszy równej ilości wierszy <code>macierz_x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających,</li>
+			<li><code>parametry_alfa</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> parametrów alfa (wektor pionowy), wynik funkcji
+				<a href="#PARAMETRYALFA"><code>PARAMETRYALFA</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ODCHYLENIEPRZECIETNE"></a>Funkcja ODCHYLENIEPRZECIETNE</h3>
+	<p>Oblicza odchylenia przeciętne dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są odchylenia przeciętne.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ODCHYLENIESTANDARDOWE"></a>Funkcja ODCHYLENIESTANDARDOWE</h3>
+	<p>Oblicza odchylenia standardowe dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są odchylenia standardowe.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ODCHYLENIESTANDARDOWERESZT"></a>Funkcja ODCHYLENIESTANDARDOWERESZT</h3>
+	<p>Oblicza odchylenie standardowe reszt.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_y_teoretyczne</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennej objaśnianej,</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> szacowanych parametrów równania regresji (dla liniowej postaci <i>y=ax+b</i> wynosi 2).</li>
+		</ul>
+	</p>
+
+
+<h3><a name="P"></a>
+<a name="PARAMETRYALFA"></a>Funkcja PARAMETRYALFA</h3>
+	<p>Oblicza ocenę wektora parametrów α dla modelu KMNK.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> - parametry α do modelu
+		<nobr><i>y<sub>teoret</sub> = a<sub>0</sub> +a<sub>1</sub>x<sub>1</sub> + ... + a<sub>m</sub>x<sub>m</sub></i></nobr>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających,</li>
+			<li><code>wyraz_wolny</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, jeśli
+				równa <code>1</code> dodaje na końcu kolumnę
+				złożoną z <b>1</b> do <a href="skrypty-jstat.html#Macierz">macierzy</a>
+				obserwacji zmiennych objaśniających.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="PI"></a>Funkcja PI</h3>
+	<p>Zwraca przybliżoną wartość liczby π (pi), czyli <code>3,14159265358979323846</code>.
+	</p>
+	<p><strong>Parametry</strong>: brak.
+	</p>
+
+
+<h3><a name="PODMACIERZ"></a>Funkcja PODMACIERZ</h3>
+	<p>Zwraca podmacierz z macierzy powstałą przez skreślenie kolumny i wiersza.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, numer kolumny
+				do usunięcia (kolumny numerowane są od 0),</li>
+			<li><code>y</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, numer wiersza
+				do usunięcia (wiersze numerowane są od 0).</li>
+		</ul>
+	</p>
+
+
+<h3><a name="POISSONA"></a>Funkcja POISSONA</h3>
+	<p>Funkcja rozkładu Poissona.
+	</p>
+	<p><img alt="wzór: funkcja poissona" src="images/funkcjapoissona.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość oczekiwana zmiennej losowej,</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość zmiennej losowej,
+				obliczamy prawdopodobieństwo, że zmienna losowa będzie równa <code>k</code>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="POW"></a>Funkcja POW</h3>
+	<p>Liczy potęgę o wykładniku <code>a</code> z <code>x</code>.
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość <code>x ^ a</code>. Działanie jest wykonywalne, gdy wykładnik
+		i podstawa są liczbami rzeczywistymi dodatnimi oraz jeśli podstawa jest
+		liczbą ujemną rzeczywistą a wykładnik całkowitą.<br />
+		Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, <code>a</code>
+		musi być liczbą całkowitą. Jeśli <code>a</code> jest liczbą dodatnią,
+		funkcja zwraca macierz powstałą w wyniku <code>a</code>-krotnego wykonania
+		operacji <code>x = x * <a href="#TRANSP">TRANSP</a>(x)</code>.
+		W przypadku gdy <code>a</code> jest liczbą ujemną, najpierw
+		odwraca macierz <code>x</code>, a następnie wykonuje operację podaną dla
+		przypadku, gdy wykładnik jest dodatni.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>, podstawa potęgi.</li>
+			<li><code>a</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wykładnik potęgi.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="R"></a>
+<a name="RANDOM"></a>Funkcja RANDOM</h3>
+	<p>Zwraca liczbę losową z rozkładu jednostajnego z przedziału <nobr>[0, 1)</nobr>.
+	</p>
+	<p><strong>Parametry</strong>: brak.
+	</p>
+
+
+<h3><a name="ROUND"></a>Funkcja ROUND</h3>
+	<p>Zaokrągla argument do liczby całkowitej. W przypadku gdy <code>x</code>
+		jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca wartość zaokrągloną, zaokrąglając
+		od połowy w górę (czyli np. <code>ROUND(3,5)</code> wynosi <code>4</code>).
+		Gdy argument jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu
+		tej macierzy wykonuje funkcję <a href="#ROUND">ROUND</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="ROZSZERZONAMACIERZKORELACJI"></a>Funkcja ROZSZERZONAMACIERZKORELACJI</h3>
+	<p>Oblicza rozszerzoną <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji. Zwraca rozszerzoną
+		<a href="skrypty-jstat.html#Macierz">macierz</a> korelacji <b>R*</b>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="S"></a>
+<a name="SEC"></a>Funkcja SEC</h3>
+	<p>Oblicza funkcję secans, przedstawianą jako stosunek przeciwprostokątnej
+		i przyprostokątnej przyległej do kąta ostrego; odwrotność funkcji <a href="#COS">cosinus</a>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji secans dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#SEC">SEC</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SGN"></a>Funkcja SGN</h3>
+	<p>Zwraca znak liczby. W przypadku gdy <code>x</code> jest
+		<a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji signum dla podanego argumentu, zdefiniowaną następująco:</p>
+	<p><img alt="funkcja sgn" src="images/funkcjasgn.png" /></p>
+	<p>Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje
+		funkcję <a href="#SGN">SGN</a>.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SIN"></a>Funkcja SIN</h3>
+	<p>Oblicza funkcję sinus, przedstawianej jako stosunek przyprostokątnej przeciwległej do kąta
+		ostrego i przeciwprostokątnej. Dziedziną jest przedział <nobr>[-∞, ∞]</nobr>, przeciwdziedziną przedział <nobr>[-1, 1]</nobr>.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji sinus dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#SIN">SIN</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SINH"></a>Funkcja SINH</h3>
+	<p>Oblicza funkcję sinus hiperboliczny.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji sinus hiperboliczny dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#SINH">SINH</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SNEDECORA"></a>Funkcja SNEDECORA</h3>
+	<p>Funkcja gęstości rozkładu F-Snedecora.
+	</p>
+	<p><img alt="wzór: funkcja snedecora" src="images/funkcjasnedecora.png" /></p>
+	<p><table border="0"><caption>Wykres <code>snedecora(7;10;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja snedecora" src="images/wykressnedecora.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>r1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>r2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SNEDECORATAIL"></a>Funkcja SNEDECORATAIL</h3>
+	<p>Znajduje wartość <code>x</code>, dla którego <code><a href="#FSTUDENTA">FSNEDECORA</a>(1-x) = p</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>r1</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>r2</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość dystrybuanty rozkładu F-Snedecora.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SQRT"></a>Funkcja SQRT</h3>
+	<p>Liczy pierwiastek kwadratowy.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		pierwiastek kwadratowy z podanego argumentu. Równoznaczne z zapisem <code>x^(1/2)</code>.<br />
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy
+		wykonuje funkcję <a href="#SQRT">SQRT</a>. <b>Uwaga</b>: nie jest to właściwa
+		procedura obliczania pierwiastka z macierzy.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SREDNIA"></a>Funkcja SREDNIA</h3>
+	<p>Oblicza średnie z kolumn macierzy.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są średnie kolumn <a href="skrypty-jstat.html#Macierz">macierzy</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SREDNIAARYTMETYCZNA"></a>Funkcja SREDNIAARYTMETYCZNA</h3>
+	<p>Oblicza średnie arytmetyczne dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są średnie.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SREDNIAGEOMETRYCZNA"></a>Funkcja SREDNIAARYTMETYCZNA</h3>
+	<p>Oblicza średnie geometryczne dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są średnie.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="STANDARDOWEBLEDYOCEN"></a>Funkcja STANDARDOWEBLEDYOCEN</h3>
+	<p>Wyznacza standardowe błędy ocen parametrów strukturalnych modelu
+		na podstawie estymatora <a href="skrypty-jstat.html#Macierz">macierzy</a> wariancji i kowariancji parametrów.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (pionowy)</a>, zbudowany z pierwiastków wyciągniętych
+		z elementów głównej przekątnej podanej <a href="skrypty-jstat.html#Macierz">macierzy</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_wariancji_kowariancji</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> wariancji i kowariancji, wynik funkcji
+				<a href="#MACIERZWARIANCJIKOWARIANCJI"><code>MACIERZWARIANCJIKOWARIANCJI</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="STUDENTA"></a>Funkcja STUDENTA</h3>
+	<p>Funkcja gęstości rozkładu t-Studenta.
+	</p>
+	<p><img alt="wzór: funkcja studenta" src="images/funkcjastudenta.png" /></p>
+	<p><table border="0"><caption>Wykres <code>studenta(4;x)</code>.</caption>
+		<tr><td><img alt="wykres: funkcja studenta" src="images/wykresstudenta.png" /></td>
+		</tr></table></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="STUDENTATAIL"></a>Funkcja STUDENTATAIL</h3>
+	<p>Znajduje wartość <code>x</code>, dla którego <code><a href="#FSTUDENTA">FSTUDENTA</a>(1-x/2) = p</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, stopnie swobody,</li>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wartość dystrybuanty rozkładu t-Studenta.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SUMA"></a>Funkcja SUMA</h3>
+	<p>Oblicza sumę kolumn macierzy.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są sumy kolumn <a href="skrypty-jstat.html#Macierz">macierzy</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="SUMAKWADRATOW"></a>Funkcja SUMAKWADRATOW</h3>
+	<p>Oblicza sumę kwadratów wszystkich kolumn macierzy podanej w parametrze.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>  o ilości kolumn równej ilości
+		kolumn macierzy podanej w parametrze i ilości wierszy równej jeden.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>reszty</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>, może być np. macierzą reszt modelu.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="T"></a>
+<a name="TEKST"></a>Funkcja TEKST</h3>
+	<p>Zwraca reprezentację <a href="skrypty-jstat.html#tekst">tekstową</a> podanego argumentu.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#elementwyrazenia">element wyrażenia</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TESTDURBINAWATSONA_STATYSTYKA"></a>Funkcja TESTDURBINAWATSONA_STATYSTYKA</h3>
+	<p>Oblicza wartość statystyki testowej dla testu Durbina-Watsona na
+		autokorelację składnika resztowego.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>reszty</code> - <a href="skrypty.html#Macierz">macierz</a> reszt analizowanego modelu.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TESTWSPOLCZYNNIKAKORELACJI_KRYTYCZNA"></a>Funkcja TESTWSPOLCZYNNIKAKORELACJI_KRYTYCZNA</h3>
+	<p>Oblicza wartość krytyczną dla testu istotności współczynnika
+		korelacji (odczytuje wartość z tablic studenta).
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość obserwacji,</li>
+			<li><code>alfa</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, poziom istotności.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TESTWSPOLCZYNNIKAKORELACJI_STATYSTYKA"></a>Funkcja TESTWSPOLCZYNNIKAKORELACJI_STATYSTYKA</h3>
+	<p>Liczy sprawdziany hipotezy zerowej, że współczynnik korelacji
+		między zmiennymi jest istotnie różny od zera dla każdej pary zmiennych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> o wymiarach takich samych jak <code>macierz_R</code>,
+		elementami są sprawdziany hipotezy.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_R</code> - rozszerzona <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji, wynik funkcji
+				<a href="#ROZSZERZONAMACIERZKORELACJI"><code>ROZSZERZONAMACIERZKORELACJI</code></a>.
+				</li>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> obserwacji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TESTWSPOLCZYNNIKAKORELACJI_TESTUJ"></a>Funkcja TESTWSPOLCZYNNIKAKORELACJI_TESTUJ</h3>
+	<p>Testuje hipotezę o nieistotności współczynnika korelacji.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>. Element macierzy równy zero
+		oznacza, iż nie ma podstaw do odrzucenia hipotezy,
+		że zmienne nie są istotnie skorelowane. Natomiast element macierzy
+		równy jeden oznacza, że zmienne są skorelowane.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>sprawdzian</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>, wynik funkcji
+				<a href="#TESTWSPOLCZYNNIKAKORELACJI_STATYSTYKA"><code>TESTWSPOLCZYNNIKAKORELACJI_STATYSTYKA</code></a>,
+				</li>
+			<li><code>wartoscKrytyczna</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, wynik funkcji
+				<a href="#TESTWSPOLCZYNNIKAKORELACJI_KRYTYCZNA"><code>TESTWSPOLCZYNNIKAKORELACJI_KRYTYCZNA</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TG"></a>Funkcja TG</h3>
+	<p>Oblicza funkcję tangens, przedstawianą jako stosunek przyprostokątnej przeciwległej
+		do kąta ostrego i przyprostokątnej przyległej do kąta ostrego.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji tangens dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#TG">TG</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TGH"></a>Funkcja TGH</h3>
+	<p>Oblicza funkcję tangens hiperboliczny.<br />
+		W przypadku gdy <code>x</code> jest <a href="skrypty-jstat.html#Liczba">liczbą</a> zwraca
+		wartość funkcji tangens hiperboliczny dla podanego argumentu.
+		Gdy jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca <a href="skrypty-jstat.html#Macierz">macierz</a>
+		o takim samym wymiarze jak <code>x</code>. Dla każdego elementu tej macierzy wykonuje funkcję <a href="#TGH">TGH</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TODEGREES"></a>Funkcja TODEGREES</h3>
+	<p>Zamienia radiany na stopnie.
+		Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca
+		<a href="skrypty-jstat.html#Macierz">macierz</a> o takim samym wymiarze jak <code>x</code>.
+		Dla każdego elementu tej macierzy wykonuje funkcję <a href="#TODEGREES">TODEGREES</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TOFLOAT"></a>Funkcja TOFLOAT</h3>
+	<p>Przekształca <code>x</code> na <a href="skrypty-jstat.html#Liczba">liczbę</a>;
+		funkcja działa odwrotnie do <a href="#TOMATRIX">TOMATRIX</a>.
+		Gdy <code>x</code> jest typu <a href="skrypty-jstat.html#Liczba">liczba</a>,
+		zwraca <code>x</code>. Gdy <code>x</code> jest typu
+		<a href="skrypty-jstat.html#Macierz">macierz</a>, sprawdza, czy jest wymiaru 1x1.
+		Jeśli tak, zwraca jedyny element macierzy jako <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TOMATRIX"></a>Funkcja TOMATRIX</h3>
+	<p>Przekształca <code>x</code> na <a href="skrypty-jstat.html#Macierz">macierz</a>;
+		funkcja działa odwrotnie do <a href="#TOFLOAT">TOFLOAT</a>.
+		Gdy <code>x</code> jest typu <a href="skrypty-jstat.html#Liczba">liczba</a>,
+		zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> wymiaru 1x1
+		z <code>x</code> jako jedynym elementem.
+		Gdy <code>x</code> jest typu	<a href="skrypty-jstat.html#Macierz">macierz</a>,
+		zwraca <code>x</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TORADIANS"></a>Funkcja TORADIANS</h3>
+	<p>Zamienia stopnie na radiany.
+		Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca
+		<a href="skrypty-jstat.html#Macierz">macierz</a> o takim samym wymiarze jak <code>x</code>.
+		Dla każdego elementu tej macierzy wykonuje funkcję <a href="#TORADIANS">TORADIANS</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="TRANSP"></a>Funkcja TRANSP</h3>
+	<p>Transponuje <a href="skrypty-jstat.html#Macierz">macierz</a>, czyli
+		zamienia wiersze z kolumnami i na odwrót.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="U"></a>
+<a name="ULP"></a>Funkcja ULP</h3>
+	<p>Dla liczb <b>całkowitych</b>:<ul>
+			<li>dodatnich - zwraca <code>1</code>,</li>
+			<li>ujemnych - zwraca <code>0,1</code>.</li>
+			</ul></p>
+	<p>Dla liczb <b>rzeczywistych niecałkowitych</b>: zwraca wynik działania <code>10^(-k)</code>,
+				gdzie <code>k</code> to ilość miejsc po przecinku w liczbie.
+				Np. <code><a href="#ULP">ULP</a>(12,30)</code> zwróci <code>0,01</code>.</p>
+	<p>Gdy <code>x</code> jest <a href="skrypty-jstat.html#Macierz">macierzą</a>, zwraca
+		<a href="skrypty-jstat.html#Macierz">macierz</a> o takim samym wymiarze jak <code>x</code>.
+		Dla każdego elementu tej macierzy wykonuje funkcję <a href="#ULP">ULP</a>.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> lub <a href="skrypty-jstat.html#Macierz">macierz</a>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="W"></a><a name="WARIANCJA"></a>Funkcja WARIANCJA</h3>
+	<p>Oblicza wariancje dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są wariancje.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WARIANCJASKLADNIKALOSOWEGO"></a>Funkcja WARIANCJASKLADNIKALOSOWEGO</h3>
+	<p>Oblicza ocenę wariancji składnika losowego modelu <nobr><b>s<sub>e</sub><sup>2</sup></b></nobr>.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_y_teoretyczne</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennej objaśnianej, wynik funkcji
+				<a href="#OBLICZTEORETYCZNE"><code>OBLICZTEORETYCZNE</code></a>,
+				</li>
+			<li><code>m</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, ilość szacowanych parametrów.
+				Jeśli jest szacowany model z wyrazem wolnym, to:
+				<br /><code>m = macierz_x_1.getLengthX()-1</code><br />oraz<br />
+			<code>m = <a href="#PARAMETRYALFA"><code>PARAMETRYALFA</code></a>(macierz_x, macierz_y, true).getLengthY()-1</code>.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WARIANCJASKLADNIKARESZTOWEGO"></a>Funkcja WARIANCJASKLADNIKARESZTOWEGO</h3>
+	<p>Oblicza wariancję składnika resztowego.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_y_teoretyczne</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennej objaśnianej, wynik funkcji
+				<a href="#OBLICZTEORETYCZNE"><code>OBLICZTEORETYCZNE</code></a>,
+				</li>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> szacowanych parametrów równania regresji (dla liniowej postaci <i>y=ax+b</i> wynosi 2).</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WARIANCJE"></a>Funkcja WARIANCJE</h3>
+	<p>Oblicza wariancję bez powtórzeń z <code>n</code> elementów po <code>k</code>.
+	<p><img alt="wzór: funkcja wariancje" src="images/funkcjawariancje.png" /></p>
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba elementów,</li>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, wielkość populacji.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WARIANCJE2"></a>Funkcja WARIANCJE2</h3>
+	<p>Oblicza wariancję z powtórzeniami z <code>n</code> elementów po <code>k</code>.
+	</p>
+	<p><img alt="wzór: funkcja wariancje z powtorzeniami" src="images/funkcjawariancje2.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>k</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, liczba elementów,</li>
+			<li><code>n</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> naturalna, wielkość populacji.</li>
+		</ul>
+	</p>
+
+<h3><a name="WEKTORKORELACJI"></a>Funkcja WEKTORKORELACJI</h3>
+	<p>Oblicza wektor korelacji. Zwraca <a href="skrypty-jstat.html#Macierz">wektor pionowy</a>,
+		którego kolejnymi elementami są współczynniki
+		korelacji między zmienną objaśnianą i zmiennymi objaśniającymi.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKA"></a>Funkcja WSPOLCZYNNIKA</h3>
+	<p>Oblicza współczynniki kierunkowe dla funkcji regresji liniowej.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> o ilości kolumn równej ilości kolumn
+		<code>macierz_x</code>, ilość wierszy wynosi 1.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKASYMETRIIA"></a>Funkcja WSPOLCZYNNIKASYMETRIIA</h3>
+	<p>Oblicza współczynniki asymetrii <nobr><b>A</b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki asymetrii.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKB"></a>Funkcja WSPOLCZYNNIKB</h3>
+	<p>Oblicza wyraz wolny dla funkcji regresji liniowej.
+		Zwraca <a href="skrypty-jstat.html#Macierz">macierz</a> o wymiarach 1 na 1.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKDETERMINACJIR2"></a>Funkcja WSPOLCZYNNIKDETERMINACJIR2</h3>
+	<p>Oblicza współczynnik determinacji <nobr><b>R<sup>2</sup></b> = 1- ϕ<sup>2</sup></nobr>.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a> z przedziału <nobr>[0, 1]</nobr>. Wartość bliska zeru oznacza brak zależności liniowej.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_y_teoretyczne</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennej objaśnianej, wynik funkcji
+				<a href="#OBLICZTEORETYCZNE"><code>OBLICZTEORETYCZNE</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKKORELACJILINIOWEJ"></a>Funkcja WSPOLCZYNNIKKORELACJILINIOWEJ</h3>
+	<p>Oblicza współczynnik korelacji liniowej <strong>r<sub>xy</sub></strong>. Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_x</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennych objaśniających.</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKKORELACJIWIELORAKIEJ"></a>Funkcja WSPOLCZYNNIKKORELACJIWIELORAKIEJ</h3>
+	<p>Oblicza współczynnik korelacji wielorakiej. Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierzKorelacji</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji, wynik funkcji
+				<a href="#MACIERZKORELACJI"><code>MACIERZKORELACJI</code></a>,
+				</li>
+			<li><code>rozszerzonaMacierzKorelacji</code> - rozszerzona <a href="skrypty-jstat.html#Macierz">macierz</a> korelacji, wynik funkcji
+				<a href="#ROZSZERZONAMACIERZKORELACJI"><code>ROZSZERZONAMACIERZKORELACJI</code></a>.
+			</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKSKOSNOSCIAD"></a>Funkcja WSPOLCZYNNIKSKOSNOSCIAD</h3>
+	<p>Oblicza współczynniki skośności <nobr><b>A<sub>d</sub></b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki skośności.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametry <code>macierz_ni</code>, <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,
+						parametry <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,
+						parametr <code>macierz_xi</code> jest pomijany (może być <code>null</code>),
+						</li>
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy,
+				</li>
+			<li><code>macierz_xi_poczatek</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca początki przedziałów klasowych,
+				</li>
+			<li><code>macierz_xi_koniec</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca końce przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKSKOSNOSCIAS"></a>Funkcja WSPOLCZYNNIKSKOSNOSCIAS</h3>
+	<p>Oblicza współczynniki skośności <nobr><b>A<sub>s</sub></b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki skośności.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametry <code>macierz_ni</code>, <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,
+						parametry <code>macierz_xi_poczatek</code> oraz
+						<code>macierz_xi_koniec</code> są pomijane (mogą być <code>null</code>),
+						</li>
+					<li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,
+						parametr <code>macierz_xi</code> jest pomijany (może być <code>null</code>),
+						</li>
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy,
+				</li>
+			<li><code>macierz_xi_poczatek</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca początki przedziałów klasowych,
+				</li>
+			<li><code>macierz_xi_koniec</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca końce przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKSKUPIENIAK"></a>Funkcja WSPOLCZYNNIKSKUPIENIAK</h3>
+	<p>Oblicza współczynniki skupienia <nobr><b>K</b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki skupienia.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKZBIEZNOSCIFI2"></a>Funkcja WSPOLCZYNNIKZBIEZNOSCIFI2</h3>
+	<p>Oblicza współczynnik zbieżności <b>ϕ<sup>2</sup></b>.
+		Zwraca <a href="skrypty-jstat.html#Liczba">liczbę</a>. Wartość bliska zeru oznacza silną zależność liniową.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>macierz_y</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> obserwacji zmiennej objaśnianej,</li>
+			<li><code>macierz_y_teoretyczne</code> - <a href="skrypty-jstat.html#Macierz">macierz</a> teoretycznych wartości zmiennej objaśnianej, wynik funkcji
+				<a href="#OBLICZTEORETYCZNE"><code>OBLICZTEORETYCZNE</code></a>.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKZMIENNOSCIVD"></a>Funkcja WSPOLCZYNNIKZMIENNOSCIVD</h3>
+	<p>Oblicza współczynnik zmienności <nobr><b>V<sub>d</sub></b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki zmienności.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WSPOLCZYNNIKZMIENNOSCIVS"></a>Funkcja WSPOLCZYNNIKZMIENNOSCIVS</h3>
+	<p>Oblicza współczynnik zmienności <nobr><b>V<sub>s</sub></b></nobr> dla podanych danych.
+		Zwraca <a href="skrypty-jstat.html#Macierz">wektor (poziomy)</a>, którego elementami
+		są współczynniki zmienności.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>typszeregu</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.
+				Zmienna określa typ szeregu, jaki przedstawiają dane. W przypadku gdy jest równa:<ul>
+					<li><b>0</b> - oznacza, że dane przedstawiają szereg szczegółowy,
+						parametr <code>macierz_ni</code> jest pomijany (może być <code>null</code>),
+						</li>
+					<li><b>1</b> - oznacza, że dane przedstawiają szereg rozdzielczy,</li>
+					<!-- <li><b>2</b> - oznacza, że dane przedstawiają szereg rozdzielczy z przedziałami klasowymi,</li>  -->
+				</ul>
+			</li>
+			<li><code>macierz_xi</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				reprezentująca klasy lub środki przedziałów klasowych,
+				</li>
+			<li><code>macierz_ni</code> - <a href="skrypty-jstat.html#Macierz">macierz</a>
+				przedstawiająca liczebności klas.
+				</li>
+		</ul>
+	</p>
+
+
+<h3><a name="WYKLADNICZY"></a>Funkcja WYKLADNICZY</h3>
+	<p>Funkcja gęstości rozkładu wykładniczego.
+	</p>
+	<p><img alt="wzór: funkcja wykladniczy" src="images/funkcjawykladniczy.png" /></p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>λ</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>, parametr rozkładu</li>
+			<li><code>x</code> - <a href="skrypty-jstat.html#Liczba">liczba</a>.</li>
+		</ul>
+	</p>
+
+
+
+<h3><a name="Z"></a>
+<a name="ZEROJEDYNKOWY"></a>Funkcja ZEROJEDYNKOWY</h3>
+	<p>Funkcja rozkładu zero-jedynkowego. Zwraca <code>p</code> jeśli <code>x</code>
+		jest równy <code>1</code>. Zwraca <code>1-p</code> jeśli <code>k</code>
+		jest równy <code>0</code>.
+	</p>
+	<p><strong>Parametry</strong>:
+		<ul>
+			<li><code>p</code> - <a href="skrypty-jstat.html#Liczba">liczba</a> z przedziału <nobr>[0, 1]</nobr>,
+				prawdopodobieństwo sukcesu,</li>
+			<li><code>k</code> - 0 lub 1.</li>
+		</ul>
+	</p>
+
+<hr /><p><a name="BOTTOM"></a>
+<span class="go-up"><a href="#TOP"><img src="images/go-up.png" alt="Do góry" /></a></span>
+<a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Ustawienia</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach" />
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+
+<h1><a name="TOP"></a>Ustawienia programu</h1>
+<p>Dialog ustawień programu można wyświetlić wybierając pozycję
+<i>Ustawienia</i> z menu <i>Narzędzia</i> lub za pomocą skrótu klawiaturowego
+<i>CTRL-P</i>.</p>
+<p>Opcje programu zostały podzielone na zakładki, odpowiadające
+	różnym zakresom funkcjonalnym.
+</p><p>
+	W celu ułatwienia orientacji w rosnącej liczbie opcji, jaka będzie
+	wprowadzana z każdą nową wersją programu, ustawienia zostały
+	wyposażone w filtr dla każdej z zakładek.
+	Wpisywanie kolejnych liter powoduje wyświetlenie tylko tych pozycji,
+	które zawierają wpisany ciąg.
+	Drugim udogodnieniem jest pole wyboru <i>Tryb eksperta</i>, które
+	po uaktywnieniu pokazuje dodatkowe informacje o opcjach
+	programu. Może to jednak pogorszyć czytelność,
+	dlatego ten tryb jest domyślnie wyłączony.
+</p>
+<p><b>Uwaga</b>, większość wprowadzanych zmian wymaga ponownego uruchomienia
+programu, aby odniosły efekt.</p>
+
+
+<h2><a name="folderustawien"></a>Folder ustawień</h2>
+<p>Wszystkie ustawienia programu są przechowywane w folderze ustawień w
+	domyślnej lokalizacji, która jest zależna od systemu operacyjnego.
+	Ścieżkę do tego folderu można sprawdzić w zakładce <i>Ścieżki</i>
+	w dialogu <nobr><i>O programie</i></nobr>. Otworzyć można ten dialog
+	wybierając z menu <i>Pomoc</i> pozycję <nobr><i>O programie</i></nobr>.
+	Dla systemów z rodziny <b>Windows</b>:<ul>
+			<li>jeśli istnieje zmienna systemowa <i>LOCALAPPDATA</i> (czyli
+				systemy Vista i nowsze), folder ustawień jest tworzony w ścieżce
+				wskazywanej przez tą zmienną. Przy standardowej konfiguracji będzie
+				to: <nobr><i>C:\Users\nazwa_użytkownika\AppData\Local\jstat</i></nobr>,
+			</li>
+			<li>w przeciwnym wypadku odczytywana jest zmienna systemowa <i>APPDATA</i> (dla
+				systemów XP i starszych), a folder ustawień jest tworzony w ścieżce
+				wskazywanej przez tą zmienną. Przy standardowej konfiguracji będzie
+				to: <nobr><i>C:\Documents and Settings\nazwa_użytkownika\Dane aplikacji\jstat</i></nobr>.
+			</li>
+		</ul>
+	Dla systemów z rodziny <b>*nix</b> (Linux, Mac OS):
+			folder ustawień znajduje się w folderze użytkownika, zostaje on
+			ukryty dzięki kropce na pierwszej w nazwie folderu (tak się tworzy
+			pliki i foldery ukryte w tych systemach). Przy standardowej konfiguracji
+			będzie to: <nobr><i>/home/nazwa_użytkownika/.jstat</i></nobr>.
+
+</p>
+
+
+<h2><a name="glowne"></a>Zakładka główne</h2>
+<p>Zawiera opcje dotyczące całej aplikacji <b>JStat</b>.</p>
+        <p><table border="0"><caption>Ustawienia - zakładka "główne".</caption>
+                <tr><td><img alt="Ustawienia - główne" src="images/ustawienia-glowne.png" /></td>
+        </tr></table></p>
+<p><ul>
+<li><b>Przechwytywanie komunikatów z konsoli</b> - jeśli jest zaznaczone,
+	komunikaty pojawiają się w dolnym polu w głównym oknie programu.
+	Zalecane jest pozostawienie opcji włączonej, chyba że występują problemy z programem,
+	wtedy przeglądnięcie logów programu może wyjaśnić przyczynę nieprawidłowego działania,</li>
+<li><b>Rysowanie tła za dokumentami</b> - jeśli zaznaczone, tło programu jest rysowane, zamiast
+	standardowego koloru,</li>
+<li><b>Wygląd programu</b> - dostosowuje wygląd programu. Wygląd zależy od systemu, w jakim
+	program został uruchomiony. Dostępne opcje:<ul>
+		<li>NATIVE - wygląd programu jest spójny z całym systemem operacyjnym,</li>
+		<li>OCEAN - program ma wygląd charakterystyczny dla aplikacji Javy, taki sam
+			niezależnie od systemu, na którym jest uruchomiony.</li></ul></li>
+<li><b>Maksymalizacja nowego okna dokumentu</b> - w przypadku otwarcia lub utworzenia nowego
+	dokumentu, okno przedstawiające dokument zostanie zmaksymalizowane, tak aby zajmowało
+	cały dostępny obszar,</li>
+<li><b>Wczytywanie wtyczek przy starcie programu</b> - jeśli opcja jest zaznaczona (zalecane)
+	wczytywane są wtyczki. Można wyłączyć, jeśli zachodzi podejrzenie, że któraś z wtyczek
+	powoduje niestabilność programu,</li>
+<li><b>Wyświetlanie pomocy online</b> - po kliknięciu na <i>Pomoc</i> zazwyczaj jest wyświetlana
+	pomoc znajdująca się w folderze z programem. Zaznaczając tą opcję, można
+	wymusić wyświetlanie pomocy ze strony WWW programu (wymagane jest połączenie z internetem),</li>
+<li><b>Rysowanie obramowania paska narzędziowego</b> - jeśli zaznaczone, rysuje obramowanie
+	paska narzędziowego. Jest to opcja zależna od systemu i wyglądu, więc nie zawsze
+	obramowanie będzie wyświetlane,</li>
+<li><b>Rysowanie obramowania przycisków na pasku narzędziowym</b> - po wybraniu tej opcji,
+	przyciski na pasku narzędziowym mają obramowanie, w przeciwnym wypadku są płaskie,</li>
+<li><b>Wygląd paska narzędziowego</b> - dostosowuje wygląd pasków narzędzi do preferencji
+	użytkownika. Można wybrać następujące opcje:<ul>
+		<li>ICONSONLY - na pasku narzędziowym widoczne są jedynie ikony,</li>
+		<li>TEXTONLY - na pasku narzędziowym widoczny jest jedynie tekst,</li>
+		<li>BOTH - na pasku narzędziowym widoczne są ikony i tekst pod ikonami,</li>
+		<li>BOTH_TEXTRIGHT - na pasku narzędziowym widoczne są ikony i tekst obok ikon.</li></ul></li>
+</ul></p>
+
+
+<h2><a name="obliczenia"></a>Zakładka obliczenia</h2>
+<p>W tym miejscu można ustawić opcje dotyczące przeprowadzania obliczeń
+oraz sposobu ich prezentacji.
+        <p><table border="0"><caption>Ustawienia - zakładka "obliczenia".</caption>
+                <tr><td><img alt="Ustawienia - obliczenia" src="images/ustawienia-obliczenia.png" /></td>
+        </tr></table></p>
+<ul>
+<li><b>Ilość cyfr znaczących na wydruku</b> - określa ilość cyfr znaczących, jakie
+	będą pokazywane przy wynikach obliczeń. Powinna być mniejsza, od ilości cyfr znaczących
+	podczas operacji dzielenia,</li>
+<li><b>Ilość cyfr znaczących podczas operacji dzielenia</b> - opcja określa, jak dokładnie
+	będą przeprowadzane obliczenia. Im więcej cyfr znaczących, tym większa dokładność,
+	ale jednocześnie dłuższy czas obliczeń.</li></ul></p>
+
+
+<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

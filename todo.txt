@@ -1,0 +1,70 @@
+==========
+konieczne:
+==========
+rozszerzyć porównania
+ikonki z pomocą w oknach
+UML
+kołmogorowa
+
+========
+możliwe:
+========
+opisać użycie kreatora
+e^(-5/4)
+(-2)^(1/3) jest null, a powinno być tyle samo co cbrt(-2)
+kopiowanie do excela z ,
+dokładne liczenie pierwiastków
+poprawić dokładność liczenia fcji gamma
+złoty podział nie działa na całych wyrażeniach
+wyrównanie komórek do prawej
+coś się napsuło z docymentpagefactory_analizadynamiki i podstawowestatystyki i charakterystyki liczbowe. dlaczego tworzy pagenotepadforobliczenia?
+http://java.sun.com/docs/books/tutorial/uiswing/misc/action.html - zobaczyć czy da się zastosować accelerator_key, mnemonic_key itp
+zrobić autoładowanie wszystkich wtyczek w jstat.projectplugins
+studenttail(10; 0) nie działa
+
+
+
+
+
+
+
+=========
+zrobione:
+=========
+zrobić mega przykład
+źródła, przypisy, linki
+Dobór zmiennych metodą analizy współczynników korelacji nie patrzy na ujemne
+poszukać tekstów napisanych w pierwszej osobie i zmienić na 3.
+screenshot statistica
+round dla mniejszych od 1 świruje
+filtrowanie w ustawieniach
+przesuwanie stron dokumentu w górę/ w dół
+kwartyl 2 != mediana
+liczenie DW
+dokończyć opis wtyczek
+opisać podstawowestatystyki (dodać do funkcji)
+opisać Macierz.pobierzKolumny
+funkcja Macierz.kumuluj upublicznić  PodstawoweStatystyki.kumuluj
+przenieść funkcje z regresji do Funkcja
+regresja: suma kwadratów reszt
+usunąć toporność
+poprawić formatowanie outputów obliczeń
+pytanie o nadpisanie pliku
++ kopiowanie/wklejanie {{1;2}}
++ tytuł * null
++ * gdy wpisane do arkusza
++ sqrt(-1*10^(-4)) ???
++ jak nowa strona - kalkulator, ustawić kursor w polu edycji
++ wygląd windows w windows, ocean poza
++ postęp obliczeń, może na pasku statusu?
++zapisywanie stron z html
++sprawdzić testowanie wektora parametrów
++dlaczego w pliku .jstat zapisuje się nazwa dokumentu? coś nie jest transient
++menu kontekstowe arkusza: kopiuj/wytnij/wklej
++ opisać charakterystyki liczbowe, dorobić min/max
++ opisać w arkuszu menu kontekstowe do kopiowania/wklejania macierzy
++ w charakterystyki liczbowe dodać częstości skumulowane
+
+
+
+

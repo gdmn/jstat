@@ -1,0 +1,162 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Wstęp</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach" />
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<h1><a name="TOP"></a>Wstęp</h1>
+
+
+<p>Na rynku oprogramowania jest wiele pozycji
+	ułatwiających obliczenia statystyczne, począwszy
+	od darmowych i <i>open-source</i>, a skończywszy na rozbudowanych
+	komercyjnych pakietach. Jak to zwykle bywa,
+	płatne aplikacje prezentują zazwyczaj wyższy poziom.
+	Natomiast ich minusem jest zamknięty kod
+	i często niewystarczająca dokumentacja.
+</p>
+
+<p>Powstaje pytanie czy możliwe jest napisanie programu statystycznego
+	"prawie idealnego". Czym musiałby się owy program
+	charakteryzować?
+	[Lista opracowana na podstawie <i>Oprogramowanie i jego zadania</i>:
+	<a href="http://www.econom.pl/nauka/informatyka_ekonomiczna/16">http://www.econom.pl/nauka/informatyka_ekonomiczna/16</a>
+	z dnia 20 mają 2008]
+	<ul>
+		<li><b>przyjazność</b> czyli łatwość użycia, mierzona ilością czasu,
+			którą użytkownik musi poświęcić na poznanie programu
+			w stopniu umożliwiającym rozwiązywanie
+			problemów statystycznych,
+			</li>
+		<li><b>uniwersalność</b>, czyli jak najlepsze dostosowanie programu
+			do obliczeń na podstawie różnych danych oraz prosta ich późniejsza
+			zmiana. Raz wprowadzone dane powinny być w późniejszym czasie
+			łatwo modyfikowalne i łatwo uzupełniane o nowe,
+		</li>
+		<li><b>niski koszt użycia, sprawność i niezależność maszynowa</b>.
+			Możliwość uruchomienia programu na różnych konfiguracjach
+			sprzętowych to niezależność maszynowa. Niezależność ta ma
+			pewne granice w zależności od rodzaju programu. Do gier zazwyczaj
+			jest konieczna dobra karta graficzna, pozwalająca na płynne wyświetlanie
+			trójwymiarowej grafiki. Błędem byłoby tworzenie gry, która mogłaby
+			zostać uruchomiona tylko na jednym konkretnym modelu karty graficznej.
+			Przy aplikacjach statystycznych typ użytej karty graficznej nie powinien
+			wpływać na komfort obsługi, a tym bardziej na możliwość samego włączenia
+			programu. Dostępne zasoby sprzętowe powinny być wykorzystywanie
+			oszczędnie. Dodatkowo nie powinno się użytkownika zmuszać do używania
+			ściśle określonych narzędzi trzecich firm, a zwłaszcza płatnych.
+			Powodowałoby to niekorzystną segregację użytkowników, na tych, którzy
+			mogą i tych, którzy nie mogą używać aplikacji. Jeśli ktoś wybiera jakieś
+			oprogramowanie i chce je  używać, ma zapewne ku temu powody. Dlatego
+			każde oprogramowanie, nie tylko statystyczne, powinno dawać użytkownikom
+			wybór, w jaki sposób chcą ten program użytkować,
+		</li>
+		<li><b>modułowa budowa</b>, umożliwiająca dodawanie bądź odejmowanie
+			części niepotrzebnych w danej chwili użytkownikowi,
+		</li>
+		<li><b>strukturyzacja</b>. Każda logicznie wydzielona część oprogramowania
+			powinna być jedynie częścią programu jako całości.
+			W każdej części powinny być takie same założenia projektowe,
+			spójny interfejs. Synonimem może być czytelność aplikacji.
+			Porównując program komputerowy do książki, każdy rozdział
+			powinien być napisany taką samą czcionką, mieć takie same
+			odstępy między liniami, a numery stron zawsze powinny być
+			w tej samej części kartki. Sprawia to pozytywne
+			wrażenie spójności i profesjonalizmu w oczach końcowego
+			użytkownika,
+			</li>
+		<li><b>modyfikowalność</b>. Każdy program powinien być zaprojektowany
+			w taki sposób, aby ułatwić jego późniejsze modyfikacje.
+			Cykl życia oprogramowania wymaga jego ciągłego ulepszania.
+			Przyszłościowe zaprojektowanie "szkieletu" aplikacji
+			umożliwi późniejsze rozbudowywanie programu.
+			Wielce pożądaną cechą jest możliwość modyfikowania
+			ostatecznej wersji programu przez użytkownika.
+			Rodzajem modyfikowalności są ustawienia programu,
+			w których może użytkownik dostosować program do swoich potrzeb,
+		</li>
+		<li><b>dokumentacja</b> powinna być jednym z wyróżników profesjonalnych
+			aplikacji. Dzięki dokumentacji użytkownicy mogą
+			zgodnie z przeznaczeniem korzystać z programu.
+			Sporządzenie dobrej dokumentacji jest korzystne z punktu
+			widzenia autora programu, ponieważ
+			nie musi odpowiadać na część pytań użytkowników,
+			gdyż mogą znaleźć część odpowiedzi na swoje pytania w dokumentacji.
+			Typem dokumentacji jest też dostęp do źródła programu.
+			Z tej drogi zapewne skorzystają jedynie wykwalifikowane
+			osoby, lecz należy im to umożliwić,
+		</li>
+		<li><b>niezawodność</b>. Kwestia niezawodności oprogramowania
+			jest dość szerokim zagadnieniem. Przyglądając się
+			czołowym światowym producentom niejednokrotnie
+			można odnieść wrażenie, że ta jakże cecha
+			jest często spychana na dalszy plan.
+			Przykładem mogą tu być aktualizacje do
+			systemu Windows, które potrafią sprawić
+			tyle samo nowych problemów, ile naprawić starych.
+			Oczywiste jest, że nie da się przewidzieć wszystkich
+			konfiguracji i możliwych scenariuszy.
+			Dlatego idealne oprogramowanie powinno dawać
+			użytkownikowi jak narzędzia, dzięki którym
+			mógłby się przyczynić do przyszłego usunięcia
+			błędów,
+		</li>
+		<li><b>dokładność</b>. Algorytmy użyte w programie powinny
+			dawać możliwie dokładne wyniki. Ułomność
+			współcześnie stosowanych procesorów nie pozwala na idealnie dokładne
+			obliczenia. Złudzenie dokładności jaką widzi ostateczny odbiorca
+			jest najczęściej dobrze napisanym algorytmem.
+			Innym problemem jest cena dokładności.
+			Nawet przy dzieleniu pisemnym więcej czasu zajmuje
+			człowiekowi podzielenie z dokładnością do, powiedzmy,
+			trzydziestej cyfry po przecinku, niż z dokładnością
+			do drugiej. Podobnie jest z komputerami.
+			Idealny program musiałby być jak najbardziej
+			dokładny, przez co należy rozumieć
+			"wystarczająco dokładny dla użytkownika",
+		</li>
+		<li><b>kompletność i racjonalność</b>. Program powinien zawierać wszystkie
+			procedury umożliwiające mu wykonywanie zadań do jakich został
+			zaprojektowany. Nie powinien zawierać procedur nie
+			służących do osiągnięcia wspomnianego celu.
+			Przykładem nieracjonalnego programu może być edytor tekstu
+			połączony z narzędziem do sprawdzania dysku twardego.
+			Program spełnia dwie funkcje na tyle rozłączne,
+			że nie ma przesłanek do sztucznego ich "sklejania".
+			Kwintesencją racjonalności są narzędzia konsolowe dołączane
+			do dowolnej z dystrybucji Linuksa. Istnieje narzędzie jedynie
+			do wyszukiwania plików. Ich listę można przekazać do programu
+			wypisującego dane na standardowe wyjście i jednocześnie do pliku,
+			a następnie przesłać całą listę np. do programu kompresującego.
+			Każdy program spełnia jedną funkcję i stara się to zrobić jak
+			najlepiej (np. narzędzie wyszukujące może uwzględniać daty
+			modyfikacji, rozmiar, wyszukiwać pliki porównując ich
+			nazwy z wyrażeniem regularnym i tak dalej).
+		</li>
+	</ul>
+</p>
+<p>Celem pracy jest opracowanie aplikacji umożliwiającej wykonywanie
+	różnych statystycznych obliczeń z jak najlepszą możliwą dokładnością.
+	Kierując się powyższą listą oraz doświadczeniem zebranym przez pięć
+	lat studiów, powstał program JStat.
+</p>
+
+<p>Praca, poza wstępem i zakończeniem, zawiera dwa rozdziały. Drugi
+	rozdział przedstawia aplikację JStat, która została napisana jako odpowiedź
+	na poszukiwania idealnego programu statystycznego. Trzeci rozdział opisuje
+	zaawansowane zagadnienia, na jakie można się natknąć podczas pracy z programem.
+	Jest jednocześnie instrukcją dla zaawansowanych użytkowników, jak rozszerzać
+	możliwości programu. Natomiast w zakończeniu przedstawione zostało porównanie
+	z innymi aplikacjami dostępnymi na rynku. Przedstawienie ich zalet i wad oraz
+	skontrastowanie ich z JStat pozwala ocenić, na ile aplikacja będąca przedmiotem
+	tej pracy spełnia założenia programu „prawie idealnego”.
+</p>
+
+
+<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

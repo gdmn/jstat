@@ -1,0 +1,440 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+<head>
+<title>Przykłady użycia</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="Author" content="Damian Gorlach" />
+<link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<h1><a name="TOP"></a>Przykłady użycia</h1>
+<p>Zostaną krok po kroku przedstawione praktyczne przykłady użycia aplikacji
+	<b>JStat</b>.
+</p>
+<h2><a name="regresja"></a>Przykład obliczania regresji</h2>
+<p>Przykład dotyczy obliczania modelu metodą najmniejszych kwadratów.
+	Dane do modelu są rzeczywiste.
+</p>
+<p>
+<table class="tablicadane">
+	<caption>Wynagrodzenie z pracy, zyski przedsiębiorstw, bilans handlowy,
+		wydatki na artykuły trwałe, budownictwo, usługi konsumpcyjne w Stanach
+		Zjednoczonych w latach 1922-1938 (dane w dziesiątkach milionów dolarów).<br />
+		<small><i>Źródło:</i> H. Theil, <i>Zasady ekonometrii</i>, PWN, Warszawa 1979, strona 68.</small>
+		</caption>
+	<tr class="tablicadanenaglowek" >
+		<td>Rok</td>
+		<td>Wynagrodzenie z pracy<br /><i></i></td>
+		<td>Zyski przedsiębiorstw<br /><i></i></td>
+		<td>Bilans handlowy<br /><i></i></td>
+		<td>Wydatki na artykuły trwałe<br /><i></i></td>
+		<td>Budownictwo<br /><i></i></td>
+		<td>Usługi konsumpcyjne<br /><i></i></td>
+	</tr>
+	<tr>
+			<td>1922</td> <td>3700</td> <td>1079</td> <td>51</td> <td>1620</td> <td>532</td> <td>2032</td>
+			</tr>
+			<tr>
+				<td>1923</td> <td>4334</td> <td>1134</td> <td>25</td> <td>1927</td> <td>688</td> <td>2229</td>
+			</tr>
+			<tr>
+				<td>1924</td> <td>4332</td> <td>1194</td> <td>78</td> <td>1864</td> <td>759</td> <td>2351</td>
+			</tr>
+			<tr>
+				<td>1925</td> <td>4502</td> <td>1250</td> <td>36</td> <td>2042</td> <td>825</td> <td>2434</td>
+			</tr>
+			<tr>
+				<td>1926</td> <td>4802</td> <td>1245</td> <td>8</td> <td>2136</td> <td>881</td> <td>2518</td>
+			</tr>
+			<tr>
+				<td>1927</td> <td>4843</td> <td>1262</td> <td>42</td> <td>2092</td> <td>858</td> <td>2580</td>
+			</tr>
+			<tr>
+				<td>1928</td> <td>4936</td> <td>1288</td> <td>63</td> <td>2137</td> <td>818</td> <td>2638</td>
+			</tr>
+			<tr>
+				<td>1929</td> <td>5221</td> <td>1338</td> <td>35</td> <td>2230</td> <td>788</td> <td>2716</td>
+			</tr>
+			<tr>
+				<td>1930</td> <td>4777</td> <td>1277</td> <td>56</td> <td>1828</td> <td>594</td> <td>2589</td>
+			</tr>
+			<tr>
+				<td>1931</td> <td>4047</td> <td>1121</td> <td>9</td> <td>1477</td> <td>371</td> <td>2338</td>
+			</tr>
+			<tr>
+				<td>1932</td> <td>3170</td> <td>975</td> <td>16</td> <td>1053</td> <td>177</td> <td>1970</td>
+			</tr>
+			<tr>
+				<td>1933</td> <td>3005</td> <td>902</td> <td>22</td> <td>1040</td> <td>109</td> <td>1767</td>
+			</tr>
+			<tr>
+				<td>1934</td> <td>3489</td> <td>910</td> <td>35</td> <td>1220</td> <td>123</td> <td>1819</td>
+			</tr>
+			<tr>
+				<td>1935</td> <td>3793</td> <td>952</td> <td>-27</td> <td>1407</td> <td>160</td> <td>1928</td>
+			</tr>
+			<tr>
+				<td>1936</td> <td>4248</td> <td>1012</td> <td>-47</td> <td>1654</td> <td>255</td> <td>2095</td>
+			</tr>
+			<tr>
+				<td>1937</td> <td>4657</td> <td>1123</td> <td>-26</td> <td>1738</td> <td>333</td> <td>2242</td>
+			</tr>
+			<tr>
+				<td>1938</td> <td>4323</td> <td>1106</td> <td>61</td> <td>1440</td> <td>293</td> <td>2228</td>
+			</tr>
+</table>
+</p>
+<p>Jak widać, dane przedstawiają sześć różnych zmiennych po siedemnaście obserwacji.
+</p>
+<p>Po <a href="uruchomienie.html#uruchomienie">uruchomieniu</a> aplikacji
+	<b>JStat</b> zostanie automatycznie utworzony nowy dokument.
+	Należy dodać do niego stronę z arkuszem.
+	Z <a href="interfejs.html#paseknarzedziowy">paska narzędziowego</a>
+	należy wybrać ikonę
+	<img alt="ikonka - arkusz" src="images/x-office-spreadsheet.png" />.
+	Alternatywą jest wybranie pozycji <i>Arkusz</i>
+	z menu <i>Wstaw</i>.
+	Spowoduje to uruchomienie kreatora.
+</p>
+<p><table border="0"><caption>Arkusz - kreator - krok 1.</caption><tr><td>
+<img alt="Arkusz - kreator - krok 1" src="images/arkusz-krok1.png" />
+</td></tr></table></p>
+<p>Posługiwanie się kreatorem zostało omówione w rozdziale
+	opisującym wszystkie <a href="moduly.html#arkusz">moduły</a> aplikacji.
+	Należy utworzyć tyle zmiennych i przypadków, ile przedstawiają dane.
+	Dodatkowo można stworzyć zmienną dla lat, ale nie powinno
+	się jej włączać do późniejszego modelu.
+	Dla ułatwienia sugeruje się wpisywać nazwy zmiennych.
+</p>
+<p>W tym momencie można zapisać dokument, klikając ikonę
+	<img alt="ikonka - arkusz" src="images/document-save.png" />
+	na pasku narzędziowym
+	lub wybierając z głównego menu pozycję <i>Plik</i>, a następnie
+	<i>Zapisz</i>. Po zapisaniu,
+	zmieni się napis na belce tytułowej okna z dokumentem
+	na ścieżkę, gdzie dokument został zapisany.
+	Jednocześnie zniknie gwiazdka (<b>*</b>), która oznaczała, że dokument
+	został zmieniony od ostatniego zapisania.
+</p>
+<p><table border="0"><caption>Utworzony pusty arkusz.</caption><tr><td>
+<img alt="Utworzony pusty arkusz." src="images/przykladtheil-pustyarkusz.png" />
+</td></tr></table></p>
+
+<p>Następnie arkusz trzeba uzupełnić danymi.
+	Dane można przepisać lub po w dowolnej przeglądarce internetowej
+	zaznaczyć i skopiować do schowka. Następnie należy zaznaczyć
+	pierwszą komórkę (kliknięcie lewym przyciskiem myszy)
+	i przywołać menu kontekstowe (kliknięcie prawym przyciskiem myszy).
+	Należy wybrać pozycję <i>Wklej</i>.
+</p>
+<p><table border="0"><caption>Wklejanie danych do arkusza.</caption><tr><td>
+<img alt="Wklejanie danych" src="images/przykladtheil-wklejanie.png" />
+</td></tr></table></p>
+
+<p>Kolejną czynnością jest przeprowadzenie analizy regresji.
+	Z menu głównego należy wybrać <i>Obliczenia</i>,
+	następnie <i>Regresja</i>.
+	Uruchomi się kreator.
+	W pierwszym kroku można wybrać zmienną objaśnianą.
+	W omawianym przykładzie jest to zmienna <i>Wynagrodzenie z pracy</i>.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennej objaśnianej.</caption><tr><td>
+<img alt="Wybór zmiennej objaśnianej" src="images/przykladheil-zmiennaobjasniana.png" />
+</td></tr></table></p>
+
+<p>Następnie w kolejnym kroku kreatora trzeba wybrać zmienne
+	objaśniające. Należy odznaczyć zmienną <i>Rok</i>.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennych objaśniających.</caption><tr><td>
+<img alt="Wybór zmiennych objaśniających" src="images/przykladheil-zmienneobjasniajace.png" />
+</td></tr></table></p>
+
+<p>W kolejnych krokach można zostawić wartości domyślne lub
+	można dostosować poziomy istotności przeprowadzanych testów. W ostatnim
+	kroku uaktywni się przycisk <img alt="OK" src="images/przyklad-ok.png" />, oznaczający, że wszystkie
+	wymagane dane zostały zebrane i można
+	przystąpić do obliczeń. Po naciśnięciu tego przycisku
+	i odczekaniu chwili, podczas której wyświetlane jest okno
+	informujące o postępie obliczeń, w dokumencie zostanie utworzona
+	nowa strona <i>Regresja</i>.
+</p>
+
+<p><table border="0"><caption>Fragment wyników obliczeń.</caption><tr><td>
+<img alt="Fragment wyników obliczeń" src="images/przykladheil-testymodelu1.png" />
+</td></tr></table></p>
+
+<p>Pod nagłówkiem <b>Dobór zmiennych metodą analizy współczynników korelacji</b>
+	w polu "wynik testu" nie jest taki sam jak w polu
+	<b>Dobór zmiennych metodą wskaźników pojemności informacji</b>.
+	Oznacza to, że dwa różne sposoby doboru zmiennych do modelu wskazały
+	różne zmienne. Od przeprowadzającego analizę statystyczną
+	zależy dalsze postępowanie. W przykładzie zostanie obliczony jeszcze
+	raz model z dwiema zmiennymi objaśniającymi.
+	Najpierw trzeba się przełączyć na widok arkusza, w tym celu należy zaznaczyć
+	na liście stron dokumentu stronę oznaczoną <i>Arkusz danych [7 zm.]</i>.
+	Następnie trzeba powtórzyć całą procedurę, lecz w drugim kroku kreatora
+	wybrać tylko dwie zmienne.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennych objaśniających do drugiego modelu.</caption><tr><td>
+<img alt="Wybór zmiennych objaśniających" src="images/przykladheil-zmienneobjasniajace2.png" />
+</td></tr></table></p>
+
+<p>Po przeprowadzeniu obliczeń, zostanie utworzona kolejna (trzecia)
+	strona dokumentu, z wynikami dla drugiego modelu.
+</p>
+<p><table border="0"><caption>Fragment wyników obliczeń dla drugiego modelu.</caption><tr><td>
+<img alt="Fragment wyników obliczeń" src="images/przykladheil-testymodelu2.png" />
+</td></tr></table></p>
+<p>Zrzut ekranu przedstawia fragment obliczeń z testami istotności
+	parametrów strukturalnych. Jak widać, testy wypadły
+	pomyślnie, czyli parametry są istotne (poza wyrazem wolnym). Test istotności
+	współczynnika korelacji również wypada pozytywnie (nie został
+	przedstawiony na zrzucie).
+</p>
+
+
+
+
+
+
+
+
+
+<!--
+<h2><a name="regresja-staryprzyklad"></a>Inny przykład obliczania regresji</h2>
+<p>Przykład dotyczy obliczania modelu metodą najmniejszych kwadratów.
+	Dane do modelu są rzeczywiste.
+</p>
+<p>
+<table class="tablicadane">
+	<caption>Wypadki drogowe, mieszkania oddane do użytkowania,
+		długość tras autobusowych i wydatki bieżące jednostek budżetowych
+		w województwie dolnośląskim w latach 2000-2006.<br />
+		<small><i>Źródło:</i> Główny Urząd Statystyczny, <a href="http://www.stat.gov.pl/bdr_s/app/wybrane_cechy.wymiary">http://www.stat.gov.pl/bdr_s/app/wybrane_cechy.wymiary</a> z dnia 18 maja 2008.
+		</small></caption>
+	<tr class="tablicadanenaglowek" >
+		<td>Rok</td>
+		<td>Wypadki drogowe<br /><i>[szt]</i></td>
+		<td>Mieszkania oddane do użytkowania<br /><i>[miesz.]</i></td>
+		<td>Długość tras autobusowych<br /><i>[km]</i></td>
+		<td>Wydatki bieżące jednostek budżetowych<br /><i>[zł]</i></td>
+	</tr>
+	<tr>
+		<td>2000</td> <td>3785</td> <td>5891</td> <td>805</td> <td>147009667</td>
+	</tr>
+	<tr>
+		<td>2001</td> <td>3552</td> <td>9466</td> <td>834</td> <td>144524268</td>
+	</tr>
+	<tr>
+		<td>2002</td> <td>3242</td> <td>7109</td> <td>843</td> <td>126842373</td>
+	</tr>
+	<tr>
+		<td>2003</td> <td>2960</td> <td>10573</td> <td>1028</td> <td>114917218</td>
+	</tr>
+	<tr>
+		<td>2004</td> <td>2987</td> <td>6497</td> <td>1040</td> <td>134426582</td>
+	</tr>
+	<tr>
+		<td>2005</td> <td>3149</td> <td>6875</td> <td>1007</td> <td>153085401</td>
+	</tr>
+	<tr>
+		<td>2006</td> <td>3030</td> <td>9167</td> <td>1040</td> <td>198689045</td>
+	</tr>
+</table>
+</p>
+<p>Jak widać, dane przedstawiają cztery różne zmienne po siedem obserwacji.
+</p>
+<p>Po <a href="uruchomienie.html#uruchomienie">uruchomieniu</a> aplikacji
+	<b>JStat</b> zostanie automatycznie utworzony nowy dokument.
+	Należy dodać do niego stronę z arkuszem.
+	Z <a href="interfejs.html#paseknarzedziowy">paska narzędziowego</a>
+	należy wybrać ikonę
+	<img alt="ikonka - arkusz" src="images/x-office-spreadsheet.png" />.
+	Alternatywą jest wybranie pozycji <i>Arkusz</i>
+	z menu <i>Wstaw</i>.
+	Spowoduje to uruchomienie kreatora.
+</p>
+<p><table border="0"><caption>Arkusz - kreator - krok 1.</caption><tr><td>
+<img alt="Arkusz - kreator - krok 1" src="images/arkusz-krok1.png" />
+</td></tr></table></p>
+<p>Posługiwanie się kreatorem zostało omówione w rozdziale
+	opisującym wszystkie <a href="moduly.html#arkusz">moduły</a> aplikacji.
+	Należy utworzyć tyle zmiennych i przypadków, ile przedstawiają dane.
+	Dodatkowo można stworzyć zmienną dla lat, ale nie powinno
+	się jej włączać do późniejszego modelu.
+	Dla ułatwienia sugeruje się wpisywać nazwy zmiennych.
+</p>
+<p>W tym momencie można zapisać dokument, klikając ikonę
+	<img alt="ikonka - arkusz" src="images/document-save.png" />
+	na pasku narzędziowym
+	lub wybierając z głównego menu pozycję <i>Plik</i>, a następnie
+	<i>Zapisz</i>. Po zapisaniu,
+	zmieni się napis na belce tytułowej okna z dokumentem
+	na ścieżkę, gdzie dokument został zapisany.
+	Jednocześnie zniknie gwiazdka (<b>*</b>), która oznaczała, że dokument
+	został zmieniony od ostatniego zapisania.
+</p>
+<p><table border="0"><caption>Utworzony pusty arkusz.</caption><tr><td>
+<img alt="Utworzony pusty arkusz." src="images/przyklad-pustyarkusz.png" />
+</td></tr></table></p>
+
+<p>Następnie arkusz trzeba uzupełnić danymi.
+	Dane można przepisać lub po w dowolnej przeglądarce internetowej
+	zaznaczyć i skopiować do schowka. Następnie należy zaznaczyć
+	pierwszą komórkę (kliknięcie lewym przyciskiem myszy)
+	i przywołać menu kontekstowe (kliknięcie prawym przyciskiem myszy).
+</p>
+<p><table border="0"><caption>Wklejanie danych do arkusza.</caption><tr><td>
+<img alt="Wklejanie danych" src="images/przyklad-wklejanie.png" />
+</td></tr></table></p>
+
+<p>Kolejną czynnością jest przeprowadzenie analizy regresji.
+	Z menu głównego należy wybrać <i>Obliczenia</i>,
+	następnie <i>Regresja</i>.
+	Uruchomi się kreator.
+	W pierwszym kroku można wybrać zmienną objaśnianą.
+	W omawianym przykładzie jest to zmienna <i>Wypadki drogowe</i>.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennej objaśnianej.</caption><tr><td>
+<img alt="Wybór zmiennej objaśnianej" src="images/przyklad-zmiennaobjasniana.png" />
+</td></tr></table></p>
+
+<p>Następnie w kolejnym kroku kreatora trzeba wybrać zmienne
+	objaśniające. Należy odznaczyć zmienną <i>Rok</i>.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennych objaśniających.</caption><tr><td>
+<img alt="Wybór zmiennych objaśniających" src="images/przyklad-zmienneobjasniajace.png" />
+</td></tr></table></p>
+
+<p>W kolejnych krokach można zostawić wartości domyślne lub
+	można dostosować poziomy istotności przeprowadzanych testów. W ostatnim
+	kroku uaktywni się przycisk <img alt="OK" src="images/przyklad-ok.png" />, oznaczający, że wszystkie
+	wymagane dane zostały zebrane i można
+	przystąpić do obliczeń. Po naciśnięciu tego przycisku
+	i odczekaniu chwili, podczas której wyświetlane jest okno
+	informujące o postępie obliczeń, w dokumencie zostanie utworzona
+	nowa strona <i>Regresja</i>.
+</p>
+
+<p><table border="0"><caption>Fragment wyników obliczeń.</caption><tr><td>
+<img alt="Fragment wyników obliczeń" src="images/przyklad-testymodelu1.png" />
+</td></tr></table></p>
+
+<p>Pod nagłówkiem <b>Dobór zmiennych metodą analizy współczynników korelacji</b>
+	w polu "wynik testu" jest taki sam jak w polu
+	<b>Dobór zmiennych metodą wskaźników pojemności informacji</b>.
+	Oznacza to, że dwa różne sposoby doboru zmiennych do modelu wskazały
+	te same zmienne. Można to wykorzystać i zbudować nowy model, jedynie
+	ze wskazaną zmienną jako objaśniającą. W tym celu należy zaznaczyć
+	na liście stron dokumentu stronę oznaczoną <i>Arkusz danych [5 zm.]</i>.
+	Następnie trzeba powtórzyć całą procedurę, lecz w drugim kroku kreatora
+	wybrać tylko jedną zmienną.
+</p>
+
+<p><table border="0"><caption>Wybór zmiennych objaśniających do drugiego modelu.</caption><tr><td>
+<img alt="Wybór zmiennych objaśniających" src="images/przyklad-zmienneobjasniajace2.png" />
+</td></tr></table></p>
+
+<p>Po przeprowadzeniu obliczeń, zostanie utworzona kolejna (trzecia)
+	strona dokumentu, z wynikami dla drugiego modelu.
+</p>
+<p><table border="0"><caption>Fragment wyników obliczeń dla drugiego modelu.</caption><tr><td>
+<img alt="Fragment wyników obliczeń" src="images/przyklad-testymodelu2.png" />
+</td></tr></table></p>
+<p>Zrzut ekranu przedstawia fragment obliczeń z testami istotności
+	parametrów strukturalnych. Jak widać, testy wypadły
+	pomyślnie, czyli parametry są istotne. Test istotności
+	współczynnika korelacji również wypada pozytywnie (nie został
+	przedstawiony na zrzucie).
+</p>
+-->
+
+
+<h2><a name="rozklady"></a>Przykład pracy z rozkładami</h2>
+<p>Załóżmy, że potrzebujemy odczytać wartości z tablic F-Snedecora dla
+	<code>5</code> i <code>10</code> stopni swobody oraz poziomu istotności <code>0,1</code>.
+</p>
+<p>W pierwszym etapie warto przyjrzeć się wykresowi rozkładu.
+	Najpierw należy dodać stronę do dokumentu pozwalającą
+	rysować wykresy. Można tego dokonać klikając na ikonę
+	<img alt="ikonka - wykres" src="images/x-office-presentation.png" />
+	na pasku narzędziowym lub wybierając pozycję <i>Wykres</i>
+	z menu <i>Wstaw</i>.
+	Teraz należy wpisać odpowiedni wzór. Można w tym celu
+	skorzystać z <a href="moduly.html#edytorfunkcji">edytora funkcji</a>
+	(menu <i>Narzędzia</i>, pozycja <i>Edytor funkcji</i>).
+	Po odszukaniu na liście funkcji pozycji <code>SNEDECORA</code>
+	i kliknięciu na niej, w centralnej części okna pojawi się pomoc,
+	wyświetlając wzór rozkładu i przykładowy wykres.
+	Poniżej przykładowego wykresu znajduje się pomoc dotycząca
+	parametrów. Pierwsze dwa oznaczają stopnie swobody,
+	a kolejny to wartość <i>x</i>, dla której ma zostać
+	odczytana wartość funkcji gęstości. Ponieważ celem jest narysowanie
+	wykresu, jako trzeci argument należy wpisać po prostu <i>x</i>.
+	Podczas rysowania, będzie on zastępowany kolejnymi wartościami
+	z osi OX.
+</p>
+<p><table border="0"><caption>Edytor funkcji - wpisywanie argumentów.</caption><tr><td>
+<img alt="Edytor funkcji - wpisywanie argumentów" src="images/przyklad-snedecora-edytorfunkcji.png" />
+</td></tr></table></p>
+<p>
+	Naciśnięcie przycisku oznaczonego jako
+	<i>Wstaw wyrażenie</i> spowoduje wstawienie wyrażenia do pola
+	pod wykresem. Zamknięcie okna nastąpi po naciśnięciu przycisku <i>Zamknij</i>.
+	W celu potwierdzenia wyrażenia, należy nacisnąć <i>ENTER</i>
+	na klawiaturze.
+</p>
+<p>Wykres zostanie narysowany, lecz domyślne powiększenie utrudnia
+	przyglądnięcie się funkcji. Używając lewego przycisku myszki do
+	przesuwania oraz lewego przycisku myszki wraz z klawiszem <i>CTRL</i>
+	do zmiany powiększenia (zgodnie ze wskazówkami opisanymi w
+	<a href="moduly.html#wykres">rozdziale o modułach, podrozdziale o wykresie</a>) należy
+	dostosować widok. Po chwili zmagań z wykresem można uzyskać
+	zadowalające powiększenie.
+</p>
+<p><table border="0"><caption>Wykres rozkładu F-Snedecora, stopnie swobody: 5 i 10.</caption><tr><td>
+<img alt="Wykres rozkładu F-Snedecora" src="images/przyklad-snedecora-wykres.png" />
+</td></tr></table></p>
+<p>Rozkład F-Snedecora jest stablicowany w ten sposób, że odczytane
+	z tablic wartości odpowiadają polu pod ogonem wykresu.
+	Do odczytania dokładnej wartości należy wykorzystać
+	<a href="moduly.html#kalkulator">moduł kalkulator</a> i funkcję
+	<code>SNEDECORATAIL</code>, zwracającą właśnie pole pod ogonem wykresu.
+	Dostęp do niego następuje po kliknięciu ikony
+	<img alt="ikonka - kalkulator" src="images/accessories-calculator.png" />
+	lub wybraniu pozycji <i>Kalkulator</i> z menu <i>Wstaw</i>.
+	Wpisanie wyrażenia może nastąpić za pomocą
+	<a href="moduly.html#edytorfunkcji">edytora funkcji</a>,
+	można też wpisać je ręcznie. Po potwierdzeniu wyrażenia
+	klawiszem <i>ENTER</i>, w środkowym polu zostanie wyświetlony
+	wynik: <code>2,5216407</code>.
+</p>
+<p><table border="0"><caption>Odczytywanie wartości z tablic rozkładu F-Snedecora.</caption><tr><td>
+<img alt="Kalkulator, funkcja SNEDECORATAIL" src="images/przyklad-snedecora-kalkulator.png" />
+</td></tr></table></p>
+<p>Warto zaznaczyć, że można wpisać dowolny poziom istotności.
+	W papierowych wersjach tablic rozkładu F-Snedecora
+	są najczęściej wartości tylko dla poziomu istotności
+	równego <code>0,05</code>. Dzięki aplikacji <b>JStat</b>
+	możliwe jest odczytanie wartości dla dowolnego poziomu istotności
+	i dowolnych stopni swobody.
+</p>
+
+
+<h2><a name="podsumowanie"></a>Podsumowanie</h2>
+<p>Na przedstawionych przykładach można się przekonać, że różne
+	obliczenia w programie <b>JStat</b> przeprowadza się
+	bardzo prosto. Dodatkowo ma się pełny wpływ na przeprowadzane
+	testy, ponieważ można wybrać dowolny poziom istotności.
+</p>
+
+
+<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+</body>
+</html>

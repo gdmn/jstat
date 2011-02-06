@@ -1,0 +1,283 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+-->
+<html>
+	<head>
+		<title>Moduły</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="Author" content="Damian Gorlach" />
+		<link rel="Stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<h1><a name="TOP"></a>Moduły</h1>
+		<p>Moduły są różnymi częściami programu, jakie można wstawiać do dokumentu.
+			Tworzą jego podstrony. W <b>JStat</b> można na obecnym etapie rozwoju
+			wybrać kilka, a dzięki przyszłościowo zaprojektowanemu interfejsowi
+			programistycznemu rozszerzenie o kolejne rodzaje modułów jest proste.
+		</p>
+
+
+		<h2><a name="arkusz"></a>Arkusz</h2>
+		<p>Wstawienie arkusza do dokumentu następuje poprzez wybranie
+			z menu <i>Wstaw</i> pozycji <i>Arkusz</i>. Otworzy się kreator
+		wstawienia nowego arkusza.</p>
+		<p><table border="0"><caption>Arkusz - kreator - krok 1.</caption>
+				<tr><td><img alt="Arkusz - kreator - krok 1" src="images/arkusz-krok1.png" /></td>
+		</tr></table></p>
+		<p>W pierwszym kroku
+			można wybrać liczbę zmiennych, które są reprezentowane
+			przez kolumny arkusza, oraz liczbę przypadków reprezentowaną ilością wierszy.
+		</p>
+		<p><table border="0"><caption>Arkusz - kreator - krok 2.</caption>
+				<tr><td><img alt="Arkusz - kreator - krok 2" src="images/arkusz-krok2.png" /></td>
+		</tr></table></p>
+		<p>W drugim kroku
+			należy wprowadzić nazwy zmiennych. Można również zostawić
+			domyślnie zaproponowane. Aby przycisk <i>OK</i> był aktywny,
+			ilość wprowadzonych zmiennych musi się równać ilości
+			zadeklarowanej w pierwszym kroku. Jeśli zajdzie potrzeba,
+			można się cofnąć za pomocą przycisku <i>Wstecz</i>
+			i skorygować wartość.
+		</p>
+		<p><table border="0"><caption>Arkusz - wprowadzanie danych.</caption>
+				<tr><td><img alt="Arkusz - wprowadzanie danych" src="images/arkusz.png" /></td>
+		</tr></table></p>
+		<p>Wprowadzanie danych do kolejnych komórek arkusza
+			można rozpocząć po dwukrotnym kliknięciu lewym przyciskiem
+			myszy na wybranej komórce. Alternatywnym sposobem
+			jest wybór komórki używając lewego przycisku myszy lub
+			klawiszy kursora na klawiaturze (<i>strzałek</i>)
+			i wciśnięcie na klawiaturze klawisza <i>F2</i>.
+		</p>
+		<p>Obecna wersja <b>JStat</b> pozwala wprowadzać
+			do arkusza jedynie <a href="skrypty-jstat.html#Liczba">liczby</a>.
+		</p>
+		<p>Kliknięcie prawym przyciskiem myszy na arkusz spowoduje
+			wyświetlenie menu kontekstowego.
+		</p>
+		<p><table border="0"><caption>Menu kontekstowe arkusza.</caption><tr><td>
+		<img alt="Menu kontekstowe arkusza" src="images/arkusz-menukontekstowe.png" />
+		</td></tr></table></p>
+		<p>Dostępne do wyboru opcje są podzielone na dwie grupy
+			operacji typu kopiuj-wytnij-wklej.
+			Pierwszą jest grupa umożliwiająca <b>swobodną wymianę</b>
+			tekstu z innymi programami, np. arkuszami kalkulacyjnymi,
+			ponieważ kopiowany tekst do schowka ma standardowy format
+			wykorzystywany do przenoszenia zawartości tabel. Używając
+			kombinacji klawiszy CTRL-C można ponadto skopiować bądź
+			wyciąć zaznaczone komórki i wkleić w innym miejscu
+			po naciśnięciu CTRL-V.
+			Druga grupa umożliwia operacje
+			na tekście przechowywanym w postaci używanej
+			przez <a href="skrypty-jstat.html#Macierz">macierze</a>,
+			tzn. skopiowanie zaznaczonej części arkusza
+			spowoduje wstawienie tekstu do schowka
+			rozpoczynającego i kończącego się odpowiednim nawiasem klamrowym,
+			każdy wiersz będzie również ograniczony przez
+			nawiasy klamrowe, a poszczególne elementy wiersza
+			będą oddzielone średnikami.
+			<br />
+			Dzięki drugiej grupie łatwo jest przenieść część
+			danych np. do modułu <a href="moduly.html#kalkulator">kalkulatora</a>,
+			wykonać na nich pewne operacje, a następnie wkleić je
+			z powrotem do arkusza.
+		</p>
+
+		<p>Jednym z pomysłów rozwoju programu jest rozwój modułu
+			arkusza o obsługę formuł, znaną z "normalnych" arkuszy
+			kalkulacyjnych, takich jak OpenOffice Calc oraz
+			Microsoft Excel. Substytutem formuł może być odpowiednia
+			obsługa kopiowania i wklejania danych z zewnętrznego
+		programu lub <a href="#edytorfunkcji">Edytor funkcji</a>.</p>
+		<p>Po uzupełnieniu wszystkich komórek arkusza można wykonywać
+			różne obliczenia, opisane szerzej w rozdziale
+		<a href="obliczenia.html">o obliczeniach</a>.</p>
+
+
+		<h2><a name="kalkulator"></a>Kalkulator</h2>
+		<p>Kalkulator można otworzyć wybierając z menu <i>Wstaw</i> pozycję
+			<i>Kalkulator</i>. Do dokumentu zostanie dodana strona z kalkulatorem.
+			Jest to zaawansowany kalkulator z <a href="funkcje.html">dodatkowymi funkcjami</a>
+		(opisane w osobnym rozdziale), przestrzegający kolejności działań.</p>
+		<p><table border="0"><caption>Kalkulator.</caption>
+				<tr><td><img alt="Kalkulator" src="images/kalkulator.png" /></td>
+		</tr></table></p>
+		<p>Okno kalkulatora składa się z:<ul>
+				<li>dolnego pola do wpisywania wyrażeń,</li>
+		<li>górnego pola do wyświetlania wyników, jest nieedytowalne.</li></ul></p>
+		<p>Wpisanie wyrażenia polega na wpisaniu działania, np.
+			<code>2+2*2</code> i naciśnięciu klawisza <i>ENTER</i>. W górnym
+			polu pojawią się dwie linie. Pierwsza, wyróżniona niebieską czcionką,
+			oznacza dane wpisane przez użytkownika. Druga prezentuje wynik obliczeń.
+			Błędy są wyróżniane na czerwono, np. po wpisaniu działania
+		<code>1/0</code> zostanie wypisany błąd o niemożliwości obliczenia.</p>
+		<p>Wykaz wszystkich funkcji wraz z wymaganymi parametrami jest dostępny poprzez
+			<a href="#edytorfunkcji">Edytor funkcji</a>. W przypadku tego modułu
+			<strong>nie ma znaczenia wielkość liter</strong>, oraz rodzaj użytego
+			separatora dziesiętnego <a href="skrypty-jstat.html#Liczba">liczb</a>.
+		</p>
+
+
+		<h2><a name="wykres"></a>Wykres</h2>
+		<p>Wykres do dokumentu można wstawić wybierając z menu <i>Wstaw</i> pozycję
+		<i>Wykres</i>.</p>
+		<p><table border="0"><caption>Przykładowy wykres.</caption>
+				<tr><td><img alt="Wykres" src="images/wykres.png" /></td>
+		</tr></table></p>
+		<p>Okno wykresu składa się z:<ul>
+				<li>dolnego pola do wpisywania wyrażeń,</li>
+				<li>centralnego pola do rysowania wykresów,</li>
+				<li>górnego paska narzędziowego.</li>
+				</ul></p>
+		<p>Wpisanie wyrażenia polega na wpisaniu działania, np.
+			<code>x^2</code> i naciśnięciu klawisza <i>ENTER</i>.
+			Wykres jest rysowany w ten sposób, że za zmienną <code>x</code>
+			zostają kolejno podstawiane wartości (cały widoczny zakres osi OX),
+			a obliczona wartość (odpowiadająca współrzędnej na osi OY)
+			zostaje zaznaczana na wykresie. W przypadku wyrażeń, które
+			są nieoznaczone dla pewnych <code>x</code>, wykres nie jest rysowany
+			w przedziale, dla których wyrażenie nie ma wartości. Np.
+			wpisanie wyrażenia oznaczającego logarytm naturalny <code>ln(x)</code>
+			i potwierdzenie klawiszem <i>ENTER</i> spowoduje wykreślenie
+			wykresu jedynie dla dodatnich liczb rzeczywistych.
+			</p>
+		<p>Wykaz wszystkich funkcji wraz z wymaganymi parametrami jest dostępny poprzez
+			<a href="#edytorfunkcji">Edytor funkcji</a>. W przypadku tego modułu
+			<strong>nie ma znaczenia wielkość liter</strong>, oraz rodzaj użytego
+			separatora dziesiętnego <a href="skrypty-jstat.html#Liczba">liczb</a>.
+		</p>
+		<h3><a name="wykres-praca"></a>Praca z wykresem</h3>
+		<p>Wykres można skalować i przesuwać.</p>
+		<p><strong>Przesuwanie</strong> obszaru kreślenia następuje przez przyciśnięcie lewego
+			klawisza myszy i przesunięcie kursora myszy (nie puszczając przycisku).
+			Podczas przesuwania widać jedynie osie wykresu. Gdy osie nie mieszczą
+			się w obszarze rysowania, na odpowiedniej krawędzi "przyklejają" się
+			liczby z osi ułatwiając orientację w układzie współrzędnych.
+			Po puszczeniu przycisku myszki wykres zostaje odrysowany. Opóźnienie
+			przerysowania podyktowane jest
+			tym, że nieustanne rysowanie wykresu, a więc obliczanie zazwyczaj
+			kilkuset wyrażeń, jest dość czasochłonnym zadaniem.
+			</p>
+		<p><strong>Przesuwanie - tryb "podróżnika"</strong>. Tryb ten jest uaktywniany
+			w przypadku kliknięcia na obszar wykresu z jednoczesnym przytrzymaniem
+			na klawiaturze przycisku <i>SHIFT</i>. Następnie nie jest wymagany
+			ruch kursorem. Wykres zostaje powoli przesunięty w stronę kursora myszki,
+			tzn. kliknięcie na prawą stronę powoduje przesunięcie obszaru
+			rysowania w prawo, tak że widać większe wartości na osi OX. Wykres
+			będzie się przesuwał do momentu, w którym nie zostanie zwolniony
+			lewy przycisk myszki. Dodatkowo będzie się przesuwał tym szybciej,
+			im dalsza jest pozycja kursora myszy od centralnego punktu obszaru
+			kreślenia wykresu.
+		</p>
+		<p><strong>Skalowanie</strong> wykresu - za pomocą myszy wyposażonej
+			w kółko (<i>scroll</i>) jest możliwe szybkie skalowanie wykresu.
+			Obrócenie kółkiem myszy <b>w górę</b> spowoduje przybliżenie
+			wykresu, natomiast przesunięcie kółkiem myszy <b>w dół</b> spowoduje
+			oddalenie wykresu. Wykres zostaje przybliżany i oddalany względem
+			centralnego punktu na obszarze kreślenia, niezależnie od pozycji
+			kursora myszy (wymagane jest, by znajdował się nad polem
+			służącym do narysowania wykresu).
+		</p>
+		<p><strong>Skalowanie - niezależne</strong>. Skalowanie wykresu można dokonać niezależnie dla każdej
+			osi. Tzn. jednostka na osi np. OX może odpowiadać (wizualnie) kilku
+			jednostkom osi OY. Skalowanie wykresu następuje przez wykonanie czynności:
+			<ul><li>naciśnięcie i przytrzymanie klawisza <i>CTRL</i> (na klawiaturze),</li>
+				<li>naciśnięcie i przytrzymanie lewego przycisku myszy,</li>
+				<li>ruch kursorem myszy w stronę rosnących liczb na osi OX powoduje
+					zwiększenie skali na tejże osi (kolejne jednostki są bliżej siebie),
+					w stronę malejących liczb na osi OX powoduje zmniejszenie skali.
+					Podobnie dla osi pionowej (OY) - ruch w stronę
+					rosnących liczb powoduje zwiększenie skali, a w stronę
+					malejących - zmniejszenie.
+					</li></ul></p>
+		<h3><a name="wykres-paseknarzedziowy"></a>Pasek narzędziowy</h3>
+		<p><strong>Eksport</strong> - eksportuje bieżący wynik do pliku graficznego.
+			Po wybraniu tej pozycji zostanie otwarty dialog, pozwalający podać,
+			jaki rozmiar (rozdzielczość) obrazka stworzyć. Im większy,
+			tym większy rozmiar pliku,
+			ale również większa czytelność. Wykresy przeznaczone do druku powinny
+			być jak jak największe, aby zachować ich dobrą jakość. Z drugiej
+			strony większy rozmiar wykresu pociąga za sobą większy rozmiar
+			pliku, więc się nie nadaje do publikacji w internecie. Stosowany format
+			zapisu danych (<strong>PNG</strong>, ang. <i>Portable Network Graphics</i>)
+			jest bezstratnym skompresowanym formatem zapisu. Obok plików <b>JPEG</b>
+			jest uznany za standard i jest bez problemu odczytywany
+			przez współczesne programy graficzne oraz przeglądarki internetowe.
+		</p>
+
+
+		<h2><a name="notatnik"></a>Notatnik</h2>
+		<p>Notatnik do dokumentu można wstawić wybierając z menu <i>Wstaw</i> pozycję
+			<i>Notatnik</i>. Notatnik to jedno pole tekstowe i, jak sama nazwa wskazuje,
+		służy do dodawania własnych notatek do dokumentów. </p>
+		<p><table border="0"><caption>Przykładowy notatnik.</caption>
+				<tr><td><img alt="Notatnik" src="images/notatnik.png" /></td>
+		</tr></table></p>
+
+
+		<h2><a name="skrypt"></a>Skrypt</h2>
+		<p>Skrypt do dokumentu można wstawić wybierając z menu <i>Wstaw</i> pozycję
+		<i>Skrypt</i>.</p>
+		<p><table border="0"><caption>Przykładowy skrypt.</caption>
+				<tr><td><img alt="Skrypt" src="images/skrypt.png" /></td>
+		</tr></table></p>
+		<p>Okno edycji skryptu jest podzielone na:
+			<ul><li>pasek narzędziowy,</li>
+				<li>właściwe pole edycji skryptu - tutaj powinny być wpisywane polecenia
+				przez użytkownika, stanowiące skrypt,</li>
+				<li>konsola wyjściowa - służy do wypisywania wszelkich wiadomości, jakie
+		są drukowane przez skrypty, m.in. za pomocą funkcji <code>print()</code>.</li></ul></p>
+		<p>Np. po wpisaniu do edytora (środkowe pole) poleceń:<pre>
+print("przykład");
+print("druga linijka");</pre>
+			następnie wybraniu z paska narzędziowego polecenia <b>Uruchom</b>,
+			w konsoli wyjściowej powinien się pojawić wynik działania
+			skryptu, tj. dwie linie:<pre>
+przykład
+druga linijka</pre></p>
+		<p>Wyczyszczenie konsoli wyjściowej następuje poprzez wybranie polecenia
+			<i>Wyczyść konsolę</i> z paska narzędziowego. Konsola jest czyszczona
+		także każdorazowo przed uruchomieniem skryptu.</p>
+		<p>Więcej informacji o skryptach znajduje się w
+		<a href="skrypty.html">osobnym rozdziale</a> poświęconym skryptom.</p>
+
+
+		<h1><a name="narzedzia"></a>Narzędzia</h1>
+		<p>Narzędzia są dodatkowymi funkcjami programu, które nie są niezbędne
+			do używania aplikacji, ani nawet do jej istnienia, lecz znacznie
+			ją ułatwiają korzystanie z JStat.
+		</p>
+		<h2><a name="edytorfunkcji"></a>Edytor funkcji</h2>
+		<p>Edytor funkcji można otworzyć wybierając z menu <i>Narzędzia</i>
+		pozycję <i>Edytor funkcji</i>.</p>
+		<p><table border="0"><caption>Edytor funkcji.</caption>
+				<tr><td><img alt="Edytor funkcji" src="images/edytorfunkcji.png" /></td>
+		</tr></table></p>
+		<p>Okienko edytora składa się
+			z czterech części. Po lewej stronie znajduje się lista wszystkich
+			funkcji. Po prawej, w górnej części jest pomoc do aktualnie
+			wybranej funkcji z listy. Poniżej pomocy są dynamicznie zmieniające
+			się pola do wprowadzania argumentów funkcji, podgląd
+			wyrażenia, jakie zostanie obliczone, oraz wynik.
+			W dolnej części umieszczone są przyciski umożliwiające:<ul>
+				<li>zamknięcie okna,</li>
+				<li>wstawienie wyniku do aktualnie wybranej podstrony dokumentu.
+					Np. jeśli aktualnie jest wybrana podstrona z arkuszem danych,
+					kliknięcie tego przycisku spowoduje wstawienie wyniku
+					obliczeń do wybranej komórki. Jeśli aktualnie jest wybrana
+					podstrona z kalkulatorem, nastąpi wstawienie wyniku zamiast
+					zaznaczonego tekstu lub (w przypadku gdy nie jest nic zaznaczone)
+				w miejscu kursora oznaczającego pozycję wpisywania,</li>
+				<li>wstawienie wyrażenia do aktualnie wybranej podstrony dokumentu.
+					Zachowanie jest podobne do poprzedniego przycisku, z wyjątkiem,
+					że zamiast wyniku wstawiane jest wyrażenie widniejące w polu
+					oznaczonym jako <i>Wyrażenie</i>. Należy zwrócić uwagę na specjalne
+					formatowanie wstawianego wyrażenia w przypadku, gdy aktualnie zaznaczoną
+					stroną jest <a href="skrypty.html">skrypt</a>. Wstawiane jest
+					wówczas wyrażenie jako argument tekstowy funkcji
+			<a href="skrypty-jstat.html#calc">calc()</a>.</li></ul>
+		</p>
+
+
+		<hr /><p><a name="BOTTOM"></a><a href="#TOP">Wróć na początek</a></p>
+	</body>
+</html>
